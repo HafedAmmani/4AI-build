@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4AI-build - Workflow Builder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="workflow-builder.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">4AI-build</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="agent-management.html">
+                            <i class="fas fa-robot"></i>
+                            <span>Agents</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="workflow-builder.html">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Workflows</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#settings">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <p class="user-name">John Doe</p>
+                        <p class="user-role">Admin</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <div class="workflow-title-container">
+                    <h1 class="page-title">Workflow Builder</h1>
+                    <div class="workflow-name-container">
+                        <input type="text" class="workflow-name-input" value="Document Processing Workflow" placeholder="Enter workflow name">
+                        <button class="btn btn-icon edit-name-btn">
+                            <i class="fas fa-pencil-alt"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-secondary" id="saveWorkflowBtn">
+                        <i class="fas fa-save"></i>
+                        <span>Save</span>
+                    </button>
+                    <button class="btn btn-primary" id="runWorkflowBtn">
+                        <i class="fas fa-play"></i>
+                        <span>Run</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Workflow Builder Content -->
+            <div class="workflow-builder-content">
+                <!-- Component Library Sidebar -->
+                <div class="component-library">
+                    <div class="component-library-header">
+                        <h2>Components</h2>
+                    </div>
+                    <div class="component-categories">
+                        <div class="component-category active" data-category="input">
+                            <i class="fas fa-arrow-right-to-bracket"></i>
+                            <span>Input</span>
+                        </div>
+                        <div class="component-category" data-category="processing">
+                            <i class="fas fa-cogs"></i>
+                            <span>Processing</span>
+                        </div>
+                        <div class="component-category" data-category="ai">
+                            <i class="fas fa-robot"></i>
+                            <span>AI</span>
+                        </div>
+                        <div class="component-category" data-category="output">
+                            <i class="fas fa-arrow-right-from-bracket"></i>
+                            <span>Output</span>
+                        </div>
+                    </div>
+                    <div class="component-list">
+                        <!-- Input Components -->
+                        <div class="component-group" data-group="input">
+                            <div class="component-item" draggable="true" data-component-type="text-input">
+                                <div class="component-icon">
+                                    <i class="fas fa-font"></i>
+                                </div>
+                                <div class="component-info">
+                                    <h3>Text Input</h3>
+                                    <p>User-provided text</p>
+                                </div>
+                            </div>
+                            <div class="component-item" draggable="true" data-component-type="file-input">
+                                <div class="component-icon">
+                                    <i class="fas fa-file"></i>
+                                </div>
+                                <div class="component-info">
+                                    <h3>File Input</h3>
+                                    <p>Document or data file</p>
+                                </div>
+                            </div>
+                            <div class="component-item" draggable="true" data-component-type="api-input">
+                                <div class="component-icon">
+                                    <i class="fas fa-plug"></i>
+                                </div>
+                                <div class="component-info">
+                                    <h3>API Input</h3>
+                                    <p>External data source</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Processing Components -->
+                        <div class="component-group" data-group="processing" style="display: none;">
+                            <div class="component-item" draggable="true" data-component-type="filter">
+                                <div class="component-icon">
+                                    <i class="fas fa-filter"></i>
+                                </div>
+                                <div class="component-info">
+                                    <h3>Filter</h3>
+                                    <p>Filter data by criteria</p>
+                                </div>
+                            </div>
+                            <div class="component-item" draggable="true" data-component-type="transform">
+                                <div class="component-icon">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </div>
+                                <div class="component-info">
+                                    <h3>Transform</h3>
+                                    <p>Convert data format</p>
+                                </div>
+                            </div>
+                            <div class="component-item" draggable="true" data-component-type="merge">
+                                <div class="component-icon">
+                                    <i class="fas fa-object-group"></i>
+                                </div>
+                                <div class="component-info">
+                                    <h3>Merge</h3>
+                                    <p>Combine multiple inputs</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- AI Components -->
+                        <div class="component-group" data-group="ai" style="display: none;">
+                            <div class="component-item" draggable="true" data-component-type="agent">
+                                <div class="component-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="component-info">
+                                    <h3>Agent</h3>
+                                    <p>AI agent processing</p>
+                                </div>
+                            </div>
+                            <div class="component-item" draggable="true" data-component-type="summarize">
+                                <div class="component-icon">
+                                    <i class="fas fa-compress-alt"></i>
+                                </div>
+                                <div class="component-info">
+                                    <h3>Summarize</h3>
+                                    <p>Document summarization</p>
+                                </div>
+                            </div>
+                            <div class="component-item" draggable="true" data-component-type="classify">
+                                <div class="component-icon">
+                                    <i class="fas fa-tags"></i>
+                                </div>
+                                <div class="component-info">
+                                    <h3>Classify</h3>
+                                    <p>Content classification</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Output Components -->
+                        <div class="component-group" data-group="output" style="display: none;">
+                            <div class="component-item" draggable="true" data-component-type="text-output">
+                                <div class="component-icon">
+                                    <i class="fas fa-align-left"></i>
+                                </div>
+                                <div class="component-info">
+                                    <h3>Text Output</h3>
+                                    <p>Formatted text result</p>
+                                </div>
+                            </div>
+                            <div class="component-item" draggable="true" data-component-type="file-output">
+                                <div class="component-icon">
+                                    <i class="fas fa-file-export"></i>
+                                </div>
+                                <div class="component-info">
+                                    <h3>File Output</h3>
+                                    <p>Save result to file</p>
+                                </div>
+                            </div>
+                            <div class="component-item" draggable="true" data-component-type="api-output">
+                                <div class="component-icon">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                </div>
+                                <div class="component-info">
+                                    <h3>API Output</h3>
+                                    <p>Send to external API</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workflow Canvas -->
+                <div class="workflow-canvas-container">
+                    <div class="canvas-toolbar">
+                        <div class="toolbar-group">
+                            <button class="btn btn-icon" title="Zoom In">
+                                <i class="fas fa-search-plus"></i>
+                            </button>
+                            <button class="btn btn-icon" title="Zoom Out">
+                                <i class="fas fa-search-minus"></i>
+                            </button>
+                            <button class="btn btn-icon" title="Reset View">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                        <div class="toolbar-group">
+                            <button class="btn btn-icon" title="Undo">
+                                <i class="fas fa-undo"></i>
+                            </button>
+                            <button class="btn btn-icon" title="Redo">
+                                <i class="fas fa-redo"></i>
+                            </button>
+                        </div>
+                        <div class="toolbar-group">
+                            <button class="btn btn-icon" title="Delete Selected">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="workflow-canvas" id="workflowCanvas">
+                        <!-- Grid background will be added via CSS -->
+                        
+                        <!-- Example nodes - these will be created dynamically in real usage -->
+                        <div class="workflow-node" data-node-id="node1" data-node-type="file-input" style="left: 100px; top: 150px;">
+                            <div class="node-header">
+                                <div class="node-icon">
+                                    <i class="fas fa-file"></i>
+                                </div>
+                                <div class="node-title">File Input</div>
+                                <div class="node-actions">
+                                    <button class="btn btn-icon node-action-btn">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="node-content">
+                                <p class="node-description">Upload document</p>
+                            </div>
+                            <div class="node-ports">
+                                <div class="output-port" data-port-id="node1-output"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="workflow-node" data-node-id="node2" data-node-type="agent" style="left: 350px; top: 150px;">
+                            <div class="node-header">
+                                <div class="node-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="node-title">Agent</div>
+                                <div class="node-actions">
+                                    <button class="btn btn-icon node-action-btn">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="node-content">
+                                <p class="node-description">Document Analyzer</p>
+                            </div>
+                            <div class="node-ports">
+                                <div class="input-port" data-port-id="node2-input"></div>
+                                <div class="output-port" data-port-id="node2-output"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="workflow-node" data-node-id="node3" data-node-type="summarize" style="left: 600px; top: 150px;">
+                            <div class="node-header">
+                                <div class="node-icon">
+                                    <i class="fas fa-compress-alt"></i>
+                                </div>
+                                <div class="node-title">Summarize</div>
+                                <div class="node-actions">
+                                    <button class="btn btn-icon node-action-btn">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="node-content">
+                                <p class="node-description">Create document summary</p>
+                            </div>
+                            <div class="node-ports">
+                                <div class="input-port" data-port-id="node3-input"></div>
+                                <div class="output-port" data-port-id="node3-output"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="workflow-node" data-node-id="node4" data-node-type="text-output" style="left: 850px; top: 150px;">
+                            <div class="node-header">
+                                <div class="node-icon">
+                                    <i class="fas fa-align-left"></i>
+                                </div>
+                                <div class="node-title">Text Output</div>
+                                <div class="node-actions">
+                                    <button class="btn btn-icon node-action-btn">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="node-content">
+                                <p class="node-description">Display formatted result</p>
+                            </div>
+                            <div class="node-ports">
+                                <div class="input-port" data-port-id="node4-input"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Connections will be drawn using SVG -->
+                        <svg class="connections-layer">
+                            <path class="connection-path" d="M 160,165 C 220,165 280,165 340,165" data-from="node1-output" data-to="node2-input"></path>
+                            <path class="connection-path" d="M 410,165 C 470,165 530,165 590,165" data-from="node2-output" data-to="node3-input"></path>
+                            <path class="connection-path" d="M 660,165 C 720,165 780,165 840,165" data-from="node3-output" data-to="node4-input"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Properties Panel -->
+                <div class="properties-panel">
+                    <div class="properties-header">
+                        <h2>Properties</h2>
+                        <button class="btn btn-icon close-properties">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="properties-content">
+                        <!-- Dynamic content based on selected node -->
+                        <div class="node-properties" data-for-node="node2">
+                            <div class="property-group">
+                                <h3 class="property-group-title">Agent Settings</h3>
+                                <div class="form-group">
+                                    <label for="agentSelect">Select Agent</label>
+                                    <select id="agentSelect" class="form-select">
+                                        <option value="agent1" selected>Document Analyzer</option>
+                                        <option value="agent2">Customer Support</option>
+                                        <option value="agent3">Data Analyzer</option>
+                                        <option value="agent4">Content Generator</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="agentPrompt">Custom Prompt</label>
+                                    <textarea id="agentPrompt" class="form-textarea" rows="3">Analyze the document and extract key information.</textarea>
+                                </div>
+                            </div>
+                            <div class="property-group">
+                                <h3 class="property-group-title">Advanced Settings</h3>
+                                <div class="form-group">
+                                    <label for="maxTokens">Max Tokens</label>
+                                    <input type="number" id="maxTokens" class="form-input" value="2048">
+                                </div>
+                                <div class="form-group">
+                                    <label for="temperature">Temperature</label>
+                                    <div class="range-input-container">
+                                        <input type="range" id="temperature" min="0" max="1" step="0.1" value="0.7" class="range-input">
+                                        <span class="range-value">0.7</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="timeout">Timeout (seconds)</label>
+                                    <input type="number" id="timeout" class="form-input" value="30">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="workflow-builder.js"></script>
+</body>
+</html>

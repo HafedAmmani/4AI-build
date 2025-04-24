@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4AI-build - Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">4AI-build</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="agent-management.html">
+                            <i class="fas fa-robot"></i>
+                            <span>Agents</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="workflow-builder.html">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Workflows</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#settings">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="documentation.html">
+                            <i class="fas fa-book"></i>
+                            <span>Documentation</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <p class="user-name">John Doe</p>
+                        <p class="user-role">Admin</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <h1 class="page-title">Documentation</h1>
+                <div class="action-buttons">
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-print"></i>
+                        <span>Print</span>
+                    </button>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-download"></i>
+                        <span>Download PDF</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Documentation Content -->
+            <div class="documentation-content">
+                <div class="doc-section">
+                    <h2>4AI-build Prototype Documentation</h2>
+                    <p>This document provides an overview of the 4AI-build prototype, a modular AI platform for managing agents, LLMs, fine-tuning workflows, and AI pipelines.</p>
+                </div>
+
+                <div class="doc-section">
+                    <h3>1. Introduction</h3>
+                    <p>4AI-build is an all-in-one SaaS for developers, researchers, and startups to interact with AI agents, fine-tune language models, create autonomous workflows, and build smart assistants—without coding. The platform features integration with various LLMs (OpenAI, Claude, open-source models) and includes workflow automation capabilities.</p>
+                    
+                    <p>This prototype demonstrates the core functionality of the platform, including:</p>
+                    <ul>
+                        <li>Dashboard for monitoring system activity and performance</li>
+                        <li>Agent management for creating and configuring AI agents</li>
+                        <li>Workflow builder for creating custom AI workflows</li>
+                        <li>Result viewer for analyzing workflow outputs</li>
+                    </ul>
+                </div>
+
+                <div class="doc-section">
+                    <h3>2. Dashboard</h3>
+                    <p>The dashboard provides an overview of your 4AI-build environment, including:</p>
+                    <ul>
+                        <li>Key metrics (active agents, workflows, executions, uptime)</li>
+                        <li>Recent activity log</li>
+                        <li>Agent status distribution</li>
+                        <li>Recent workflows with status indicators</li>
+                        <li>Usage statistics</li>
+                    </ul>
+                    
+                    <div class="doc-image">
+                        <img src="assets/dashboard-screenshot.png" alt="Dashboard Screenshot">
+                        <p class="image-caption">Dashboard interface showing key metrics and activity</p>
+                    </div>
+                    
+                    <p>From the dashboard, you can quickly access all main functions of the platform and get a high-level view of system performance.</p>
+                </div>
+
+                <div class="doc-section">
+                    <h3>3. Agent Management</h3>
+                    <p>The Agent Management interface allows you to create, configure, and manage AI agents. Key features include:</p>
+                    <ul>
+                        <li>Agent listing with status indicators (Active, Inactive, Error)</li>
+                        <li>Agent creation with model selection</li>
+                        <li>Knowledge base management (file uploads)</li>
+                        <li>Advanced configuration options (temperature, max tokens, etc.)</li>
+                        <li>Prompt testing functionality</li>
+                    </ul>
+                    
+                    <div class="doc-image">
+                        <img src="assets/agent-management-screenshot.png" alt="Agent Management Screenshot">
+                        <p class="image-caption">Agent management interface showing agent list and configuration panel</p>
+                    </div>
+                    
+                    <h4>3.1 Creating a New Agent</h4>
+                    <p>To create a new agent:</p>
+                    <ol>
+                        <li>Click the "New Agent" button in the top-right corner</li>
+                        <li>Enter a name for your agent</li>
+                        <li>Select a language model (OpenAI, Claude, Mistral, etc.)</li>
+                        <li>Optionally upload knowledge base documents</li>
+                        <li>Click "Create" to create the agent</li>
+                    </ol>
+                    
+                    <h4>3.2 Agent Status</h4>
+                    <p>Agents can have the following statuses:</p>
+                    <ul>
+                        <li><span class="status-badge active">Active</span> - Agent is operational and ready to use</li>
+                        <li><span class="status-badge inactive">Inactive</span> - Agent is disabled but can be activated</li>
+                        <li><span class="status-badge error">Error</span> - Agent has encountered an error and needs attention</li>
+                    </ul>
+                </div>
+
+                <div class="doc-section">
+                    <h3>4. Workflow Builder</h3>
+                    <p>The Workflow Builder allows you to create custom AI workflows by connecting different components. Key features include:</p>
+                    <ul>
+                        <li>Drag-and-drop interface for building workflows</li>
+                        <li>Component library with categorized components</li>
+                        <li>Visual connection between workflow steps</li>
+                        <li>Component configuration panel</li>
+                        <li>Workflow saving and execution</li>
+                    </ul>
+                    
+                    <div class="doc-image">
+                        <img src="assets/workflow-builder-screenshot.png" alt="Workflow Builder Screenshot">
+                        <p class="image-caption">Workflow builder interface showing component library, canvas, and properties panel</p>
+                    </div>
+                    
+                    <h4>4.1 Building a Workflow</h4>
+                    <p>To build a workflow:</p>
+                    <ol>
+                        <li>Drag components from the library to the canvas</li>
+                        <li>Connect components by dragging from output ports to input ports</li>
+                        <li>Configure each component by selecting it and using the properties panel</li>
+                        <li>Save your workflow using the "Save" button</li>
+                        <li>Run the workflow using the "Run" button</li>
+                    </ol>
+                    
+                    <h4>4.2 Component Types</h4>
+                    <p>The workflow builder includes the following component categories:</p>
+                    <ul>
+                        <li><strong>Input Components</strong> - Text Input, File Input, API Input</li>
+                        <li><strong>Processing Components</strong> - Filter, Transform, Merge</li>
+                        <li><strong>AI Components</strong> - Agent, Summarize, Classify</li>
+                        <li><strong>Output Components</strong> - Text Output, File Output, API Output</li>
+                    </ul>
+                </div>
+
+                <div class="doc-section">
+                    <h3>5. Workflow Result</h3>
+                    <p>The Workflow Result interface displays the output of executed workflows. Key features include:</p>
+                    <ul>
+                        <li>Execution summary with status, duration, and token usage</li>
+                        <li>Tabbed interface for Result, Execution Log, and Debug information</li>
+                        <li>Well-formatted result display with sections, tables, and code blocks</li>
+                        <li>Export and sharing options</li>
+                    </ul>
+                    
+                    <div class="doc-image">
+                        <img src="assets/workflow-result-screenshot.png" alt="Workflow Result Screenshot">
+                        <p class="image-caption">Workflow result interface showing formatted output and execution details</p>
+                    </div>
+                    
+                    <h4>5.1 Result Tabs</h4>
+                    <p>The result view includes three tabs:</p>
+                    <ul>
+                        <li><strong>Result</strong> - The formatted output of the workflow</li>
+                        <li><strong>Execution Log</strong> - A detailed log of the workflow execution</li>
+                        <li><strong>Debug</strong> - Technical details for debugging and optimization</li>
+                    </ul>
+                    
+                    <h4>5.2 Exporting Results</h4>
+                    <p>Results can be exported in various formats:</p>
+                    <ul>
+                        <li>PDF document</li>
+                        <li>Word document</li>
+                        <li>Plain text</li>
+                        <li>JSON data</li>
+                    </ul>
+                </div>
+
+                <div class="doc-section">
+                    <h3>6. Next Steps</h3>
+                    <p>This prototype demonstrates the core functionality of the 4AI-build platform. Future development will include:</p>
+                    <ul>
+                        <li>User management and team collaboration features</li>
+                        <li>Integration with additional LLM providers</li>
+                        <li>Advanced workflow templates and examples</li>
+                        <li>API access for programmatic control</li>
+                        <li>Enhanced analytics and monitoring</li>
+                    </ul>
+                    
+                    <p>For feedback or questions about this prototype, please contact the development team.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="common.js"></script>
+</body>
+</html>

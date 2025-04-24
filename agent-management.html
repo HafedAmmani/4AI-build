@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4AI-build - Agent Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">4AI-build</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="agent-management.html">
+                            <i class="fas fa-robot"></i>
+                            <span>Agents</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="workflow-builder.html">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Workflows</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#settings">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <p class="user-name">John Doe</p>
+                        <p class="user-role">Admin</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <h1 class="page-title">Agent Management</h1>
+                <div class="action-buttons">
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-filter"></i>
+                        <span>Filter</span>
+                    </button>
+                    <button class="btn btn-primary" id="newAgentBtn">
+                        <i class="fas fa-plus"></i>
+                        <span>New Agent</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Agent Management Content -->
+            <div class="agent-management-content">
+                <!-- Agent List -->
+                <div class="agent-list-container">
+                    <div class="card-header">
+                        <h2 class="card-title">Your Agents</h2>
+                        <div class="search-container">
+                            <input type="text" class="search-input" placeholder="Search agents...">
+                            <i class="fas fa-search search-icon"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="table-container">
+                            <table class="data-table agent-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Model</th>
+                                        <th>Status</th>
+                                        <th>Last Used</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="agent-name">
+                                                <i class="fas fa-robot"></i>
+                                                <span>Document Analyzer</span>
+                                            </div>
+                                        </td>
+                                        <td>OpenAI</td>
+                                        <td><span class="status-badge active">Active</span></td>
+                                        <td>Today, 10:45 AM</td>
+                                        <td>
+                                            <div class="table-actions">
+                                                <button class="btn btn-icon" title="Edit">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button class="btn btn-icon btn-primary" title="Run">
+                                                    <i class="fas fa-play"></i>
+                                                </button>
+                                                <button class="btn btn-icon" title="Delete">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="agent-name">
+                                                <i class="fas fa-robot"></i>
+                                                <span>Customer Support</span>
+                                            </div>
+                                        </td>
+                                        <td>Claude</td>
+                                        <td><span class="status-badge active">Active</span></td>
+                                        <td>Today, 09:30 AM</td>
+                                        <td>
+                                            <div class="table-actions">
+                                                <button class="btn btn-icon" title="Edit">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button class="btn btn-icon btn-primary" title="Run">
+                                                    <i class="fas fa-play"></i>
+                                                </button>
+                                                <button class="btn btn-icon" title="Delete">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="agent-name">
+                                                <i class="fas fa-robot"></i>
+                                                <span>Data Analyzer</span>
+                                            </div>
+                                        </td>
+                                        <td>Mistral</td>
+                                        <td><span class="status-badge inactive">Inactive</span></td>
+                                        <td>Yesterday, 3:15 PM</td>
+                                        <td>
+                                            <div class="table-actions">
+                                                <button class="btn btn-icon" title="Edit">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button class="btn btn-icon btn-primary" title="Run">
+                                                    <i class="fas fa-play"></i>
+                                                </button>
+                                                <button class="btn btn-icon" title="Delete">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="agent-name">
+                                                <i class="fas fa-robot"></i>
+                                                <span>Content Generator</span>
+                                            </div>
+                                        </td>
+                                        <td>OpenAI</td>
+                                        <td><span class="status-badge error">Error</span></td>
+                                        <td>Yesterday, 11:20 AM</td>
+                                        <td>
+                                            <div class="table-actions">
+                                                <button class="btn btn-icon" title="Edit">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button class="btn btn-icon btn-primary" title="Run">
+                                                    <i class="fas fa-play"></i>
+                                                </button>
+                                                <button class="btn btn-icon" title="Delete">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="agent-name">
+                                                <i class="fas fa-robot"></i>
+                                                <span>Email Assistant</span>
+                                            </div>
+                                        </td>
+                                        <td>Claude</td>
+                                        <td><span class="status-badge inactive">Inactive</span></td>
+                                        <td>Apr 22, 2025</td>
+                                        <td>
+                                            <div class="table-actions">
+                                                <button class="btn btn-icon" title="Edit">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button class="btn btn-icon btn-primary" title="Run">
+                                                    <i class="fas fa-play"></i>
+                                                </button>
+                                                <button class="btn btn-icon" title="Delete">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agent Details -->
+                <div class="agent-details-container" id="agentDetails">
+                    <div class="card-header">
+                        <h2 class="card-title">Agent Details</h2>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary toggle-status" id="toggleStatus">
+                                <i class="fas fa-power-off"></i>
+                                <span>Deactivate</span>
+                            </button>
+                            <button class="btn btn-primary" id="saveAgent">
+                                <i class="fas fa-save"></i>
+                                <span>Save</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="agent-details-form">
+                            <div class="form-group">
+                                <label for="agentName">Agent Name</label>
+                                <input type="text" id="agentName" class="form-input" value="Document Analyzer">
+                            </div>
+                            <div class="form-group">
+                                <label for="agentModel">Language Model</label>
+                                <select id="agentModel" class="form-select">
+                                    <option value="openai" selected>OpenAI</option>
+                                    <option value="claude">Claude</option>
+                                    <option value="mistral">Mistral</option>
+                                    <option value="llama">Llama</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="agentDescription">Description</label>
+                                <textarea id="agentDescription" class="form-textarea" rows="3">An AI agent specialized in analyzing and extracting information from documents.</textarea>
+                            </div>
+                            
+                            <div class="form-section">
+                                <h3 class="section-title">Knowledge Base</h3>
+                                <div class="file-upload-container">
+                                    <div class="file-upload-area">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <p>Drop files here or click to upload</p>
+                                        <input type="file" id="fileUpload" class="file-input" multiple>
+                                    </div>
+                                    <div class="uploaded-files">
+                                        <div class="uploaded-file">
+                                            <i class="fas fa-file-pdf"></i>
+                                            <span>company_handbook.pdf</span>
+                                            <button class="btn btn-icon">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                        <div class="uploaded-file">
+                                            <i class="fas fa-file-word"></i>
+                                            <span>product_documentation.docx</span>
+                                            <button class="btn btn-icon">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-section">
+                                <h3 class="section-title">Advanced Settings</h3>
+                                <div class="advanced-settings">
+                                    <div class="form-group">
+                                        <label for="temperature">Temperature</label>
+                                        <div class="range-input-container">
+                                            <input type="range" id="temperature" min="0" max="1" step="0.1" value="0.7" class="range-input">
+                                            <span class="range-value">0.7</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="maxTokens">Max Tokens</label>
+                                        <input type="number" id="maxTokens" class="form-input" value="2048">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="systemPrompt">System Prompt</label>
+                                        <textarea id="systemPrompt" class="form-textarea" rows="4">You are a document analysis assistant. Your task is to extract key information, summarize content, and answer questions based on the documents provided.</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-section">
+                                <h3 class="section-title">Prompt Testing</h3>
+                                <div class="prompt-testing">
+                                    <div class="form-group">
+                                        <label for="testPrompt">Test Prompt</label>
+                                        <textarea id="testPrompt" class="form-textarea" rows="3">Summarize the main points of the company handbook.</textarea>
+                                    </div>
+                                    <button class="btn btn-secondary" id="testPromptBtn">
+                                        <i class="fas fa-bolt"></i>
+                                        <span>Test</span>
+                                    </button>
+                                    <div class="test-result">
+                                        <h4>Response:</h4>
+                                        <div class="result-content">
+                                            <p>Based on the company handbook, the main points are:</p>
+                                            <ol>
+                                                <li>Company mission and values focusing on innovation and customer satisfaction</li>
+                                                <li>Work policies including remote work options and flexible hours</li>
+                                                <li>Benefits package with health insurance, retirement plans, and professional development</li>
+                                                <li>Code of conduct emphasizing respect, integrity, and confidentiality</li>
+                                                <li>Performance review process conducted quarterly with clear metrics</li>
+                                            </ol>
+                                            <p>The handbook also covers vacation policy, sick leave, and procedures for internal communications.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Create Agent Modal -->
+    <div class="modal" id="createAgentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create New Agent</h2>
+                <button class="btn btn-icon close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="newAgentName">Agent Name</label>
+                    <input type="text" id="newAgentName" class="form-input" placeholder="Enter agent name">
+                </div>
+                <div class="form-group">
+                    <label for="newAgentModel">Language Model</label>
+                    <select id="newAgentModel" class="form-select">
+                        <option value="openai">OpenAI</option>
+                        <option value="claude">Claude</option>
+                        <option value="mistral">Mistral</option>
+                        <option value="llama">Llama</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="newAgentDescription">Description</label>
+                    <textarea id="newAgentDescription" class="form-textarea" rows="3" placeholder="Describe what this agent does"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Knowledge Base</label>
+                    <div class="file-upload-area">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drop files here or click to upload</p>
+                        <input type="file" id="newAgentFiles" class="file-input" multiple>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary close-modal">Cancel</button>
+                <button class="btn btn-primary" id="createAgentBtn">Create</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="agent-management.js"></script>
+</body>
+</html>
