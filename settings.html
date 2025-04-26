@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4AI-build - Settings</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/ui-improvements.css">
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">4AI-build</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="agent-management.html">
+                            <i class="fas fa-robot"></i>
+                            <span>Agents</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="workflow-builder.html">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Workflows</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="prompt-lab.html">
+                            <i class="fas fa-flask"></i>
+                            <span>Prompt Lab</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dataset-studio.html">
+                            <i class="fas fa-database"></i>
+                            <span>Dataset Studio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="app-builder.html">
+                            <i class="fas fa-cubes"></i>
+                            <span>App Builder</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="api-generator.html">
+                            <i class="fas fa-code"></i>
+                            <span>API Generator</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="collaboration.html">
+                            <i class="fas fa-users"></i>
+                            <span>Collaboration</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="web3-integration.html">
+                            <i class="fas fa-link"></i>
+                            <span>Web3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="collaboration.html">
+                            <i class="fas fa-users"></i>
+                            <span>Collaboration</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="web3-integration.html">
+                            <i class="fas fa-link"></i>
+                            <span>Web3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="marketplace.html">
+                            <i class="fas fa-store"></i>
+                            <span>Marketplace</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-panel.html">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Admin Panel</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="documentation.html">
+                            <i class="fas fa-book"></i>
+                            <span>Documentation</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Avatar">
+                    </div>
+                    <div class="user-details">
+                        <p class="user-name">Hafedh Ammani</p>
+                        <p class="user-role">Admin</p>
+                    </div>
+                    <div class="user-actions">
+                        <button class="btn-icon" title="Profile" onclick="window.location.href='profile.html'">
+                            <i class="fas fa-user-cog"></i>
+                        </button>
+                        <button class="btn-icon" title="Logout" onclick="logout()">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <div class="page-header">
+                    <h1 class="page-title">Settings</h1>
+                    <p class="page-subtitle">Configure your 4AI-build environment</p>
+                </div>
+                <div class="top-bar-actions">
+                    <div class="search-container">
+                        <input type="text" placeholder="Search settings..." class="search-input">
+                        <button class="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="notification-bell">
+                        <button class="btn-icon" title="Notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Settings Content -->
+            <div class="content-container">
+                <!-- Settings Navigation -->
+                <div class="settings-navigation">
+                    <ul class="settings-nav-list">
+                        <li class="settings-nav-item active" data-target="general">
+                            <i class="fas fa-sliders-h"></i>
+                            <span>General</span>
+                        </li>
+                        <li class="settings-nav-item" data-target="account">
+                            <i class="fas fa-user-circle"></i>
+                            <span>Account</span>
+                        </li>
+                        <li class="settings-nav-item" data-target="appearance">
+                            <i class="fas fa-palette"></i>
+                            <span>Appearance</span>
+                        </li>
+                        <li class="settings-nav-item" data-target="ai-models">
+                            <i class="fas fa-brain"></i>
+                            <span>AI Models</span>
+                        </li>
+                        <li class="settings-nav-item" data-target="api-keys">
+                            <i class="fas fa-key"></i>
+                            <span>API Keys</span>
+                        </li>
+                        <li class="settings-nav-item" data-target="notifications">
+                            <i class="fas fa-bell"></i>
+                            <span>Notifications</span>
+                        </li>
+                        <li class="settings-nav-item" data-target="security">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Security</span>
+                        </li>
+                        <li class="settings-nav-item" data-target="billing">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Billing</span>
+                        </li>
+                        <li class="settings-nav-item" data-target="integrations">
+                            <i class="fas fa-plug"></i>
+                            <span>Integrations</span>
+                        </li>
+                        <li class="settings-nav-item" data-target="advanced">
+                            <i class="fas fa-tools"></i>
+                            <span>Advanced</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Settings Content Panels -->
+                <div class="settings-content">
+                    <!-- General Settings -->
+                    <div class="settings-panel active" id="general-panel">
+                        <div class="panel-header">
+                            <h2 class="panel-title">General Settings</h2>
+                            <p class="panel-description">Configure basic application settings and preferences</p>
+                        </div>
+                        <div class="settings-section">
+                            <h3 class="section-title">Language & Region</h3>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="language">Interface Language</label>
+                                    <span class="setting-description">Select your preferred language for the user interface</span>
+                                </div>
+                                <div class="setting-control">
+                                    <select id="language" class="select-control">
+                                        <option value="en">English</option>
+                                        <option value="fr">Français</option>
+                                        <option value="es">Español</option>
+                                        <option value="de">Deutsch</option>
+                                        <option value="zh">中文</option>
+                                        <option value="ja">日本語</option>
+                                        <option value="ar">العربية</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="timezone">Time Zone</label>
+                                    <span class="setting-description">Set your local time zone for accurate timestamps</span>
+                                </div>
+                                <div class="setting-control">
+                                    <select id="timezone" class="select-control">
+                                        <option value="UTC">UTC (Coordinated Universal Time)</option>
+                                        <option value="GMT">GMT (Greenwich Mean Time)</option>
+                                        <option value="EST">EST (Eastern Standard Time)</option>
+                                        <option value="CST">CST (Central Standard Time)</option>
+                                        <option value="PST">PST (Pacific Standard Time)</option>
+                                        <option value="CET">CET (Central European Time)</option>
+                                        <option value="JST">JST (Japan Standard Time)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="date-format">Date Format</label>
+                                    <span class="setting-description">Choose how dates are displayed throughout the application</span>
+                                </div>
+                                <div class="setting-control">
+                                    <select id="date-format" class="select-control">
+                                        <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                        <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                        <option value="YYYY-MM-DD">YYYY-MM-DD</option>
+                                        <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                        <option value="DD-MMM-YYYY">DD-MMM-YYYY</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-section">
+                            <h3 class="section-title">Default Behaviors</h3>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="default-page">Default Landing Page</label>
+                                    <span class="setting-description">Choose which page to show when you first log in</span>
+                                </div>
+                                <div class="setting-control">
+                                    <select id="default-page" class="select-control">
+                                        <option value="dashboard">Dashboard</option>
+                                        <option value="agents">Agent Management</option>
+                                        <option value="workflows">Workflow Builder</option>
+                                        <option value="prompt-lab">Prompt Lab</option>
+                                        <option value="dataset-studio">Dataset Studio</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="auto-save">Auto-Save Interval</label>
+                                    <span class="setting-description">Set how frequently your work is automatically saved</span>
+                                </div>
+                                <div class="setting-control">
+                                    <select id="auto-save" class="select-control">
+                                        <option value="30">Every 30 seconds</option>
+                                        <option value="60">Every minute</option>
+                                        <option value="300">Every 5 minutes</option>
+                                        <option value="600">Every 10 minutes</option>
+                                        <option value="0">Disabled (Manual save only)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label>Session Timeout</label>
+                                    <span class="setting-description">Automatically log out after a period of inactivity</span>
+                                </div>
+                                <div class="setting-control">
+                                    <div class="range-control">
+                                        <input type="range" id="session-timeout" min="5" max="120" step="5" value="30">
+                                        <span class="range-value">30 minutes</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-section">
+                            <h3 class="section-title">Accessibility</h3>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="font-size">Font Size</label>
+                                    <span class="setting-description">Adjust the text size throughout the application</span>
+                                </div>
+                                <div class="setting-control">
+                                    <div class="range-control">
+                                        <input type="range" id="font-size" min="80" max="120" step="5" value="100">
+                                        <span class="range-value">100%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="high-contrast">High Contrast Mode</label>
+                                    <span class="setting-description">Increase contrast for better visibility</span>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="high-contrast">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="reduce-motion">Reduce Motion</label>
+                                    <span class="setting-description">Minimize animations and transitions</span>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="reduce-motion">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="screen-reader">Screen Reader Support</label>
+                                    <span class="setting-description">Optimize for screen readers and assistive technologies</span>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="screen-reader">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-actions">
+                            <button class="btn btn-secondary">Reset to Defaults</button>
+                            <button class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </div>
+
+                    <!-- Account Settings -->
+                    <div class="settings-panel" id="account-panel">
+                        <div class="panel-header">
+                            <h2 class="panel-title">Account Settings</h2>
+                            <p class="panel-description">Manage your account information and preferences</p>
+                        </div>
+                        <div class="settings-section">
+                            <h3 class="section-title">Profile Information</h3>
+                            <div class="profile-preview">
+                                <div class="profile-avatar">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile Avatar">
+                                    <button class="avatar-change-btn">
+                                        <i class="fas fa-camera"></i>
+                                    </button>
+                                </div>
+                                <div class="profile-info">
+                                    <h4 class="profile-name">Hafedh Ammani</h4>
+                                    <p class="profile-email">hafedh.ammani@example.com</p>
+                                    <p class="profile-role">Administrator</p>
+                                    <p class="profile-member-since">Member since: April 2023</p>
+                                </div>
+                                <div class="profile-actions">
+                                    <button class="btn btn-outline">Edit Profile</button>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="display-name">Display Name</label>
+                                    <span class="setting-description">Your name as shown to other users</span>
+                                </div>
+                                <div class="setting-control">
+                                    <input type="text" id="display-name" class="text-input" value="Hafedh Ammani">
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="job-title">Job Title</label>
+                                    <span class="setting-description">Your professional title or role</span>
+                                </div>
+                                <div class="setting-control">
+                                    <input type="text" id="job-title" class="text-input" value="AI Solutions Architect">
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="bio">Bio</label>
+                                    <span class="setting-description">A brief description about yourself</span>
+                                </div>
+                                <div class="setting-control">
+                                    <textarea id="bio" class="textarea-input" rows="3">AI enthusiast with expertise in building intelligent systems and automation workflows. Passionate about leveraging AI to solve complex business problems.</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-section">
+                            <h3 class="section-title">Contact Information</h3>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="email">Email Address</label>
+                                    <span class="setting-description">Your primary email for notifications and communications</span>
+                                </div>
+                                <div class="setting-control">
+                                    <input type="email" id="email" class="text-input" value="hafedh.ammani@example.com">
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="phone">Phone Number</label>
+                                    <span class="setting-description">For account recovery and security alerts</span>
+                                </div>
+                                <div class="setting-control">
+                                    <input type="tel" id="phone" class="text-input" value="+1 (555) 123-4567">
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="company">Company/Organization</label>
+                                    <span class="setting-description">Where you work or are affiliated with</span>
+                                </div>
+                                <div class="setting-control">
+                                    <input type="text" id="company" class="text-input" value="TechInnovate Solutions">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-section">
+                            <h3 class="section-title">Account Management</h3>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label>Account Status</label>
+                                    <span class="setting-description">Current status of your account</span>
+                                </div>
+                                <div class="setting-control">
+                                    <span class="status-badge active">Active</span>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label>Subscription Plan</label>
+                                    <span class="setting-description">Your current subscription level</span>
+                                </div>
+                                <div class="setting-control">
+                                    <span class="plan-badge premium">Premium</span>
+                                    <button class="btn btn-text">Manage Subscription</button>
+                                </div>
+                            </div>
+                            <div class="setting-item danger-zone">
+                                <div class="setting-label">
+                                    <label>Danger Zone</label>
+                                    <span class="setting-description">Irreversible account actions</span>
+                                </div>
+                                <div class="setting-control">
+                                    <button class="btn btn-danger">Deactivate Account</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-actions">
+                            <button class="btn btn-secondary">Cancel</button>
+                            <button class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </div>
+
+                    <!-- Appearance Settings -->
+                    <div class="settings-panel" id="appearance-panel">
+                        <div class="panel-header">
+                            <h2 class="panel-title">Appearance Settings</h2>
+                            <p class="panel-description">Customize the look and feel of your 4AI-build interface</p>
+                        </div>
+                        <div class="settings-section">
+                            <h3 class="section-title">Theme</h3>
+                            <div class="theme-options">
+                                <div class="theme-option">
+                                    <input type="radio" name="theme" id="theme-light" checked>
+                                    <label for="theme-light" class="theme-card light">
+                                        <div class="theme-preview light-theme"></div>
+                                        <span class="theme-name">Light</span>
+                                    </label>
+                                </div>
+                                <div class="theme-option">
+                                    <input type="radio" name="theme" id="theme-dark">
+                                    <label for="theme-dark" class="theme-card dark">
+                                        <div class="theme-preview dark-theme"></div>
+                                        <span class="theme-name">Dark</span>
+                                    </label>
+                                </div>
+                                <div class="theme-option">
+                                    <input type="radio" name="theme" id="theme-system">
+                                    <label for="theme-system" class="theme-card system">
+                                        <div class="theme-preview system-theme"></div>
+                                        <span class="theme-name">System Default</span>
+                                    </label>
+                                </div>
+                                <div class="theme-option">
+                                    <input type="radio" name="theme" id="theme-custom">
+                                    <label for="theme-custom" class="theme-card custom">
+                                        <div class="theme-preview custom-theme"></div>
+                                        <span class="theme-name">Custom</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-section">
+                            <h3 class="section-title">Color Scheme</h3>
+                            <div class="color-scheme-options">
+                                <div class="color-option">
+                                    <input type="radio" name="color-scheme" id="color-blue" checked>
+                                    <label for="color-blue" class="color-swatch blue"></label>
+                                </div>
+                                <div class="color-option">
+                                    <input type="radio" name="color-scheme" id="color-purple">
+                                    <label for="color-purple" class="color-swatch purple"></label>
+                                </div>
+                                <div class="color-option">
+                                    <input type="radio" name="color-scheme" id="color-green">
+                                    <label for="color-green" class="color-swatch green"></label>
+                                </div>
+                                <div class="color-option">
+                                    <input type="radio" name="color-scheme" id="color-orange">
+                                    <label for="color-orange" class="color-swatch orange"></label>
+                                </div>
+                                <div class="color-option">
+                                    <input type="radio" name="color-scheme" id="color-red">
+                                    <label for="color-red" class="color-swatch red"></label>
+                                </div>
+                                <div class="color-option">
+                                    <input type="radio" name="color-scheme" id="color-custom">
+                                    <label for="color-custom" class="color-swatch custom">
+                                        <i class="fas fa-plus"></i>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="custom-colors" id="custom-colors-panel" style="display: none;">
+                                <div class="setting-item">
+                                    <div class="setting-label">
+                                        <label for="primary-color">Primary Color</label>
+                                    </div>
+                                    <div class="setting-control">
+                                        <input type="color" id="primary-color" value="#3f51b5">
+                                    </div>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-label">
+                                        <label for="secondary-color">Secondary Color</label>
+                                    </div>
+                                    <div class="setting-control">
+                                        <input type="color" id="secondary-color" value="#ff4081">
+                                    </div>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-label">
+                                        <label for="accent-color">Accent Color</label>
+                                    </div>
+                                    <div class="setting-control">
+                                        <input type="color" id="accent-color" value="#00bcd4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-section">
+                            <h3 class="section-title">Layout</h3>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="sidebar-position">Sidebar Position</label>
+                                    <span class="setting-description">Choose where the navigation sidebar appears</span>
+                                </div>
+                                <div class="setting-control">
+                                    <select id="sidebar-position" class="select-control">
+                                        <option value="left">Left</option>
+                                        <option value="right">Right</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="sidebar-collapsed">Collapsed Sidebar</label>
+                                    <span class="setting-description">Start with a minimized sidebar for more workspace</span>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="sidebar-collapsed">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="content-density">Content Density</label>
+                                    <span class="setting-description">Adjust spacing between elements</span>
+                                </div>
+                                <div class="setting-control">
+                                    <select id="content-density" class="select-control">
+                                        <option value="comfortable">Comfortable</option>
+                                        <option value="compact">Compact</option>
+                                        <option value="spacious">Spacious</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-section">
+                            <h3 class="section-title">Customization</h3>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="custom-css">Custom CSS</label>
+                                    <span class="setting-description">Add your own CSS styles (advanced)</span>
+                                </div>
+                                <div class="setting-control">
+                                    <textarea id="custom-css" class="code-textarea" rows="5" placeholder="/* Add your custom CSS here */"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-actions">
+                            <button class="btn btn-secondary">Reset to Defaults</button>
+                            <button class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </div>
+
+                    <!-- AI Models Settings -->
+                    <div class="settings-panel" id="ai-models-panel">
+                        <div class="panel-header">
+                            <h2 class="panel-title">AI Models Settings</h2>
+                            <p class="panel-description">Configure AI models and parameters for your workflows</p>
+                        </div>
+                        <div class="settings-section">
+                            <h3 class="section-title">Default Models</h3>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="default-text-model">Default Text Generation Model</label>
+                                    <span class="setting-description">Model used for text generation tasks</span>
+                                </div>
+                                <div class="setting-control">
+                                    <select id="default-text-model" class="select-control">
+                                        <option value="gpt-4">GPT-4</option>
+                                        <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+                                        <option value="claude-3">Claude 3</option>
+                                        <option value="llama-3">Llama 3</option>
+                                        <option value="mistral-large">Mistral Large</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="default-image-model">Default Image Generation Model</label>
+                                    <span class="setting-description">Model used for image generation tasks</span>
+                                </div>
+                                <div class="setting-control">
+                                    <select id="default-image-model" class="select-control">
+                                        <option value="dalle-3">DALL-E 3</option>
+                                        <option value="stable-diffusion-xl">Stable Diffusion XL</option>
+                                        <option value="midjourney">Midjourney</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="default-embedding-model">Default Embedding Model</label>
+                                    <span class="setting-description">Model used for text embeddings and similarity</span>
+                                </div>
+                                <div class="setting-control">
+                                    <select id="default-embedding-model" class="select-control">
+                                        <option value="text-embedding-ada-002">text-embedding-ada-002</option>
+                                        <option value="text-embedding-3-large">text-embedding-3-large</option>
+                                        <option value="cohere-embed-english-v3.0">Cohere Embed English v3.0</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-section">
+                            <h3 class="section-title">Model Parameters</h3>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="temperature">Default Temperature</label>
+                                    <span class="setting-description">Controls randomness in generation (0.0 - 2.0)</span>
+                                </div>
+                                <div class="setting-control">
+                                    <div class="range-control">
+                                        <input type="range" id="temperature" min="0" max="2" step="0.1" value="0.7">
+                                        <span class="range-value">0.7</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="max-tokens">Default Max Tokens</label>
+                                    <span class="setting-description">Maximum length of generated content</span>
+                                </div>
+                                <div class="setting-control">
+                                    <input type="number" id="max-tokens" class="number-input" value="1024" min="1" max="8192">
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="top-p">Default Top P</label>
+                                    <span class="setting-description">Controls diversity via nucleus sampling</span>
+                                </div>
+                                <div class="setting-control">
+                                    <div class="range-control">
+                                        <input type="range" id="top-p" min="0" max="1" step="0.05" value="0.9">
+                                        <span class="range-value">0.9</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-section">
+                            <h3 class="section-title">Model Access</h3>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="model-provider">Primary Model Provider</label>
+                                    <span class="setting-description">Select your preferred AI service provider</span>
+                                </div>
+                                <div class="setting-control">
+                                    <select id="model-provider" class="select-control">
+                                        <option value="openai">OpenAI</option>
+                                        <option value="anthropic">Anthropic</option>
+                                        <option value="google">Google AI</option>
+                                        <option value="meta">Meta AI</option>
+                                        <option value="custom">Custom Provider</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="fallback-provider">Fallback Provider</label>
+                                    <span class="setting-description">Used when primary provider is unavailable</span>
+                                </div>
+                                <div class="setting-control">
+                                    <select id="fallback-provider" class="select-control">
+                                        <option value="none">None</option>
+                                        <option value="openai">OpenAI</option>
+                                        <option value="anthropic">Anthropic</option>
+                                        <option value="google">Google AI</option>
+                                        <option value="meta">Meta AI</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-label">
+                                    <label for="model-caching">Model Response Caching</label>
+                                    <span class="setting-description">Cache responses to reduce API calls and costs</span>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="model-caching" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-actions">
+                            <button class="btn btn-secondary">Reset to Defaults</button>
+                            <button class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </div>
+
+                    <!-- Other settings panels would be implemented similarly -->
+                    <div class="settings-panel" id="api-keys-panel">
+                        <!-- API Keys content -->
+                        <div class="panel-header">
+                            <h2 class="panel-title">API Keys</h2>
+                            <p class="panel-description">Manage API keys for external services</p>
+                        </div>
+                        <div class="settings-section">
+                            <h3 class="section-title">API Keys Management</h3>
+                            <div class="api-keys-list">
+                                <div class="api-key-item">
+                                    <div class="api-key-info">
+                                        <h4>OpenAI API Key</h4>
+                                        <div class="api-key-value">
+                                            <input type="password" value="••••••••••••••••••••••••••••••" readonly>
+                                            <button class="btn-icon" title="Show/Hide">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn-icon" title="Copy">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </div>
+                                        <div class="api-key-meta">
+                                            <span class="api-key-added">Added: Jan 15, 2025</span>
+                                            <span class="api-key-status active">Active</span>
+                                        </div>
+                                    </div>
+                                    <div class="api-key-actions">
+                                        <button class="btn btn-outline">Regenerate</button>
+                                        <button class="btn btn-danger">Delete</button>
+                                    </div>
+                                </div>
+                                <!-- More API keys would be listed here -->
+                            </div>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-plus"></i>
+                                <span>Add New API Key</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Other panels would follow the same pattern -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Notification System -->
+    <div class="notification-container">
+        <!-- Notifications will be added here dynamically -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+    <script src="js/ui-improvements.js"></script>
+    <script src="js/settings.js"></script>
+    <script>
+        // Authentication functions
+        function logout() {
+            // Show confirmation dialog
+            if (confirm('Are you sure you want to log out?')) {
+                // In a real app, this would clear session data and redirect to login
+                window.location.href = 'login.html';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Settings navigation
+            const settingsNavItems = document.querySelectorAll('.settings-nav-item');
+            const settingsPanels = document.querySelectorAll('.settings-panel');
+            
+            settingsNavItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    // Remove active class from all items
+                    settingsNavItems.forEach(navItem => navItem.classList.remove('active'));
+                    
+                    // Add active class to clicked item
+                    item.classList.add('active');
+                    
+                    // Hide all panels
+                    settingsPanels.forEach(panel => panel.classList.remove('active'));
+                    
+                    // Show corresponding panel
+                    const targetPanel = document.getElementById(`${item.dataset.target}-panel`);
+                    if (targetPanel) {
+                        targetPanel.classList.add('active');
+                    }
+                });
+            });
+            
+            // Range input value display
+            const rangeInputs = document.querySelectorAll('input[type="range"]');
+            rangeInputs.forEach(input => {
+                const valueDisplay = input.nextElementSibling;
+                
+                // Update value display on input change
+                input.addEventListener('input', () => {
+                    let displayValue = input.value;
+                    
+                    // Add units based on input id
+                    if (input.id === 'session-timeout') {
+                        displayValue += ' minutes';
+                    } else if (input.id === 'font-size') {
+                        displayValue += '%';
+                    }
+                    
+                    valueDisplay.textContent = displayValue;
+                });
+            });
+            
+            // Custom color scheme toggle
+            const colorCustom = document.getElementById('color-custom');
+            const customColorsPanel = document.getElementById('custom-colors-panel');
+            
+            if (colorCustom && customColorsPanel) {
+                colorCustom.addEventListener('change', () => {
+                    if (colorCustom.checked) {
+                        customColorsPanel.style.display = 'block';
+                    } else {
+                        customColorsPanel.style.display = 'none';
+                    }
+                });
+            }
+            
+            // Show notification when saving changes
+            const saveButtons = document.querySelectorAll('.btn-primary');
+            saveButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // This would be replaced with actual save functionality
+                    showNotification('Settings saved successfully!', 'success');
+                });
+            });
+            
+            // Function to show notifications
+            function showNotification(message, type = 'info') {
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`;
+                
+                const icon = document.createElement('i');
+                icon.className = type === 'success' ? 'fas fa-check-circle' : 'fas fa-info-circle';
+                
+                const text = document.createElement('span');
+                text.textContent = message;
+                
+                const closeBtn = document.createElement('button');
+                closeBtn.className = 'notification-close';
+                closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+                closeBtn.addEventListener('click', () => {
+                    notification.remove();
+                });
+                
+                notification.appendChild(icon);
+                notification.appendChild(text);
+                notification.appendChild(closeBtn);
+                
+                document.querySelector('.notification-container').appendChild(notification);
+                
+                // Auto-remove after 5 seconds
+                setTimeout(() => {
+                    notification.classList.add('fade-out');
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+</html>

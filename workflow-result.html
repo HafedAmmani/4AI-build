@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4AI-build - Workflow Result</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="workflow-result.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/workflow-result.css">
+    <link rel="stylesheet" href="css/ui-improvements.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-light.min.css" rel="stylesheet">
@@ -38,9 +39,75 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#settings">
+                        <a href="prompt-lab.html">
+                            <i class="fas fa-flask"></i>
+                            <span>Prompt Lab</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dataset-studio.html">
+                            <i class="fas fa-database"></i>
+                            <span>Dataset Studio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="app-builder.html">
+                            <i class="fas fa-cubes"></i>
+                            <span>App Builder</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="api-generator.html">
+                            <i class="fas fa-code"></i>
+                            <span>API Generator</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="collaboration.html">
+                            <i class="fas fa-users"></i>
+                            <span>Collaboration</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="web3-integration.html">
+                            <i class="fas fa-link"></i>
+                            <span>Web3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="collaboration.html">
+                            <i class="fas fa-users"></i>
+                            <span>Collaboration</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="web3-integration.html">
+                            <i class="fas fa-link"></i>
+                            <span>Web3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="marketplace.html">
+                            <i class="fas fa-store"></i>
+                            <span>Marketplace</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-panel.html">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Admin Panel</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
                             <i class="fas fa-cog"></i>
                             <span>Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="documentation.html">
+                            <i class="fas fa-book"></i>
+                            <span>Documentation</span>
                         </a>
                     </li>
                 </ul>
@@ -48,11 +115,19 @@
             <div class="sidebar-footer">
                 <div class="user-info">
                     <div class="user-avatar">
-                        <i class="fas fa-user"></i>
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Avatar">
                     </div>
                     <div class="user-details">
                         <p class="user-name">Hafedh Ammani</p>
                         <p class="user-role">Admin</p>
+                    </div>
+                    <div class="user-actions">
+                        <button class="btn-icon" title="Profile" onclick="window.location.href='profile.html'">
+                            <i class="fas fa-user-cog"></i>
+                        </button>
+                        <button class="btn-icon" title="Logout" onclick="logout()">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -62,73 +137,191 @@
         <main class="main-content">
             <!-- Top Bar -->
             <header class="top-bar">
-                <div class="workflow-title-container">
+                <div class="page-header">
                     <h1 class="page-title">Workflow Result</h1>
-                    <div class="workflow-name-container">
+                    <div class="workflow-info">
                         <h2 class="workflow-name">Document Processing Workflow</h2>
                         <span class="execution-id">Execution ID: WF-2025042301</span>
                     </div>
                 </div>
-                <div class="action-buttons">
-                    <button class="btn btn-secondary" id="exportResultBtn">
-                        <i class="fas fa-download"></i>
-                        <span>Export</span>
-                    </button>
-                    <button class="btn btn-primary" id="newRunBtn">
-                        <i class="fas fa-play"></i>
-                        <span>New Run</span>
-                    </button>
+                <div class="top-bar-actions">
+                    <div class="search-container">
+                        <input type="text" placeholder="Search workflows..." class="search-input">
+                        <button class="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="notification-bell">
+                        <button class="btn-icon" title="Notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">1</span>
+                        </button>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn btn-secondary" id="exportResultBtn">
+                            <i class="fas fa-download"></i>
+                            <span>Export</span>
+                        </button>
+                        <button class="btn btn-primary" id="newRunBtn">
+                            <i class="fas fa-play"></i>
+                            <span>New Run</span>
+                        </button>
+                    </div>
                 </div>
             </header>
 
             <!-- Workflow Result Content -->
-            <div class="workflow-result-content">
+            <div class="content-container">
                 <!-- Execution Summary -->
-                <div class="execution-summary">
-                    <div class="summary-item">
-                        <div class="summary-icon success">
-                            <i class="fas fa-check"></i>
+                <div class="execution-summary-card">
+                    <div class="summary-grid">
+                        <div class="summary-item">
+                            <div class="summary-icon success">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h3 class="summary-title">Status</h3>
+                                <p class="summary-value">Completed</p>
+                            </div>
                         </div>
-                        <div class="summary-content">
-                            <h3 class="summary-title">Status</h3>
-                            <p class="summary-value">Completed</p>
+                        <div class="summary-item">
+                            <div class="summary-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h3 class="summary-title">Duration</h3>
+                                <p class="summary-value">12.4 seconds</p>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h3 class="summary-title">Started</h3>
+                                <p class="summary-value">Apr 23, 2025 - 14:32:15</p>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-icon">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h3 class="summary-title">Tokens</h3>
+                                <p class="summary-value">1,245 tokens</p>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-icon">
+                                <i class="fas fa-memory"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h3 class="summary-title">Memory Used</h3>
+                                <p class="summary-value">256 MB</p>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h3 class="summary-title">Cost</h3>
+                                <p class="summary-value">$0.12</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="summary-item">
-                        <div class="summary-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="summary-content">
-                            <h3 class="summary-title">Duration</h3>
-                            <p class="summary-value">12.4 seconds</p>
+                </div>
+
+                <!-- Workflow Visualization -->
+                <div class="workflow-visualization-card">
+                    <div class="card-header">
+                        <h3 class="card-title">Workflow Execution</h3>
+                        <div class="card-actions">
+                            <button class="btn-icon" title="Zoom In">
+                                <i class="fas fa-search-plus"></i>
+                            </button>
+                            <button class="btn-icon" title="Zoom Out">
+                                <i class="fas fa-search-minus"></i>
+                            </button>
+                            <button class="btn-icon" title="Reset View">
+                                <i class="fas fa-expand"></i>
+                            </button>
                         </div>
                     </div>
-                    <div class="summary-item">
-                        <div class="summary-icon">
-                            <i class="fas fa-calendar"></i>
+                    <div class="workflow-diagram">
+                        <div class="workflow-node start">
+                            <div class="node-icon">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <div class="node-label">Start</div>
+                            <div class="node-status success">
+                                <i class="fas fa-check"></i>
+                            </div>
                         </div>
-                        <div class="summary-content">
-                            <h3 class="summary-title">Started</h3>
-                            <p class="summary-value">Apr 23, 2025 - 14:32:15</p>
+                        <div class="workflow-connector"></div>
+                        <div class="workflow-node">
+                            <div class="node-icon">
+                                <i class="fas fa-file-import"></i>
+                            </div>
+                            <div class="node-label">Document Input</div>
+                            <div class="node-status success">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="node-time">0.3s</div>
                         </div>
-                    </div>
-                    <div class="summary-item">
-                        <div class="summary-icon">
-                            <i class="fas fa-coins"></i>
+                        <div class="workflow-connector"></div>
+                        <div class="workflow-node">
+                            <div class="node-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="node-label">Text Extraction</div>
+                            <div class="node-status success">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="node-time">2.1s</div>
                         </div>
-                        <div class="summary-content">
-                            <h3 class="summary-title">Tokens</h3>
-                            <p class="summary-value">1,245 tokens</p>
+                        <div class="workflow-connector"></div>
+                        <div class="workflow-node">
+                            <div class="node-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="node-label">AI Analysis</div>
+                            <div class="node-status success">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="node-time">8.7s</div>
+                        </div>
+                        <div class="workflow-connector"></div>
+                        <div class="workflow-node">
+                            <div class="node-icon">
+                                <i class="fas fa-file-export"></i>
+                            </div>
+                            <div class="node-label">Result Formatting</div>
+                            <div class="node-status success">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="node-time">1.3s</div>
+                        </div>
+                        <div class="workflow-connector"></div>
+                        <div class="workflow-node end">
+                            <div class="node-icon">
+                                <i class="fas fa-flag-checkered"></i>
+                            </div>
+                            <div class="node-label">End</div>
+                            <div class="node-status success">
+                                <i class="fas fa-check"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Result Tabs -->
-                <div class="result-tabs">
+                <div class="result-tabs-card">
                     <div class="tab-header">
                         <button class="tab-btn active" data-tab="result">Result</button>
                         <button class="tab-btn" data-tab="execution">Execution Log</button>
                         <button class="tab-btn" data-tab="debug">Debug</button>
+                        <button class="tab-btn" data-tab="metrics">Metrics</button>
                     </div>
                     <div class="tab-content">
                         <!-- Result Tab -->
@@ -137,11 +330,14 @@
                                 <div class="result-header">
                                     <h3>Document Analysis</h3>
                                     <div class="result-actions">
-                                        <button class="btn btn-icon" title="Copy">
+                                        <button class="btn-icon" title="Copy">
                                             <i class="fas fa-copy"></i>
                                         </button>
-                                        <button class="btn btn-icon" title="Download">
+                                        <button class="btn-icon" title="Download">
                                             <i class="fas fa-download"></i>
+                                        </button>
+                                        <button class="btn-icon" title="Share">
+                                            <i class="fas fa-share-alt"></i>
                                         </button>
                                     </div>
                                 </div>
@@ -177,7 +373,7 @@
                                         </ul>
                                     </div>
                                     
-                                    <!-- <div class="result-section">
+                                    <div class="result-section">
                                         <h4 class="section-title">Product Features</h4>
                                         <div class="feature-grid">
                                             <div class="feature-item">
@@ -217,7 +413,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div> -->
+                                    </div>
                                     
                                     <div class="result-section">
                                         <h4 class="section-title">Financial Projections</h4>
@@ -290,9 +486,36 @@
                                     </div>
                                     
                                     <div class="result-section">
-                                        <h4 class="section-title">Conclusion</h4>
-                                        <p>The EcoTrack platform represents a significant market opportunity with strong growth potential. The combination of increasing regulatory pressure and corporate sustainability initiatives creates an ideal environment for market entry. With the proposed funding and development timeline, the company is well-positioned to capture market share and achieve profitability within two years.</p>
-                                        <p>Recommended next steps include securing initial funding, finalizing the technical architecture, and establishing partnerships with key industry players to accelerate market adoption.</p>
+                                        <h4 class="section-title">Recommendations</h4>
+                                        <div class="recommendation-list">
+                                            <div class="recommendation-item">
+                                                <div class="recommendation-icon">
+                                                    <i class="fas fa-check-circle"></i>
+                                                </div>
+                                                <div class="recommendation-content">
+                                                    <h5>Proceed with Investment</h5>
+                                                    <p>The business case is strong with significant market opportunity and competitive advantages.</p>
+                                                </div>
+                                            </div>
+                                            <div class="recommendation-item">
+                                                <div class="recommendation-icon">
+                                                    <i class="fas fa-exclamation-triangle"></i>
+                                                </div>
+                                                <div class="recommendation-content">
+                                                    <h5>Staged Funding Approach</h5>
+                                                    <p>Consider releasing funds in stages tied to development milestones to manage risk.</p>
+                                                </div>
+                                            </div>
+                                            <div class="recommendation-item">
+                                                <div class="recommendation-icon">
+                                                    <i class="fas fa-lightbulb"></i>
+                                                </div>
+                                                <div class="recommendation-content">
+                                                    <h5>Strategic Partnerships</h5>
+                                                    <p>Explore partnerships with industry leaders to accelerate market adoption.</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -300,77 +523,128 @@
                         
                         <!-- Execution Log Tab -->
                         <div class="tab-pane" id="executionTab">
-                            <div class="execution-log">
-                                <div class="log-filters">
-                                    <div class="filter-group">
-                                        <label>Filter by:</label>
-                                        <select class="form-select">
-                                            <option value="all">All Events</option>
-                                            <option value="info">Info</option>
-                                            <option value="warning">Warnings</option>
-                                            <option value="error">Errors</option>
-                                        </select>
+                            <div class="log-container">
+                                <div class="log-header">
+                                    <div class="log-filters">
+                                        <div class="filter-group">
+                                            <label for="logLevel">Level:</label>
+                                            <select id="logLevel" class="filter-select">
+                                                <option value="all">All Levels</option>
+                                                <option value="info">Info</option>
+                                                <option value="warning">Warning</option>
+                                                <option value="error">Error</option>
+                                            </select>
+                                        </div>
+                                        <div class="filter-group">
+                                            <label for="logComponent">Component:</label>
+                                            <select id="logComponent" class="filter-select">
+                                                <option value="all">All Components</option>
+                                                <option value="input">Document Input</option>
+                                                <option value="extraction">Text Extraction</option>
+                                                <option value="analysis">AI Analysis</option>
+                                                <option value="formatting">Result Formatting</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <div class="search-container">
-                                        <input type="text" class="search-input" placeholder="Search logs...">
-                                        <i class="fas fa-search search-icon"></i>
+                                    <div class="log-actions">
+                                        <button class="btn-icon" title="Download Logs">
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                        <button class="btn-icon" title="Copy Logs">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
                                     </div>
                                 </div>
-                                <div class="log-entries">
+                                <div class="log-body">
                                     <div class="log-entry info">
-                                        <div class="log-time">14:32:15</div>
-                                        <div class="log-type">INFO</div>
-                                        <div class="log-message">Workflow execution started</div>
+                                        <span class="log-time">14:32:15</span>
+                                        <span class="log-level">INFO</span>
+                                        <span class="log-component">System</span>
+                                        <span class="log-message">Workflow execution started</span>
                                     </div>
                                     <div class="log-entry info">
-                                        <div class="log-time">14:32:16</div>
-                                        <div class="log-type">INFO</div>
-                                        <div class="log-message">File input node processing: business_proposal.pdf</div>
+                                        <span class="log-time">14:32:15</span>
+                                        <span class="log-level">INFO</span>
+                                        <span class="log-component">Document Input</span>
+                                        <span class="log-message">Processing input document: business_proposal.pdf</span>
                                     </div>
                                     <div class="log-entry info">
-                                        <div class="log-time">14:32:18</div>
-                                        <div class="log-type">INFO</div>
-                                        <div class="log-message">Document loaded successfully (12 pages, 4,532 words)</div>
+                                        <span class="log-time">14:32:16</span>
+                                        <span class="log-level">INFO</span>
+                                        <span class="log-component">Document Input</span>
+                                        <span class="log-message">Document loaded successfully (15 pages, 4.2MB)</span>
                                     </div>
                                     <div class="log-entry info">
-                                        <div class="log-time">14:32:19</div>
-                                        <div class="log-type">INFO</div>
-                                        <div class="log-message">Agent node processing: Document Analyzer</div>
+                                        <span class="log-time">14:32:16</span>
+                                        <span class="log-level">INFO</span>
+                                        <span class="log-component">Text Extraction</span>
+                                        <span class="log-message">Starting text extraction process</span>
                                     </div>
                                     <div class="log-entry warning">
-                                        <div class="log-time">14:32:20</div>
-                                        <div class="log-type">WARNING</div>
-                                        <div class="log-message">Large document detected, processing may take longer than usual</div>
+                                        <span class="log-time">14:32:17</span>
+                                        <span class="log-level">WARNING</span>
+                                        <span class="log-component">Text Extraction</span>
+                                        <span class="log-message">Page 7 contains image-based content, OCR will be applied</span>
                                     </div>
                                     <div class="log-entry info">
-                                        <div class="log-time">14:32:25</div>
-                                        <div class="log-type">INFO</div>
-                                        <div class="log-message">Agent processing completed (used 845 tokens)</div>
+                                        <span class="log-time">14:32:18</span>
+                                        <span class="log-level">INFO</span>
+                                        <span class="log-component">Text Extraction</span>
+                                        <span class="log-message">Text extraction completed (12,450 words extracted)</span>
                                     </div>
                                     <div class="log-entry info">
-                                        <div class="log-time">14:32:26</div>
-                                        <div class="log-type">INFO</div>
-                                        <div class="log-message">Summarize node processing</div>
+                                        <span class="log-time">14:32:18</span>
+                                        <span class="log-level">INFO</span>
+                                        <span class="log-component">AI Analysis</span>
+                                        <span class="log-message">Starting AI analysis using GPT-4 model</span>
                                     </div>
                                     <div class="log-entry info">
-                                        <div class="log-time">14:32:27</div>
-                                        <div class="log-type">INFO</div>
-                                        <div class="log-message">Summarization completed (used 400 tokens)</div>
+                                        <span class="log-time">14:32:20</span>
+                                        <span class="log-level">INFO</span>
+                                        <span class="log-component">AI Analysis</span>
+                                        <span class="log-message">Analyzing document structure and content</span>
                                     </div>
                                     <div class="log-entry info">
-                                        <div class="log-time">14:32:27</div>
-                                        <div class="log-type">INFO</div>
-                                        <div class="log-message">Text output node processing</div>
+                                        <span class="log-time">14:32:23</span>
+                                        <span class="log-level">INFO</span>
+                                        <span class="log-component">AI Analysis</span>
+                                        <span class="log-message">Extracting key business metrics and projections</span>
                                     </div>
                                     <div class="log-entry info">
-                                        <div class="log-time">14:32:27</div>
-                                        <div class="log-type">INFO</div>
-                                        <div class="log-message">Formatting result for display</div>
+                                        <span class="log-time">14:32:25</span>
+                                        <span class="log-level">INFO</span>
+                                        <span class="log-component">AI Analysis</span>
+                                        <span class="log-message">Performing risk assessment analysis</span>
                                     </div>
                                     <div class="log-entry info">
-                                        <div class="log-time">14:32:27</div>
-                                        <div class="log-type">INFO</div>
-                                        <div class="log-message">Workflow execution completed successfully</div>
+                                        <span class="log-time">14:32:27</span>
+                                        <span class="log-level">INFO</span>
+                                        <span class="log-component">AI Analysis</span>
+                                        <span class="log-message">AI analysis completed (1,245 tokens used)</span>
+                                    </div>
+                                    <div class="log-entry info">
+                                        <span class="log-time">14:32:27</span>
+                                        <span class="log-level">INFO</span>
+                                        <span class="log-component">Result Formatting</span>
+                                        <span class="log-message">Formatting analysis results</span>
+                                    </div>
+                                    <div class="log-entry info">
+                                        <span class="log-time">14:32:28</span>
+                                        <span class="log-level">INFO</span>
+                                        <span class="log-component">Result Formatting</span>
+                                        <span class="log-message">Generating structured output with sections</span>
+                                    </div>
+                                    <div class="log-entry info">
+                                        <span class="log-time">14:32:28</span>
+                                        <span class="log-level">INFO</span>
+                                        <span class="log-component">Result Formatting</span>
+                                        <span class="log-message">Result formatting completed</span>
+                                    </div>
+                                    <div class="log-entry info">
+                                        <span class="log-time">14:32:28</span>
+                                        <span class="log-level">INFO</span>
+                                        <span class="log-component">System</span>
+                                        <span class="log-message">Workflow execution completed successfully</span>
                                     </div>
                                 </div>
                             </div>
@@ -378,253 +652,502 @@
                         
                         <!-- Debug Tab -->
                         <div class="tab-pane" id="debugTab">
-                            <div class="debug-info">
-                                <div class="debug-section">
-                                    <h4 class="section-title">Workflow Configuration</h4>
-                                    <div class="code-block">
-                                        <pre><code class="language-json">{
-  "workflowId": "wf-doc-analysis-01",
-  "name": "Document Processing Workflow",
-  "version": "1.0.2",
-  "nodes": [
-    {
-      "id": "node1",
-      "type": "file-input",
-      "config": {
-        "allowedTypes": ["pdf", "docx", "txt"],
-        "maxSize": 10485760
-      }
-    },
-    {
-      "id": "node2",
-      "type": "agent",
-      "config": {
-        "agentId": "agent-doc-analyzer",
-        "model": "gpt-4",
-        "temperature": 0.7,
-        "maxTokens": 2048,
-        "systemPrompt": "Analyze the document and extract key information."
-      }
-    },
-    {
-      "id": "node3",
-      "type": "summarize",
-      "config": {
-        "maxLength": 1000,
-        "format": "structured",
-        "highlightKeyFindings": true
-      }
-    },
-    {
-      "id": "node4",
-      "type": "text-output",
-      "config": {
-        "format": "html",
-        "includeMetadata": true
-      }
-    }
-  ],
-  "connections": [
-    {
-      "from": "node1.output",
-      "to": "node2.input"
-    },
-    {
-      "from": "node2.output",
-      "to": "node3.input"
-    },
-    {
-      "from": "node3.output",
-      "to": "node4.input"
-    }
-  ]
-}</code></pre>
+                            <div class="debug-container">
+                                <div class="debug-header">
+                                    <h3>Debug Information</h3>
+                                    <div class="debug-actions">
+                                        <button class="btn-icon" title="Download Debug Info">
+                                            <i class="fas fa-download"></i>
+                                        </button>
                                     </div>
                                 </div>
-                                
-                                <div class="debug-section">
-                                    <h4 class="section-title">Performance Metrics</h4>
-                                    <div class="metrics-grid">
-                                        <div class="metric-card">
-                                            <h5>Node Execution Times</h5>
-                                            <table class="data-table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Node</th>
-                                                        <th>Time (ms)</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>File Input</td>
-                                                        <td>245</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Agent</td>
-                                                        <td>5,842</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Summarize</td>
-                                                        <td>1,124</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Text Output</td>
-                                                        <td>78</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="metric-card">
-                                            <h5>Token Usage</h5>
-                                            <table class="data-table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Component</th>
-                                                        <th>Tokens</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Input Document</td>
-                                                        <td>4,532</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Agent Prompt</td>
-                                                        <td>124</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Agent Response</td>
-                                                        <td>845</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Summarization</td>
-                                                        <td>400</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="debug-section">
-                                    <h4 class="section-title">Raw Agent Response</h4>
-                                    <div class="code-block">
-                                        <pre><code class="language-json">{
-  "analysis": {
-    "documentType": "Business Proposal",
-    "title": "EcoTrack: AI-Powered Carbon Footprint Management Platform",
-    "author": "GreenTech Innovations",
-    "date": "2025-03-15",
-    "pageCount": 12,
-    "wordCount": 4532,
-    "sections": [
-      "Executive Summary",
-      "Market Analysis",
-      "Product Description",
-      "Technical Architecture",
-      "Implementation Timeline",
-      "Financial Projections",
-      "Risk Assessment",
-      "Conclusion"
-    ],
-    "keyFindings": {
-      "marketSize": "$4.5 billion by 2026 with 24% CAGR",
-      "targetCustomers": "Mid to large enterprises in manufacturing, logistics, and retail sectors",
-      "competitiveAdvantage": "AI-powered recommendations and regulatory compliance automation",
-      "developmentTimeline": "18 months from funding to full market release",
-      "fundingRequired": "$2.8 million initial investment"
-    },
-    "productFeatures": [
-      {
-        "name": "Emissions Dashboard",
-        "description": "Real-time monitoring of carbon emissions across all company operations"
-      },
-      {
-        "name": "AI Recommendations",
-        "description": "Machine learning algorithms to suggest emission reduction strategies"
-      },
-      {
-        "name": "Regulatory Compliance",
-        "description": "Automated reporting for various environmental regulations"
-      },
-      {
-        "name": "Integration API",
-        "description": "Connects with existing ERP and supply chain management systems"
-      }
-    ],
-    "financialProjections": {
-      "year1": {
-        "revenue": "$1.2M",
-        "expenses": "$1.8M",
-        "netProfit": "-$600K",
-        "customers": 45
-      },
-      "year2": {
-        "revenue": "$3.6M",
-        "expenses": "$2.4M",
-        "netProfit": "$1.2M",
-        "customers": 120
-      },
-      "year3": {
-        "revenue": "$8.5M",
-        "expenses": "$4.2M",
-        "netProfit": "$4.3M",
-        "customers": 275
-      },
-      "breakEvenPoint": "Month 18",
-      "projectedROI": "210% over 3 years"
-    },
-    "riskAssessment": [
-      {
-        "factor": "Market adoption delay",
-        "probability": "Medium",
-        "impact": "High",
-        "mitigation": "Freemium model for initial customers"
-      },
-      {
-        "factor": "Regulatory changes",
-        "probability": "High",
-        "impact": "Medium",
-        "mitigation": "Dedicated compliance team"
-      },
-      {
-        "factor": "Technical challenges",
-        "probability": "Medium",
-        "impact": "Medium",
-        "mitigation": "Phased development approach"
-      },
-      {
-        "factor": "Competitive pressure",
-        "probability": "Medium",
-        "impact": "High",
-        "mitigation": "Accelerated go-to-market strategy"
-      }
-    ]
+                                <div class="debug-body">
+                                    <div class="debug-section">
+                                        <h4 class="section-title">System Information</h4>
+                                        <div class="code-block">
+                                            <pre><code class="language-json">{
+  "platform": {
+    "version": "4AI-build v2.3.1",
+    "environment": "Production",
+    "nodeId": "worker-12",
+    "region": "us-east-1"
+  },
+  "runtime": {
+    "python": "3.10.4",
+    "tensorflow": "2.11.0",
+    "pytorch": "2.0.1",
+    "langchain": "0.0.267"
+  },
+  "resources": {
+    "cpuCores": 8,
+    "gpuType": "NVIDIA A10G",
+    "memoryAllocated": "16GB",
+    "diskAllocated": "100GB"
   }
 }</code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="debug-section">
+                                        <h4 class="section-title">Workflow Configuration</h4>
+                                        <div class="code-block">
+                                            <pre><code class="language-yaml">name: Document Processing Workflow
+version: 1.2.0
+description: Analyzes business documents and extracts key information
+owner: hafedh.ammani@example.com
+created: 2025-03-15T09:23:45Z
+lastModified: 2025-04-10T14:12:33Z
+
+nodes:
+  - id: document-input
+    type: DocumentInput
+    config:
+      allowedTypes: [pdf, docx, txt]
+      maxSizeBytes: 10485760
+      
+  - id: text-extraction
+    type: TextExtraction
+    config:
+      enableOcr: true
+      language: en
+      preserveFormatting: true
+      
+  - id: ai-analysis
+    type: AIAnalysis
+    config:
+      model: gpt-4
+      temperature: 0.2
+      maxTokens: 2000
+      systemPrompt: "Analyze the following business document..."
+      
+  - id: result-formatting
+    type: ResultFormatting
+    config:
+      format: html
+      includeSections: [summary, findings, financials, risks, recommendations]
+      
+connections:
+  - from: document-input
+    to: text-extraction
+  - from: text-extraction
+    to: ai-analysis
+  - from: ai-analysis
+    to: result-formatting</code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="debug-section">
+                                        <h4 class="section-title">Execution Metrics</h4>
+                                        <div class="metrics-grid">
+                                            <div class="metric-card">
+                                                <h5>Memory Usage</h5>
+                                                <div class="metric-chart">
+                                                    <canvas id="memoryChart"></canvas>
+                                                </div>
+                                            </div>
+                                            <div class="metric-card">
+                                                <h5>CPU Utilization</h5>
+                                                <div class="metric-chart">
+                                                    <canvas id="cpuChart"></canvas>
+                                                </div>
+                                            </div>
+                                            <div class="metric-card">
+                                                <h5>API Calls</h5>
+                                                <div class="metric-chart">
+                                                    <canvas id="apiChart"></canvas>
+                                                </div>
+                                            </div>
+                                            <div class="metric-card">
+                                                <h5>Execution Time</h5>
+                                                <div class="metric-chart">
+                                                    <canvas id="timeChart"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Metrics Tab -->
+                        <div class="tab-pane" id="metricsTab">
+                            <div class="metrics-container">
+                                <div class="metrics-header">
+                                    <h3>Performance Metrics</h3>
+                                    <div class="metrics-actions">
+                                        <button class="btn-text">
+                                            <i class="fas fa-sync"></i>
+                                            <span>Refresh</span>
+                                        </button>
+                                        <button class="btn-text">
+                                            <i class="fas fa-download"></i>
+                                            <span>Export</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="metrics-body">
+                                    <div class="metrics-overview">
+                                        <div class="metric-card">
+                                            <div class="metric-icon">
+                                                <i class="fas fa-tachometer-alt"></i>
+                                            </div>
+                                            <div class="metric-content">
+                                                <h4>Performance Score</h4>
+                                                <div class="metric-value">92<span class="metric-unit">/100</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="metric-card">
+                                            <div class="metric-icon">
+                                                <i class="fas fa-bolt"></i>
+                                            </div>
+                                            <div class="metric-content">
+                                                <h4>Efficiency</h4>
+                                                <div class="metric-value">87<span class="metric-unit">%</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="metric-card">
+                                            <div class="metric-icon">
+                                                <i class="fas fa-bullseye"></i>
+                                            </div>
+                                            <div class="metric-content">
+                                                <h4>Accuracy</h4>
+                                                <div class="metric-value">95<span class="metric-unit">%</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="metric-card">
+                                            <div class="metric-icon">
+                                                <i class="fas fa-dollar-sign"></i>
+                                            </div>
+                                            <div class="metric-content">
+                                                <h4>Cost Efficiency</h4>
+                                                <div class="metric-value">$0.10<span class="metric-unit">/1000 tokens</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="metrics-details">
+                                        <div class="metrics-section">
+                                            <h4>Performance Breakdown</h4>
+                                            <div class="performance-chart">
+                                                <canvas id="performanceChart"></canvas>
+                                            </div>
+                                        </div>
+                                        <div class="metrics-section">
+                                            <h4>Resource Utilization</h4>
+                                            <div class="resource-chart">
+                                                <canvas id="resourceChart"></canvas>
+                                            </div>
+                                        </div>
+                                        <div class="metrics-section">
+                                            <h4>Historical Comparison</h4>
+                                            <div class="history-chart">
+                                                <canvas id="historyChart"></canvas>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Action Footer -->
-            <div class="action-footer">
-                <button class="btn btn-secondary" id="backToWorkflowBtn">
-                    <i class="fas fa-arrow-left"></i>
-                    <span>Back to Workflow</span>
-                </button>
-                <button class="btn btn-primary" id="shareResultBtn">
-                    <i class="fas fa-share-alt"></i>
-                    <span>Share Result</span>
-                </button>
+                
+                <!-- Related Workflows -->
+                <div class="related-workflows-card">
+                    <div class="card-header">
+                        <h3 class="card-title">Related Workflows</h3>
+                        <div class="card-actions">
+                            <button class="btn-text">
+                                <i class="fas fa-th-list"></i>
+                                <span>View All</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="related-workflows-grid">
+                        <div class="workflow-card">
+                            <div class="workflow-icon">
+                                <i class="fas fa-file-contract"></i>
+                            </div>
+                            <div class="workflow-info">
+                                <h4>Contract Analysis</h4>
+                                <p>Analyzes legal contracts and extracts key clauses</p>
+                                <div class="workflow-meta">
+                                    <span class="workflow-runs">32 runs</span>
+                                    <span class="workflow-updated">Updated 2 days ago</span>
+                                </div>
+                            </div>
+                            <button class="btn-icon" title="Run Workflow">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                        <div class="workflow-card">
+                            <div class="workflow-icon">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <div class="workflow-info">
+                                <h4>Financial Report Analysis</h4>
+                                <p>Extracts financial metrics from quarterly reports</p>
+                                <div class="workflow-meta">
+                                    <span class="workflow-runs">18 runs</span>
+                                    <span class="workflow-updated">Updated 1 week ago</span>
+                                </div>
+                            </div>
+                            <button class="btn-icon" title="Run Workflow">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                        <div class="workflow-card">
+                            <div class="workflow-icon">
+                                <i class="fas fa-file-medical-alt"></i>
+                            </div>
+                            <div class="workflow-info">
+                                <h4>Research Paper Analysis</h4>
+                                <p>Summarizes research papers and extracts key findings</p>
+                                <div class="workflow-meta">
+                                    <span class="workflow-runs">45 runs</span>
+                                    <span class="workflow-updated">Updated 3 days ago</span>
+                                </div>
+                            </div>
+                            <button class="btn-icon" title="Run Workflow">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
 
+    <!-- Notification System -->
+    <div class="notification-container">
+        <!-- Notifications will be added here dynamically -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-    <script src="workflow-result.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/workflow-result.js"></script>
+    <script src="js/ui-improvements.js"></script>
+    <script>
+        // Authentication functions
+        function logout() {
+            // Show confirmation dialog
+            if (confirm('Are you sure you want to log out?')) {
+                // In a real app, this would clear session data and redirect to login
+                window.location.href = 'login.html';
+            }
+        }
+        
+        // Initialize syntax highlighting
+        document.addEventListener('DOMContentLoaded', function() {
+            hljs.highlightAll();
+            
+            // Tab switching
+            document.querySelectorAll('.tab-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and panes
+                    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                    document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    // Show corresponding tab pane
+                    const tabId = button.getAttribute('data-tab') + 'Tab';
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Initialize charts for debug tab
+            const memoryCtx = document.getElementById('memoryChart').getContext('2d');
+            new Chart(memoryCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Start', '25%', '50%', '75%', 'End'],
+                    datasets: [{
+                        label: 'Memory Usage (MB)',
+                        data: [120, 180, 256, 240, 180],
+                        borderColor: '#3f51b5',
+                        backgroundColor: 'rgba(63, 81, 181, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            
+            const cpuCtx = document.getElementById('cpuChart').getContext('2d');
+            new Chart(cpuCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Start', '25%', '50%', '75%', 'End'],
+                    datasets: [{
+                        label: 'CPU Usage (%)',
+                        data: [15, 65, 85, 70, 25],
+                        borderColor: '#4CAF50',
+                        backgroundColor: 'rgba(76, 175, 80, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+            
+            const apiCtx = document.getElementById('apiChart').getContext('2d');
+            new Chart(apiCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Document API', 'OCR API', 'GPT-4 API', 'Storage API'],
+                    datasets: [{
+                        label: 'API Calls',
+                        data: [2, 1, 3, 4],
+                        backgroundColor: '#2196F3'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            
+            const timeCtx = document.getElementById('timeChart').getContext('2d');
+            new Chart(timeCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Document Input', 'Text Extraction', 'AI Analysis', 'Result Formatting'],
+                    datasets: [{
+                        label: 'Execution Time (seconds)',
+                        data: [0.3, 2.1, 8.7, 1.3],
+                        backgroundColor: '#FF9800'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            
+            // Initialize charts for metrics tab
+            const performanceCtx = document.getElementById('performanceChart').getContext('2d');
+            new Chart(performanceCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['Speed', 'Accuracy', 'Efficiency', 'Reliability', 'Cost'],
+                    datasets: [{
+                        label: 'Current Run',
+                        data: [85, 95, 87, 92, 88],
+                        borderColor: '#3f51b5',
+                        backgroundColor: 'rgba(63, 81, 181, 0.2)',
+                        pointBackgroundColor: '#3f51b5'
+                    }, {
+                        label: 'Average',
+                        data: [75, 88, 80, 85, 82],
+                        borderColor: '#FF9800',
+                        backgroundColor: 'rgba(255, 152, 0, 0.2)',
+                        pointBackgroundColor: '#FF9800'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+            
+            const resourceCtx = document.getElementById('resourceChart').getContext('2d');
+            new Chart(resourceCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['CPU', 'Memory', 'Network', 'Storage', 'API Calls'],
+                    datasets: [{
+                        data: [35, 25, 15, 10, 15],
+                        backgroundColor: ['#3f51b5', '#4CAF50', '#2196F3', '#FF9800', '#9C27B0']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+            
+            const historyCtx = document.getElementById('historyChart').getContext('2d');
+            new Chart(historyCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Run 1', 'Run 2', 'Run 3', 'Run 4', 'Run 5', 'Current'],
+                    datasets: [{
+                        label: 'Execution Time (s)',
+                        data: [15.2, 14.1, 13.5, 12.8, 12.6, 12.4],
+                        borderColor: '#3f51b5',
+                        backgroundColor: 'rgba(63, 81, 181, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }, {
+                        label: 'Tokens Used',
+                        data: [1450, 1380, 1320, 1290, 1260, 1245],
+                        borderColor: '#4CAF50',
+                        backgroundColor: 'rgba(76, 175, 80, 0.1)',
+                        tension: 0.4,
+                        fill: true,
+                        yAxisID: 'y1'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            position: 'left',
+                            title: {
+                                display: true,
+                                text: 'Execution Time (s)'
+                            }
+                        },
+                        y1: {
+                            beginAtZero: true,
+                            position: 'right',
+                            grid: {
+                                drawOnChartArea: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Tokens Used'
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>

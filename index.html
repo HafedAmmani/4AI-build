@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4AI-build - AI Platform</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/ui-improvements.css">
+    <link rel="stylesheet" href="css/dashboard-improvements.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -35,12 +37,60 @@
                             <span>Workflows</span>
                         </a>
                     </li>
-<!--                     <li>
+                    <li>
+                        <a href="prompt-lab.html">
+                            <i class="fas fa-flask"></i>
+                            <span>Prompt Lab</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dataset-studio.html">
+                            <i class="fas fa-database"></i>
+                            <span>Dataset Studio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="app-builder.html">
+                            <i class="fas fa-cubes"></i>
+                            <span>App Builder</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="api-generator.html">
+                            <i class="fas fa-code"></i>
+                            <span>API Generator</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="collaboration.html">
+                            <i class="fas fa-users"></i>
+                            <span>Collaboration</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="web3-integration.html">
+                            <i class="fas fa-link"></i>
+                            <span>Web3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="marketplace.html">
+                            <i class="fas fa-store"></i>
+                            <span>Marketplace</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-panel.html">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Admin Panel</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="settings.html">
                             <i class="fas fa-cog"></i>
                             <span>Settings</span>
                         </a>
-                    </li> -->
+                    </li>
                     <li>
                         <a href="documentation.html">
                             <i class="fas fa-book"></i>
@@ -132,6 +182,32 @@
                         <div class="metric-trend neutral">
                             <i class="fas fa-minus"></i>
                             <span>0%</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3 class="metric-value">8</h3>
+                            <p class="metric-label">Active Users</p>
+                        </div>
+                        <div class="metric-trend positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>2</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3 class="metric-value">15</h3>
+                            <p class="metric-label">Datasets</p>
+                        </div>
+                        <div class="metric-trend positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>3</span>
                         </div>
                     </div>
                 </div>
@@ -246,6 +322,132 @@
                     </div>
                 </div>
 
+                <!-- Usage Statistics Row -->
+                <div class="dashboard-row">
+                    <!-- Usage Statistics -->
+                    <div class="dashboard-card usage-stats-card">
+                        <div class="card-header">
+                            <h2 class="card-title">Usage Statistics</h2>
+                            <div class="card-actions">
+                                <select class="form-select time-range-select">
+                                    <option value="day">Last 24 Hours</option>
+                                    <option value="week" selected>Last 7 Days</option>
+                                    <option value="month">Last 30 Days</option>
+                                    <option value="year">Last Year</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="usage-chart">
+                                <div class="chart-container">
+                                    <canvas id="usageChart"></canvas>
+                                </div>
+                            </div>
+                            <div class="usage-metrics">
+                                <div class="usage-metric">
+                                    <div class="metric-header">
+                                        <h3 class="metric-title">API Calls</h3>
+                                        <span class="metric-value">2,456</span>
+                                    </div>
+                                    <div class="metric-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 65%"></div>
+                                        </div>
+                                        <span class="progress-text">65% of limit</span>
+                                    </div>
+                                </div>
+                                <div class="usage-metric">
+                                    <div class="metric-header">
+                                        <h3 class="metric-title">Compute Hours</h3>
+                                        <span class="metric-value">18.5</span>
+                                    </div>
+                                    <div class="metric-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 37%"></div>
+                                        </div>
+                                        <span class="progress-text">37% of limit</span>
+                                    </div>
+                                </div>
+                                <div class="usage-metric">
+                                    <div class="metric-header">
+                                        <h3 class="metric-title">Storage</h3>
+                                        <span class="metric-value">1.2 GB</span>
+                                    </div>
+                                    <div class="metric-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 24%"></div>
+                                        </div>
+                                        <span class="progress-text">24% of limit</span>
+                                    </div>
+                                </div>
+                                <div class="usage-metric">
+                                    <div class="metric-header">
+                                        <h3 class="metric-title">Tokens Used</h3>
+                                        <span class="metric-value">1.8M</span>
+                                    </div>
+                                    <div class="metric-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 72%"></div>
+                                        </div>
+                                        <span class="progress-text">72% of limit</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-text">View Detailed Usage</button>
+                            <button class="btn btn-text">Export Report</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Resource Allocation -->
+                    <div class="dashboard-card resource-card">
+                        <div class="card-header">
+                            <h2 class="card-title">Resource Allocation</h2>
+                            <button class="btn btn-icon">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                        </div>
+                        <div class="card-content">
+                            <div class="resource-chart">
+                                <div class="chart-container">
+                                    <canvas id="resourceChart"></canvas>
+                                </div>
+                            </div>
+                            <div class="resource-legend">
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background-color: #4a6cf7;"></span>
+                                    <span class="legend-label">Document Processing</span>
+                                    <span class="legend-value">35%</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background-color: #6ad2ff;"></span>
+                                    <span class="legend-label">Customer Support</span>
+                                    <span class="legend-value">25%</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background-color: #ffba69;"></span>
+                                    <span class="legend-label">Data Analysis</span>
+                                    <span class="legend-value">20%</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background-color: #ff6b6b;"></span>
+                                    <span class="legend-label">Content Generation</span>
+                                    <span class="legend-value">15%</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background-color: #8c54ff;"></span>
+                                    <span class="legend-label">Other</span>
+                                    <span class="legend-value">5%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-text">Optimize Resources</button>
+                        </div>
+                    </div>
+                </div>
+                
                 <!-- Workflows Row -->
                 <div class="dashboard-row">
                     <!-- Recent Workflows -->
@@ -453,6 +655,10 @@
         </main>
     </div>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/ui-improvements.js"></script>
+    <script src="js/dashboard-improvements.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/dashboard-charts.js"></script>
 </body>
 </html>

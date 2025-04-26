@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4AI-build - App Builder</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/ui-improvements.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/app-builder.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">4AI-build</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="agent-management.html">
+                            <i class="fas fa-robot"></i>
+                            <span>Agents</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="workflow-builder.html">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Workflows</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="prompt-lab.html">
+                            <i class="fas fa-flask"></i>
+                            <span>Prompt Lab</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dataset-studio.html">
+                            <i class="fas fa-database"></i>
+                            <span>Dataset Studio</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="app-builder.html">
+                            <i class="fas fa-cubes"></i>
+                            <span>App Builder</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="api-generator.html">
+                            <i class="fas fa-code"></i>
+                            <span>API Generator</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="collaboration.html">
+                            <i class="fas fa-users"></i>
+                            <span>Collaboration</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="web3-integration.html">
+                            <i class="fas fa-link"></i>
+                            <span>Web3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="marketplace.html">
+                            <i class="fas fa-store"></i>
+                            <span>Marketplace</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-panel.html">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Admin Panel</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="documentation.html">
+                            <i class="fas fa-book"></i>
+                            <span>Documentation</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <p class="user-name">Hafedh Ammani</p>
+                        <p class="user-role">Admin</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <h1 class="page-title">App Builder</h1>
+                <div class="action-buttons">
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-eye"></i>
+                        <span>Preview</span>
+                    </button>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-save"></i>
+                        <span>Save App</span>
+                    </button>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        <span>Deploy</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- App Builder Content -->
+            <div class="app-builder-content">
+                <!-- App Builder Toolbar -->
+                <div class="app-builder-toolbar">
+                    <div class="toolbar-section">
+                        <button class="toolbar-btn active" data-view="design">
+                            <i class="fas fa-paint-brush"></i>
+                            <span>Design</span>
+                        </button>
+                        <button class="toolbar-btn" data-view="logic">
+                            <i class="fas fa-code-branch"></i>
+                            <span>Logic</span>
+                        </button>
+                        <button class="toolbar-btn" data-view="data">
+                            <i class="fas fa-database"></i>
+                            <span>Data</span>
+                        </button>
+                        <button class="toolbar-btn" data-view="settings">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </button>
+                    </div>
+                    <div class="toolbar-section">
+                        <div class="device-selector">
+                            <button class="device-btn active" data-device="desktop">
+                                <i class="fas fa-desktop"></i>
+                            </button>
+                            <button class="device-btn" data-device="tablet">
+                                <i class="fas fa-tablet-alt"></i>
+                            </button>
+                            <button class="device-btn" data-device="mobile">
+                                <i class="fas fa-mobile-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="toolbar-section">
+                        <button class="toolbar-btn">
+                            <i class="fas fa-undo"></i>
+                        </button>
+                        <button class="toolbar-btn">
+                            <i class="fas fa-redo"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- App Builder Workspace -->
+                <div class="app-builder-workspace">
+                    <!-- Component Library -->
+                    <div class="component-library">
+                        <div class="library-header">
+                            <h3>Components</h3>
+                            <div class="search-box">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="Search components...">
+                            </div>
+                        </div>
+                        <div class="component-categories">
+                            <div class="category-item active" data-category="layout">
+                                <i class="fas fa-th-large"></i>
+                                <span>Layout</span>
+                            </div>
+                            <div class="category-item" data-category="input">
+                                <i class="fas fa-keyboard"></i>
+                                <span>Input</span>
+                            </div>
+                            <div class="category-item" data-category="display">
+                                <i class="fas fa-tv"></i>
+                                <span>Display</span>
+                            </div>
+                            <div class="category-item" data-category="ai">
+                                <i class="fas fa-robot"></i>
+                                <span>AI</span>
+                            </div>
+                            <div class="category-item" data-category="media">
+                                <i class="fas fa-image"></i>
+                                <span>Media</span>
+                            </div>
+                            <div class="category-item" data-category="advanced">
+                                <i class="fas fa-code"></i>
+                                <span>Advanced</span>
+                            </div>
+                        </div>
+                        <div class="component-list">
+                            <!-- Layout Components -->
+                            <div class="component-group" data-category="layout">
+                                <div class="component-item" draggable="true" data-component="container">
+                                    <div class="component-icon">
+                                        <i class="fas fa-square-full"></i>
+                                    </div>
+                                    <span>Container</span>
+                                </div>
+                                <div class="component-item" draggable="true" data-component="row">
+                                    <div class="component-icon">
+                                        <i class="fas fa-grip-lines"></i>
+                                    </div>
+                                    <span>Row</span>
+                                </div>
+                                <div class="component-item" draggable="true" data-component="column">
+                                    <div class="component-icon">
+                                        <i class="fas fa-grip-lines-vertical"></i>
+                                    </div>
+                                    <span>Column</span>
+                                </div>
+                                <div class="component-item" draggable="true" data-component="card">
+                                    <div class="component-icon">
+                                        <i class="fas fa-credit-card"></i>
+                                    </div>
+                                    <span>Card</span>
+                                </div>
+                                <div class="component-item" draggable="true" data-component="tabs">
+                                    <div class="component-icon">
+                                        <i class="fas fa-folder"></i>
+                                    </div>
+                                    <span>Tabs</span>
+                                </div>
+                                <div class="component-item" draggable="true" data-component="accordion">
+                                    <div class="component-icon">
+                                        <i class="fas fa-bars"></i>
+                                    </div>
+                                    <span>Accordion</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Input Components (initially hidden) -->
+                            <div class="component-group" data-category="input" style="display: none;">
+                                <div class="component-item" draggable="true" data-component="text-input">
+                                    <div class="component-icon">
+                                        <i class="fas fa-font"></i>
+                                    </div>
+                                    <span>Text Input</span>
+                                </div>
+                                <div class="component-item" draggable="true" data-component="textarea">
+                                    <div class="component-icon">
+                                        <i class="fas fa-align-left"></i>
+                                    </div>
+                                    <span>Text Area</span>
+                                </div>
+                                <div class="component-item" draggable="true" data-component="select">
+                                    <div class="component-icon">
+                                        <i class="fas fa-caret-square-down"></i>
+                                    </div>
+                                    <span>Select</span>
+                                </div>
+                                <div class="component-item" draggable="true" data-component="checkbox">
+                                    <div class="component-icon">
+                                        <i class="fas fa-check-square"></i>
+                                    </div>
+                                    <span>Checkbox</span>
+                                </div>
+                                <div class="component-item" draggable="true" data-component="radio">
+                                    <div class="component-icon">
+                                        <i class="fas fa-dot-circle"></i>
+                                    </div>
+                                    <span>Radio</span>
+                                </div>
+                                <div class="component-item" draggable="true" data-component="button">
+                                    <div class="component-icon">
+                                        <i class="fas fa-square"></i>
+                                    </div>
+                                    <span>Button</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Display Components (initially hidden) -->
+                            <div class="component-group" data-category="display" style="display: none;">
+                                <div class="component-item" draggable="true" data-component="text">
+                                    <div class="component-icon">
+                                        <i class="fas fa-font"></i>
+                                    </div>
+                                    <span>Text</span>
+                                </div>
+                                <div class="component-item" draggable="true" data-component="heading">
+                                    <div class="component-icon">
+                                        <i class="fas fa-heading"></i>
+                                    </div>
+                                    <span>Heading</span>
+                                </div>
+                                <div class="component-item" draggable="true" data-component="list">
+                                    <div class="component-icon">
+                                        <i class="fas fa-list"></i>
+                                    </div>
+                                    <span>List</span>
+                                </div>
+                                <div class="component-item" draggable="true" data-component="table">
+                                    <div class="component-icon">
+                                        <i class="fas fa-table"></i>
+                                    </div>
+                                    <span>Table</span>
+                                </div>
+                                <div class="component-item" draggable="true" data-component="chart">
+                                    <div class="component-icon">
+                                        <i class="fas fa-chart-bar"></i>
+                                    </div>
+                                    <span>Chart</span>
+                                </div>
+                                <div class="component-item" draggable="true" data-component="icon">
+                                    <div class="component-icon">
+                                        <i class="fas fa-icons"></i>
+                                    </div>
+                                    <span>Icon</span>
+                                </div>
+                            </div>
+                            
+                            <!-- AI Components (initially hidden) -->
+                            <div class="component-group" data-category="ai" style="display: none;">
+                                <div class="component-item" draggable="true" data-component="ai-chat">
+                                    <div class="component-icon">
+                                        <i class="fas fa-comment-dots"></i>
+                                    </div>
+                                    <span>AI Chat</span>
+                                </div>
+                                <div class="component-item" draggable="true" data-component="ai-form">
+                                    <div class="component-icon">
+                                        <i class="fas fa-clipboard-list"></i>
+                                    </div>
+                                    <span>AI Form</span>
+                                </div>
+                                <div class="component-item" draggable="true" data-component="ai-search">
+                                    <div class="component-icon">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                    <span>AI Search</span>
+                                </div>
+                                <div class="component-item" draggable="true" data-component="ai-recommendation">
+                                    <div class="component-icon">
+                                        <i class="fas fa-thumbs-up"></i>
+                                    </div>
+                                    <span>AI Recommendation</span>
+                                </div>
+                                <div class="component-item" draggable="true" data-component="ai-generator">
+                                    <div class="component-icon">
+                                        <i class="fas fa-magic"></i>
+                                    </div>
+                                    <span>AI Generator</span>
+                                </div>
+                                <div class="component-item" draggable="true" data-component="ai-workflow">
+                                    <div class="component-icon">
+                                        <i class="fas fa-project-diagram"></i>
+                                    </div>
+                                    <span>AI Workflow</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Canvas -->
+                    <div class="app-canvas">
+                        <div class="canvas-container">
+                            <div class="canvas-header">
+                                <div class="app-title">My AI App</div>
+                                <div class="app-controls">
+                                    <button class="control-btn">
+                                        <i class="fas fa-arrow-left"></i>
+                                    </button>
+                                    <button class="control-btn">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                    <button class="control-btn">
+                                        <i class="fas fa-sync"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="canvas-content">
+                                <div class="dropzone empty-canvas">
+                                    <div class="empty-canvas-message">
+                                        <i class="fas fa-cubes"></i>
+                                        <h3>Start Building Your App</h3>
+                                        <p>Drag and drop components from the library to build your app</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Properties Panel -->
+                    <div class="properties-panel">
+                        <div class="panel-header">
+                            <h3>Properties</h3>
+                            <button class="panel-close-btn">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="panel-content">
+                            <div class="empty-properties">
+                                <i class="fas fa-info-circle"></i>
+                                <p>Select a component to edit its properties</p>
+                            </div>
+                            <div class="properties-form" style="display: none;">
+                                <!-- Component Type -->
+                                <div class="property-group">
+                                    <div class="property-header">
+                                        <h4>Component</h4>
+                                    </div>
+                                    <div class="property-content">
+                                        <div class="property-field">
+                                            <label>Type</label>
+                                            <div class="property-value">Container</div>
+                                        </div>
+                                        <div class="property-field">
+                                            <label>ID</label>
+                                            <input type="text" value="container-1">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Layout Properties -->
+                                <div class="property-group">
+                                    <div class="property-header">
+                                        <h4>Layout</h4>
+                                        <button class="property-toggle">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                    </div>
+                                    <div class="property-content">
+                                        <div class="property-field">
+                                            <label>Width</label>
+                                            <div class="input-with-unit">
+                                                <input type="text" value="100">
+                                                <select>
+                                                    <option value="%">%</option>
+                                                    <option value="px">px</option>
+                                                    <option value="auto">auto</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="property-field">
+                                            <label>Height</label>
+                                            <div class="input-with-unit">
+                                                <input type="text" value="auto">
+                                                <select>
+                                                    <option value="auto">auto</option>
+                                                    <option value="px">px</option>
+                                                    <option value="%">%</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="property-field">
+                                            <label>Padding</label>
+                                            <div class="spacing-inputs">
+                                                <div class="spacing-input">
+                                                    <span>T</span>
+                                                    <input type="text" value="20">
+                                                </div>
+                                                <div class="spacing-input">
+                                                    <span>R</span>
+                                                    <input type="text" value="20">
+                                                </div>
+                                                <div class="spacing-input">
+                                                    <span>B</span>
+                                                    <input type="text" value="20">
+                                                </div>
+                                                <div class="spacing-input">
+                                                    <span>L</span>
+                                                    <input type="text" value="20">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="property-field">
+                                            <label>Margin</label>
+                                            <div class="spacing-inputs">
+                                                <div class="spacing-input">
+                                                    <span>T</span>
+                                                    <input type="text" value="0">
+                                                </div>
+                                                <div class="spacing-input">
+                                                    <span>R</span>
+                                                    <input type="text" value="0">
+                                                </div>
+                                                <div class="spacing-input">
+                                                    <span>B</span>
+                                                    <input type="text" value="0">
+                                                </div>
+                                                <div class="spacing-input">
+                                                    <span>L</span>
+                                                    <input type="text" value="0">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Style Properties -->
+                                <div class="property-group">
+                                    <div class="property-header">
+                                        <h4>Style</h4>
+                                        <button class="property-toggle">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                    </div>
+                                    <div class="property-content">
+                                        <div class="property-field">
+                                            <label>Background</label>
+                                            <div class="color-picker">
+                                                <div class="color-preview" style="background-color: #ffffff;"></div>
+                                                <input type="text" value="#ffffff">
+                                            </div>
+                                        </div>
+                                        <div class="property-field">
+                                            <label>Border</label>
+                                            <div class="border-inputs">
+                                                <input type="text" value="1" class="border-width">
+                                                <select class="border-style">
+                                                    <option value="solid">solid</option>
+                                                    <option value="dashed">dashed</option>
+                                                    <option value="dotted">dotted</option>
+                                                    <option value="none">none</option>
+                                                </select>
+                                                <div class="color-picker">
+                                                    <div class="color-preview" style="background-color: #e0e0e0;"></div>
+                                                    <input type="text" value="#e0e0e0">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="property-field">
+                                            <label>Border Radius</label>
+                                            <div class="input-with-unit">
+                                                <input type="text" value="8">
+                                                <span>px</span>
+                                            </div>
+                                        </div>
+                                        <div class="property-field">
+                                            <label>Shadow</label>
+                                            <select>
+                                                <option value="none">None</option>
+                                                <option value="sm">Small</option>
+                                                <option value="md" selected>Medium</option>
+                                                <option value="lg">Large</option>
+                                                <option value="custom">Custom</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Advanced Properties -->
+                                <div class="property-group">
+                                    <div class="property-header">
+                                        <h4>Advanced</h4>
+                                        <button class="property-toggle">
+                                            <i class="fas fa-chevron-up"></i>
+                                        </button>
+                                    </div>
+                                    <div class="property-content" style="display: none;">
+                                        <div class="property-field">
+                                            <label>CSS Classes</label>
+                                            <input type="text" value="container">
+                                        </div>
+                                        <div class="property-field">
+                                            <label>Custom CSS</label>
+                                            <textarea rows="4"></textarea>
+                                        </div>
+                                        <div class="property-field">
+                                            <label>Visibility</label>
+                                            <div class="checkbox-group">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" checked>
+                                                    <span>Desktop</span>
+                                                </label>
+                                                <label class="checkbox">
+                                                    <input type="checkbox" checked>
+                                                    <span>Tablet</span>
+                                                </label>
+                                                <label class="checkbox">
+                                                    <input type="checkbox" checked>
+                                                    <span>Mobile</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/ui-improvements.js"></script>
+    <script src="js/app-builder.js"></script>
+</body>
+</html>

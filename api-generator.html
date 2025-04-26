@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4AI-build - API Generator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/ui-improvements.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/api-generator.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">4AI-build</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="agent-management.html">
+                            <i class="fas fa-robot"></i>
+                            <span>Agents</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="workflow-builder.html">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Workflows</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="prompt-lab.html">
+                            <i class="fas fa-flask"></i>
+                            <span>Prompt Lab</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dataset-studio.html">
+                            <i class="fas fa-database"></i>
+                            <span>Dataset Studio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="app-builder.html">
+                            <i class="fas fa-cubes"></i>
+                            <span>App Builder</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="api-generator.html">
+                            <i class="fas fa-code"></i>
+                            <span>API Generator</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="collaboration.html">
+                            <i class="fas fa-users"></i>
+                            <span>Collaboration</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="web3-integration.html">
+                            <i class="fas fa-link"></i>
+                            <span>Web3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="marketplace.html">
+                            <i class="fas fa-store"></i>
+                            <span>Marketplace</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-panel.html">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Admin Panel</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="documentation.html">
+                            <i class="fas fa-book"></i>
+                            <span>Documentation</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <p class="user-name">Hafedh Ammani</p>
+                        <p class="user-role">Admin</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <h1 class="page-title">API Generator</h1>
+                <div class="action-buttons">
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-sync"></i>
+                        <span>Refresh</span>
+                    </button>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        <span>New API</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- API Generator Content -->
+            <div class="api-generator-content">
+                <!-- API List Section -->
+                <div class="api-list-section">
+                    <div class="section-header">
+                        <h2>Your APIs</h2>
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search APIs...">
+                        </div>
+                    </div>
+                    
+                    <div class="api-list">
+                        <div class="api-card active">
+                            <div class="api-card-header">
+                                <div class="api-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="api-info">
+                                    <h3>Text Analysis API</h3>
+                                    <p>Sentiment analysis and entity extraction</p>
+                                </div>
+                                <div class="api-status">
+                                    <span class="status-badge active">Active</span>
+                                </div>
+                            </div>
+                            <div class="api-card-footer">
+                                <div class="api-metrics">
+                                    <div class="api-metric">
+                                        <span class="metric-value">1.2k</span>
+                                        <span class="metric-label">Requests</span>
+                                    </div>
+                                    <div class="api-metric">
+                                        <span class="metric-value">99.8%</span>
+                                        <span class="metric-label">Uptime</span>
+                                    </div>
+                                </div>
+                                <div class="api-actions">
+                                    <button class="api-action-btn">
+                                        <i class="fas fa-cog"></i>
+                                    </button>
+                                    <button class="api-action-btn">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="api-card">
+                            <div class="api-card-header">
+                                <div class="api-icon">
+                                    <i class="fas fa-image"></i>
+                                </div>
+                                <div class="api-info">
+                                    <h3>Image Recognition API</h3>
+                                    <p>Object detection and classification</p>
+                                </div>
+                                <div class="api-status">
+                                    <span class="status-badge active">Active</span>
+                                </div>
+                            </div>
+                            <div class="api-card-footer">
+                                <div class="api-metrics">
+                                    <div class="api-metric">
+                                        <span class="metric-value">856</span>
+                                        <span class="metric-label">Requests</span>
+                                    </div>
+                                    <div class="api-metric">
+                                        <span class="metric-value">99.5%</span>
+                                        <span class="metric-label">Uptime</span>
+                                    </div>
+                                </div>
+                                <div class="api-actions">
+                                    <button class="api-action-btn">
+                                        <i class="fas fa-cog"></i>
+                                    </button>
+                                    <button class="api-action-btn">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="api-card">
+                            <div class="api-card-header">
+                                <div class="api-icon">
+                                    <i class="fas fa-language"></i>
+                                </div>
+                                <div class="api-info">
+                                    <h3>Translation API</h3>
+                                    <p>Multi-language translation service</p>
+                                </div>
+                                <div class="api-status">
+                                    <span class="status-badge inactive">Inactive</span>
+                                </div>
+                            </div>
+                            <div class="api-card-footer">
+                                <div class="api-metrics">
+                                    <div class="api-metric">
+                                        <span class="metric-value">0</span>
+                                        <span class="metric-label">Requests</span>
+                                    </div>
+                                    <div class="api-metric">
+                                        <span class="metric-value">0%</span>
+                                        <span class="metric-label">Uptime</span>
+                                    </div>
+                                </div>
+                                <div class="api-actions">
+                                    <button class="api-action-btn">
+                                        <i class="fas fa-cog"></i>
+                                    </button>
+                                    <button class="api-action-btn">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- API Details Section -->
+                <div class="api-details-section">
+                    <div class="section-header">
+                        <div class="header-tabs">
+                            <button class="header-tab active">Overview</button>
+                            <button class="header-tab">Endpoints</button>
+                            <button class="header-tab">Documentation</button>
+                            <button class="header-tab">Settings</button>
+                        </div>
+                        <div class="header-actions">
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-code"></i>
+                                <span>Test API</span>
+                            </button>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-rocket"></i>
+                                <span>Deploy</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="api-details-content">
+                        <!-- Overview Tab (active by default) -->
+                        <div class="details-tab-content active" id="overview-tab">
+                            <div class="overview-header">
+                                <div class="overview-title">
+                                    <h2>Text Analysis API</h2>
+                                    <p>API for sentiment analysis and entity extraction from text</p>
+                                </div>
+                                <div class="overview-status">
+                                    <div class="status-indicator active"></div>
+                                    <span>Active</span>
+                                </div>
+                            </div>
+                            
+                            <div class="overview-stats">
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <h3>1,234</h3>
+                                        <p>Total Requests</p>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <h3>235ms</h3>
+                                        <p>Avg. Response Time</p>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <h3>99.8%</h3>
+                                        <p>Success Rate</p>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <h3>12</h3>
+                                        <p>Active Users</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="overview-chart">
+                                <div class="chart-header">
+                                    <h3>API Usage</h3>
+                                    <div class="chart-controls">
+                                        <button class="chart-control active">Day</button>
+                                        <button class="chart-control">Week</button>
+                                        <button class="chart-control">Month</button>
+                                    </div>
+                                </div>
+                                <div class="chart-container">
+                                    <!-- Placeholder for chart -->
+                                    <div class="chart-placeholder">
+                                        <div class="chart-bars">
+                                            <div class="chart-bar" style="height: 30%;"></div>
+                                            <div class="chart-bar" style="height: 45%;"></div>
+                                            <div class="chart-bar" style="height: 60%;"></div>
+                                            <div class="chart-bar" style="height: 40%;"></div>
+                                            <div class="chart-bar" style="height: 75%;"></div>
+                                            <div class="chart-bar" style="height: 90%;"></div>
+                                            <div class="chart-bar" style="height: 65%;"></div>
+                                        </div>
+                                        <div class="chart-labels">
+                                            <span>Mon</span>
+                                            <span>Tue</span>
+                                            <span>Wed</span>
+                                            <span>Thu</span>
+                                            <span>Fri</span>
+                                            <span>Sat</span>
+                                            <span>Sun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="overview-details">
+                                <div class="details-card">
+                                    <h3>API Details</h3>
+                                    <div class="details-item">
+                                        <span class="details-label">API ID</span>
+                                        <span class="details-value">api-text-analysis-001</span>
+                                    </div>
+                                    <div class="details-item">
+                                        <span class="details-label">Created</span>
+                                        <span class="details-value">April 15, 2025</span>
+                                    </div>
+                                    <div class="details-item">
+                                        <span class="details-label">Last Updated</span>
+                                        <span class="details-value">April 23, 2025</span>
+                                    </div>
+                                    <div class="details-item">
+                                        <span class="details-label">Version</span>
+                                        <span class="details-value">1.2.0</span>
+                                    </div>
+                                    <div class="details-item">
+                                        <span class="details-label">Base URL</span>
+                                        <span class="details-value">https://api.4ai-build.com/v1/text-analysis</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="details-card">
+                                    <h3>Authentication</h3>
+                                    <div class="details-item">
+                                        <span class="details-label">Auth Type</span>
+                                        <span class="details-value">API Key</span>
+                                    </div>
+                                    <div class="details-item">
+                                        <span class="details-label">API Key</span>
+                                        <div class="api-key-container">
+                                            <span class="api-key-hidden">••••••••••••••••••••••</span>
+                                            <button class="api-key-action">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="api-key-action">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="details-item">
+                                        <span class="details-label">Header Name</span>
+                                        <span class="details-value">X-API-Key</span>
+                                    </div>
+                                    <div class="details-actions">
+                                        <button class="btn btn-secondary btn-sm">
+                                            <i class="fas fa-sync"></i>
+                                            <span>Regenerate Key</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Endpoints Tab (initially hidden) -->
+                        <div class="details-tab-content" id="endpoints-tab" style="display: none;">
+                            <div class="endpoints-header">
+                                <h2>API Endpoints</h2>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fas fa-plus"></i>
+                                    <span>Add Endpoint</span>
+                                </button>
+                            </div>
+                            
+                            <div class="endpoints-list">
+                                <div class="endpoint-item">
+                                    <div class="endpoint-header">
+                                        <div class="endpoint-method get">GET</div>
+                                        <div class="endpoint-path">/sentiment</div>
+                                        <div class="endpoint-actions">
+                                            <button class="endpoint-action-btn">
+                                                <i class="fas fa-code"></i>
+                                            </button>
+                                            <button class="endpoint-action-btn">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="endpoint-action-btn">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="endpoint-content">
+                                        <p class="endpoint-description">Analyze the sentiment of provided text</p>
+                                        <div class="endpoint-details">
+                                            <div class="endpoint-section">
+                                                <h4>Parameters</h4>
+                                                <div class="parameter-list">
+                                                    <div class="parameter-item">
+                                                        <div class="parameter-name">text</div>
+                                                        <div class="parameter-type">string</div>
+                                                        <div class="parameter-required">Required</div>
+                                                        <div class="parameter-description">Text to analyze</div>
+                                                    </div>
+                                                    <div class="parameter-item">
+                                                        <div class="parameter-name">language</div>
+                                                        <div class="parameter-type">string</div>
+                                                        <div class="parameter-required">Optional</div>
+                                                        <div class="parameter-description">Language code (default: en)</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="endpoint-section">
+                                                <h4>Response</h4>
+                                                <div class="response-example">
+                                                    <pre>{
+  "sentiment": "positive",
+  "score": 0.85,
+  "confidence": 0.92
+}</pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="endpoint-item">
+                                    <div class="endpoint-header">
+                                        <div class="endpoint-method post">POST</div>
+                                        <div class="endpoint-path">/entities</div>
+                                        <div class="endpoint-actions">
+                                            <button class="endpoint-action-btn">
+                                                <i class="fas fa-code"></i>
+                                            </button>
+                                            <button class="endpoint-action-btn">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="endpoint-action-btn">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="endpoint-content" style="display: none;">
+                                        <p class="endpoint-description">Extract entities from provided text</p>
+                                        <!-- Content hidden by default -->
+                                    </div>
+                                </div>
+                                
+                                <div class="endpoint-item">
+                                    <div class="endpoint-header">
+                                        <div class="endpoint-method post">POST</div>
+                                        <div class="endpoint-path">/summarize</div>
+                                        <div class="endpoint-actions">
+                                            <button class="endpoint-action-btn">
+                                                <i class="fas fa-code"></i>
+                                            </button>
+                                            <button class="endpoint-action-btn">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="endpoint-action-btn">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="endpoint-content" style="display: none;">
+                                        <p class="endpoint-description">Generate a summary of provided text</p>
+                                        <!-- Content hidden by default -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Documentation Tab (initially hidden) -->
+                        <div class="details-tab-content" id="documentation-tab" style="display: none;">
+                            <div class="documentation-header">
+                                <h2>API Documentation</h2>
+                                <div class="documentation-actions">
+                                    <button class="btn btn-secondary btn-sm">
+                                        <i class="fas fa-download"></i>
+                                        <span>Export</span>
+                                    </button>
+                                    <button class="btn btn-primary btn-sm">
+                                        <i class="fas fa-edit"></i>
+                                        <span>Edit</span>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="documentation-content">
+                                <div class="documentation-section">
+                                    <h3>Introduction</h3>
+                                    <p>The Text Analysis API provides natural language processing capabilities for sentiment analysis, entity extraction, and text summarization. This API is designed to help developers integrate advanced text analysis features into their applications with minimal effort.</p>
+                                </div>
+                                
+                                <div class="documentation-section">
+                                    <h3>Authentication</h3>
+                                    <p>All API requests require authentication using an API key. Include your API key in the request headers as follows:</p>
+                                    <div class="code-block">
+                                        <pre>X-API-Key: your_api_key_here</pre>
+                                    </div>
+                                </div>
+                                
+                                <div class="documentation-section">
+                                    <h3>Rate Limits</h3>
+                                    <p>The API has the following rate limits:</p>
+                                    <ul>
+                                        <li>Free tier: 100 requests per day</li>
+                                        <li>Basic tier: 1,000 requests per day</li>
+                                        <li>Premium tier: 10,000 requests per day</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="documentation-section">
+                                    <h3>Endpoints</h3>
+                                    <div class="documentation-endpoint">
+                                        <h4>GET /sentiment</h4>
+                                        <p>Analyze the sentiment of provided text.</p>
+                                        <h5>Parameters</h5>
+                                        <table class="documentation-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Type</th>
+                                                    <th>Required</th>
+                                                    <th>Description</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>text</td>
+                                                    <td>string</td>
+                                                    <td>Yes</td>
+                                                    <td>Text to analyze</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>language</td>
+                                                    <td>string</td>
+                                                    <td>No</td>
+                                                    <td>Language code (default: en)</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <h5>Response</h5>
+                                        <div class="code-block">
+                                            <pre>{
+  "sentiment": "positive",
+  "score": 0.85,
+  "confidence": 0.92
+}</pre>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- More endpoints documentation would go here -->
+                                </div>
+                                
+                                <div class="documentation-section">
+                                    <h3>Error Codes</h3>
+                                    <table class="documentation-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Code</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>400</td>
+                                                <td>Bad Request - The request was invalid</td>
+                                            </tr>
+                                            <tr>
+                                                <td>401</td>
+                                                <td>Unauthorized - API key is missing or invalid</td>
+                                            </tr>
+                                            <tr>
+                                                <td>429</td>
+                                                <td>Too Many Requests - Rate limit exceeded</td>
+                                            </tr>
+                                            <tr>
+                                                <td>500</td>
+                                                <td>Internal Server Error - Something went wrong on our end</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Settings Tab (initially hidden) -->
+                        <div class="details-tab-content" id="settings-tab" style="display: none;">
+                            <div class="settings-header">
+                                <h2>API Settings</h2>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fas fa-save"></i>
+                                    <span>Save Changes</span>
+                                </button>
+                            </div>
+                            
+                            <div class="settings-content">
+                                <div class="settings-section">
+                                    <h3>General Settings</h3>
+                                    <div class="settings-form">
+                                        <div class="form-group">
+                                            <label>API Name</label>
+                                            <input type="text" value="Text Analysis API">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Description</label>
+                                            <textarea rows="3">API for sentiment analysis and entity extraction from text</textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Version</label>
+                                            <input type="text" value="1.2.0">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Base Path</label>
+                                            <input type="text" value="/v1/text-analysis">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="settings-section">
+                                    <h3>Authentication</h3>
+                                    <div class="settings-form">
+                                        <div class="form-group">
+                                            <label>Authentication Type</label>
+                                            <select>
+                                                <option value="api_key" selected>API Key</option>
+                                                <option value="oauth2">OAuth 2.0</option>
+                                                <option value="jwt">JWT</option>
+                                                <option value="none">None</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>API Key Header Name</label>
+                                            <input type="text" value="X-API-Key">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="settings-section">
+                                    <h3>Rate Limiting</h3>
+                                    <div class="settings-form">
+                                        <div class="form-group">
+                                            <label>Enable Rate Limiting</label>
+                                            <div class="toggle-switch">
+                                                <input type="checkbox" id="rate-limit-toggle" checked>
+                                                <label for="rate-limit-toggle"></label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Requests per Minute</label>
+                                            <input type="number" value="60">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Requests per Day</label>
+                                            <input type="number" value="1000">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="settings-section">
+                                    <h3>CORS Settings</h3>
+                                    <div class="settings-form">
+                                        <div class="form-group">
+                                            <label>Enable CORS</label>
+                                            <div class="toggle-switch">
+                                                <input type="checkbox" id="cors-toggle" checked>
+                                                <label for="cors-toggle"></label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Allowed Origins</label>
+                                            <input type="text" value="*">
+                                            <small>Use * for all origins or specify comma-separated domains</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="settings-section danger-zone">
+                                    <h3>Danger Zone</h3>
+                                    <div class="danger-actions">
+                                        <div class="danger-action">
+                                            <div class="danger-info">
+                                                <h4>Deactivate API</h4>
+                                                <p>Temporarily disable this API. You can reactivate it later.</p>
+                                            </div>
+                                            <button class="btn btn-warning">Deactivate</button>
+                                        </div>
+                                        <div class="danger-action">
+                                            <div class="danger-info">
+                                                <h4>Delete API</h4>
+                                                <p>Permanently delete this API and all its data. This action cannot be undone.</p>
+                                            </div>
+                                            <button class="btn btn-danger">Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/ui-improvements.js"></script>
+    <script src="js/api-generator.js"></script>
+</body>
+</html>

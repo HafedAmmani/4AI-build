@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4AI-build - Web3 Integration</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/ui-improvements.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/web3-integration.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">4AI-build</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="agent-management.html">
+                            <i class="fas fa-robot"></i>
+                            <span>Agents</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="workflow-builder.html">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Workflows</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="prompt-lab.html">
+                            <i class="fas fa-flask"></i>
+                            <span>Prompt Lab</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dataset-studio.html">
+                            <i class="fas fa-database"></i>
+                            <span>Dataset Studio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="app-builder.html">
+                            <i class="fas fa-cubes"></i>
+                            <span>App Builder</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="api-generator.html">
+                            <i class="fas fa-code"></i>
+                            <span>API Generator</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="collaboration.html">
+                            <i class="fas fa-users"></i>
+                            <span>Collaboration</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="web3-integration.html">
+                            <i class="fas fa-link"></i>
+                            <span>Web3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="collaboration.html">
+                            <i class="fas fa-users"></i>
+                            <span>Collaboration</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="web3-integration.html">
+                            <i class="fas fa-link"></i>
+                            <span>Web3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="marketplace.html">
+                            <i class="fas fa-store"></i>
+                            <span>Marketplace</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-panel.html">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Admin Panel</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="documentation.html">
+                            <i class="fas fa-book"></i>
+                            <span>Documentation</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <p class="user-name">Hafedh Ammani</p>
+                        <p class="user-role">Admin</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <h1 class="page-title">Web3 Integration</h1>
+                <div class="wallet-status">
+                    <div class="wallet-indicator not-connected">
+                        <i class="fas fa-wallet"></i>
+                        <span class="wallet-text">Wallet Not Connected</span>
+                    </div>
+                    <button class="btn btn-primary connect-wallet-btn">
+                        <i class="fas fa-plug"></i>
+                        <span>Connect Wallet</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Web3 Content -->
+            <div class="web3-content">
+                <!-- Web3 Dashboard -->
+                <div class="web3-dashboard">
+                    <div class="dashboard-header">
+                        <h2>Web3 Dashboard</h2>
+                        <div class="network-selector">
+                            <select id="network-select">
+                                <option value="ethereum">Ethereum Mainnet</option>
+                                <option value="polygon">Polygon</option>
+                                <option value="optimism">Optimism</option>
+                                <option value="arbitrum">Arbitrum</option>
+                                <option value="base">Base</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-cards">
+                        <div class="dashboard-card">
+                            <div class="card-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>AI Agents</h3>
+                                <p class="card-value">0</p>
+                                <p class="card-description">Decentralized AI agents deployed</p>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-card">
+                            <div class="card-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Workflows</h3>
+                                <p class="card-value">0</p>
+                                <p class="card-description">On-chain workflows created</p>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-card">
+                            <div class="card-icon">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Tokens</h3>
+                                <p class="card-value">0 4AI</p>
+                                <p class="card-description">4AI tokens in your wallet</p>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-card">
+                            <div class="card-icon">
+                                <i class="fas fa-file-contract"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Smart Contracts</h3>
+                                <p class="card-value">0</p>
+                                <p class="card-description">Smart contracts deployed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Web3 Features -->
+                <div class="web3-features">
+                    <div class="features-header">
+                        <h2>Web3 Features</h2>
+                    </div>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-header">
+                                <div class="feature-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <h3>Decentralized AI Agents</h3>
+                            </div>
+                            <div class="feature-content">
+                                <p>Deploy your AI agents to decentralized networks, ensuring they remain operational without central server dependencies.</p>
+                                <div class="feature-actions">
+                                    <button class="btn btn-secondary btn-sm">Learn More</button>
+                                    <button class="btn btn-primary btn-sm" disabled>Deploy Agent</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-header">
+                                <div class="feature-icon">
+                                    <i class="fas fa-coins"></i>
+                                </div>
+                                <h3>Token-Based Access</h3>
+                            </div>
+                            <div class="feature-content">
+                                <p>Control access to your AI models and workflows using token-gating mechanisms. Monetize your creations with subscription or pay-per-use models.</p>
+                                <div class="feature-actions">
+                                    <button class="btn btn-secondary btn-sm">Learn More</button>
+                                    <button class="btn btn-primary btn-sm" disabled>Set Up Access</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-header">
+                                <div class="feature-icon">
+                                    <i class="fas fa-file-contract"></i>
+                                </div>
+                                <h3>Smart Contract Generation</h3>
+                            </div>
+                            <div class="feature-content">
+                                <p>Generate smart contracts for your AI applications with our no-code interface. Define rules, permissions, and payment structures easily.</p>
+                                <div class="feature-actions">
+                                    <button class="btn btn-secondary btn-sm">Learn More</button>
+                                    <button class="btn btn-primary btn-sm" disabled>Create Contract</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-header">
+                                <div class="feature-icon">
+                                    <i class="fas fa-fingerprint"></i>
+                                </div>
+                                <h3>Verifiable Credentials</h3>
+                            </div>
+                            <div class="feature-content">
+                                <p>Issue and verify AI-generated content credentials. Ensure authenticity and provenance of AI outputs with blockchain verification.</p>
+                                <div class="feature-actions">
+                                    <button class="btn btn-secondary btn-sm">Learn More</button>
+                                    <button class="btn btn-primary btn-sm" disabled>Verify Content</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Smart Contract Generator -->
+                <div class="contract-generator">
+                    <div class="generator-header">
+                        <h2>Smart Contract Generator</h2>
+                        <div class="generator-actions">
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-code"></i>
+                                <span>View Code</span>
+                            </button>
+                            <button class="btn btn-primary" disabled>
+                                <i class="fas fa-rocket"></i>
+                                <span>Deploy Contract</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="generator-content">
+                        <div class="contract-form">
+                            <div class="form-group">
+                                <label for="contract-name">Contract Name</label>
+                                <input type="text" id="contract-name" placeholder="MyAIAgent" value="">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contract-type">Contract Type</label>
+                                <select id="contract-type">
+                                    <option value="agent">AI Agent Contract</option>
+                                    <option value="marketplace">Marketplace Contract</option>
+                                    <option value="token">Token Contract</option>
+                                    <option value="access">Access Control Contract</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contract-description">Description</label>
+                                <textarea id="contract-description" placeholder="Describe your smart contract..."></textarea>
+                            </div>
+                            
+                            <div class="form-section">
+                                <h4>Access Control</h4>
+                                <div class="form-group">
+                                    <label>Access Type</label>
+                                    <div class="radio-group">
+                                        <div class="radio-option">
+                                            <input type="radio" id="access-public" name="access-type" checked>
+                                            <label for="access-public">Public</label>
+                                        </div>
+                                        <div class="radio-option">
+                                            <input type="radio" id="access-token" name="access-type">
+                                            <label for="access-token">Token Gated</label>
+                                        </div>
+                                        <div class="radio-option">
+                                            <input type="radio" id="access-whitelist" name="access-type">
+                                            <label for="access-whitelist">Whitelist</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-section">
+                                <h4>Payment Settings</h4>
+                                <div class="form-group">
+                                    <label>Payment Model</label>
+                                    <div class="radio-group">
+                                        <div class="radio-option">
+                                            <input type="radio" id="payment-free" name="payment-model" checked>
+                                            <label for="payment-free">Free</label>
+                                        </div>
+                                        <div class="radio-option">
+                                            <input type="radio" id="payment-per-use" name="payment-model">
+                                            <label for="payment-per-use">Pay Per Use</label>
+                                        </div>
+                                        <div class="radio-option">
+                                            <input type="radio" id="payment-subscription" name="payment-model">
+                                            <label for="payment-subscription">Subscription</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group payment-details" style="display: none;">
+                                    <label for="payment-amount">Amount</label>
+                                    <div class="input-with-select">
+                                        <input type="number" id="payment-amount" placeholder="0.00" min="0" step="0.01">
+                                        <select id="payment-token">
+                                            <option value="eth">ETH</option>
+                                            <option value="4ai">4AI</option>
+                                            <option value="usdc">USDC</option>
+                                            <option value="usdt">USDT</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-section">
+                                <h4>Advanced Settings</h4>
+                                <div class="form-group">
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="upgradeable-toggle">
+                                        <label for="upgradeable-toggle"></label>
+                                        <span>Upgradeable Contract</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="pausable-toggle">
+                                        <label for="pausable-toggle"></label>
+                                        <span>Pausable</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="royalty-toggle">
+                                        <label for="royalty-toggle"></label>
+                                        <span>Enable Royalties</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group royalty-details" style="display: none;">
+                                    <label for="royalty-percentage">Royalty Percentage</label>
+                                    <div class="input-with-unit">
+                                        <input type="number" id="royalty-percentage" placeholder="2.5" min="0" max="100" step="0.1">
+                                        <span class="input-unit">%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contract-preview">
+                            <div class="preview-header">
+                                <h3>Contract Preview</h3>
+                                <div class="preview-actions">
+                                    <button class="preview-action">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                    <button class="preview-action">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="preview-content">
+                                <pre><code>// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+/**
+ * @title MyAIAgent
+ * @dev AI Agent Contract for 4AI-build platform
+ */
+contract MyAIAgent is Ownable {
+    // Contract variables
+    string public name;
+    string public description;
+    bool public isActive;
+    
+    // Events
+    event AgentActivated(address indexed owner);
+    event AgentDeactivated(address indexed owner);
+    event AgentExecuted(address indexed user, uint256 timestamp);
+    
+    /**
+     * @dev Constructor sets the name and description of the AI agent
+     */
+    constructor(string memory _name, string memory _description) {
+        name = _name;
+        description = _description;
+        isActive = true;
+    }
+    
+    /**
+     * @dev Execute the AI agent functionality
+     * @return success status of execution
+     */
+    function executeAgent() external returns (bool) {
+        require(isActive, "Agent is not active");
+        
+        // AI agent execution logic would be implemented here
+        
+        emit AgentExecuted(msg.sender, block.timestamp);
+        return true;
+    }
+    
+    /**
+     * @dev Activate the AI agent
+     * @notice Only contract owner can call this function
+     */
+    function activateAgent() external onlyOwner {
+        isActive = true;
+        emit AgentActivated(msg.sender);
+    }
+    
+    /**
+     * @dev Deactivate the AI agent
+     * @notice Only contract owner can call this function
+     */
+    function deactivateAgent() external onlyOwner {
+        isActive = false;
+        emit AgentDeactivated(msg.sender);
+    }
+    
+    /**
+     * @dev Update the agent description
+     * @notice Only contract owner can call this function
+     */
+    function updateDescription(string memory _description) external onlyOwner {
+        description = _description;
+    }
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Token Management -->
+                <div class="token-management">
+                    <div class="token-header">
+                        <h2>Token Management</h2>
+                    </div>
+                    
+                    <div class="token-content">
+                        <div class="token-info">
+                            <div class="token-card">
+                                <div class="token-icon">
+                                    <img src="https://via.placeholder.com/50" alt="4AI Token">
+                                </div>
+                                <div class="token-details">
+                                    <h3>4AI Token</h3>
+                                    <p class="token-description">Utility token for the 4AI-build ecosystem</p>
+                                    <div class="token-stats">
+                                        <div class="token-stat">
+                                            <span class="stat-label">Balance</span>
+                                            <span class="stat-value">0 4AI</span>
+                                        </div>
+                                        <div class="token-stat">
+                                            <span class="stat-label">Value</span>
+                                            <span class="stat-value">$0.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="token-actions">
+                                    <button class="btn btn-secondary btn-sm" disabled>
+                                        <i class="fas fa-exchange-alt"></i>
+                                        <span>Swap</span>
+                                    </button>
+                                    <button class="btn btn-primary btn-sm" disabled>
+                                        <i class="fas fa-wallet"></i>
+                                        <span>Buy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="token-transactions">
+                            <div class="transactions-header">
+                                <h3>Recent Transactions</h3>
+                                <button class="btn btn-text">
+                                    <i class="fas fa-sync"></i>
+                                    <span>Refresh</span>
+                                </button>
+                            </div>
+                            
+                            <div class="transactions-empty">
+                                <div class="empty-icon">
+                                    <i class="fas fa-receipt"></i>
+                                </div>
+                                <p>No transactions found</p>
+                                <p class="empty-description">Connect your wallet to view your transaction history</p>
+                            </div>
+                            
+                            <div class="transactions-list" style="display: none;">
+                                <!-- Transaction items would be populated here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- NFT Gallery -->
+                <div class="nft-gallery">
+                    <div class="gallery-header">
+                        <h2>AI-Generated NFTs</h2>
+                        <button class="btn btn-primary" disabled>
+                            <i class="fas fa-plus"></i>
+                            <span>Create NFT</span>
+                        </button>
+                    </div>
+                    
+                    <div class="gallery-content">
+                        <div class="gallery-empty">
+                            <div class="empty-icon">
+                                <i class="fas fa-images"></i>
+                            </div>
+                            <p>No NFTs found</p>
+                            <p class="empty-description">Connect your wallet to view your NFT collection or create a new AI-generated NFT</p>
+                        </div>
+                        
+                        <div class="gallery-grid" style="display: none;">
+                            <!-- NFT items would be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Wallet Connection Modal -->
+    <div class="modal" id="wallet-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Connect Wallet</h2>
+                <button class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">Connect your wallet to access Web3 features</p>
+                
+                <div class="wallet-options">
+                    <button class="wallet-option">
+                        <div class="wallet-icon">
+                            <img src="https://metamask.io/images/metamask-fox.svg" alt="MetaMask">
+                        </div>
+                        <div class="wallet-info">
+                            <h3>MetaMask</h3>
+                            <p>Connect to your MetaMask wallet</p>
+                        </div>
+                    </button>
+                    
+                    <button class="wallet-option">
+                        <div class="wallet-icon">
+                            <img src="https://walletconnect.com/walletconnect-logo.svg" alt="WalletConnect">
+                        </div>
+                        <div class="wallet-info">
+                            <h3>WalletConnect</h3>
+                            <p>Scan with WalletConnect to connect</p>
+                        </div>
+                    </button>
+                    
+                    <button class="wallet-option">
+                        <div class="wallet-icon">
+                            <img src="https://www.coinbase.com/assets/press/coinbase-icon.png" alt="Coinbase Wallet">
+                        </div>
+                        <div class="wallet-info">
+                            <h3>Coinbase Wallet</h3>
+                            <p>Connect to your Coinbase Wallet</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <p class="modal-note">By connecting your wallet, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/ui-improvements.js"></script>
+    <script src="js/web3-integration.js"></script>
+</body>
+</html>

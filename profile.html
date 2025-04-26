@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4AI-build - User Profile</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/ui-improvements.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">4AI-build</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="agent-management.html">
+                            <i class="fas fa-robot"></i>
+                            <span>Agents</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="workflow-builder.html">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Workflows</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="prompt-lab.html">
+                            <i class="fas fa-flask"></i>
+                            <span>Prompt Lab</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dataset-studio.html">
+                            <i class="fas fa-database"></i>
+                            <span>Dataset Studio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="app-builder.html">
+                            <i class="fas fa-cubes"></i>
+                            <span>App Builder</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="api-generator.html">
+                            <i class="fas fa-code"></i>
+                            <span>API Generator</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="collaboration.html">
+                            <i class="fas fa-users"></i>
+                            <span>Collaboration</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="web3-integration.html">
+                            <i class="fas fa-link"></i>
+                            <span>Web3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="collaboration.html">
+                            <i class="fas fa-users"></i>
+                            <span>Collaboration</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="web3-integration.html">
+                            <i class="fas fa-link"></i>
+                            <span>Web3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="marketplace.html">
+                            <i class="fas fa-store"></i>
+                            <span>Marketplace</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-panel.html">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Admin Panel</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="documentation.html">
+                            <i class="fas fa-book"></i>
+                            <span>Documentation</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Avatar">
+                    </div>
+                    <div class="user-details">
+                        <p class="user-name">Hafedh Ammani</p>
+                        <p class="user-role">Admin</p>
+                    </div>
+                    <div class="user-actions">
+                        <button class="btn-icon active" title="Profile" onclick="window.location.href='profile.html'">
+                            <i class="fas fa-user-cog"></i>
+                        </button>
+                        <button class="btn-icon" title="Logout" onclick="logout()">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <div class="page-header">
+                    <h1 class="page-title">User Profile</h1>
+                    <p class="page-subtitle">Manage your personal information and preferences</p>
+                </div>
+                <div class="top-bar-actions">
+                    <div class="notification-bell">
+                        <button class="btn-icon" title="Notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Profile Content -->
+            <div class="content-container">
+                <!-- Profile Header -->
+                <div class="profile-header-card">
+                    <div class="profile-cover">
+                        <button class="cover-change-btn">
+                            <i class="fas fa-camera"></i>
+                            <span>Change Cover</span>
+                        </button>
+                    </div>
+                    <div class="profile-header-content">
+                        <div class="profile-avatar-large">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Avatar">
+                            <button class="avatar-change-btn">
+                                <i class="fas fa-camera"></i>
+                            </button>
+                        </div>
+                        <div class="profile-header-info">
+                            <h2 class="profile-name">Hafedh Ammani</h2>
+                            <p class="profile-title">AI Solutions Architect</p>
+                            <p class="profile-company">TechInnovate Solutions</p>
+                        </div>
+                        <div class="profile-header-actions">
+                            <button class="btn btn-primary" id="saveProfileBtn">
+                                <i class="fas fa-save"></i>
+                                <span>Save Changes</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Navigation -->
+                <div class="profile-navigation">
+                    <ul class="profile-nav-tabs">
+                        <li class="profile-nav-item active" data-target="personal">
+                            <i class="fas fa-user"></i>
+                            <span>Personal Info</span>
+                        </li>
+                        <li class="profile-nav-item" data-target="security">
+                            <i class="fas fa-lock"></i>
+                            <span>Security</span>
+                        </li>
+                        <li class="profile-nav-item" data-target="preferences">
+                            <i class="fas fa-sliders-h"></i>
+                            <span>Preferences</span>
+                        </li>
+                        <li class="profile-nav-item" data-target="activity">
+                            <i class="fas fa-history"></i>
+                            <span>Activity</span>
+                        </li>
+                        <li class="profile-nav-item" data-target="billing">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Billing</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Profile Content Panels -->
+                <div class="profile-content">
+                    <!-- Personal Info Panel -->
+                    <div class="profile-panel active" id="personal-panel">
+                        <div class="panel-header">
+                            <h3 class="panel-title">Personal Information</h3>
+                            <p class="panel-description">Update your personal details and contact information</p>
+                        </div>
+                        <div class="profile-form">
+                            <div class="form-section">
+                                <h4 class="section-title">Basic Information</h4>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="firstName">First Name</label>
+                                        <input type="text" id="firstName" class="form-control" value="Hafedh">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName">Last Name</label>
+                                        <input type="text" id="lastName" class="form-control" value="Ammani">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="displayName">Display Name</label>
+                                        <input type="text" id="displayName" class="form-control" value="Hafedh Ammani">
+                                        <small class="form-text">This is how your name will appear to other users</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="jobTitle">Job Title</label>
+                                        <input type="text" id="jobTitle" class="form-control" value="AI Solutions Architect">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="bio">Bio</label>
+                                        <textarea id="bio" class="form-control" rows="4">AI enthusiast with expertise in building intelligent systems and automation workflows. Passionate about leveraging AI to solve complex business problems.</textarea>
+                                        <small class="form-text">Brief description about yourself (max 200 characters)</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-section">
+                                <h4 class="section-title">Contact Information</h4>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="email">Email Address</label>
+                                        <input type="email" id="email" class="form-control" value="hafedh.ammani@example.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">Phone Number</label>
+                                        <input type="tel" id="phone" class="form-control" value="+1 (555) 123-4567">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="company">Company/Organization</label>
+                                        <input type="text" id="company" class="form-control" value="TechInnovate Solutions">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="location">Location</label>
+                                        <input type="text" id="location" class="form-control" value="San Francisco, CA">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-section">
+                                <h4 class="section-title">Social Profiles</h4>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="linkedin">LinkedIn</label>
+                                        <div class="input-with-icon">
+                                            <i class="fab fa-linkedin"></i>
+                                            <input type="url" id="linkedin" class="form-control" value="https://linkedin.com/in/hafedh-ammani">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="twitter">Twitter</label>
+                                        <div class="input-with-icon">
+                                            <i class="fab fa-twitter"></i>
+                                            <input type="url" id="twitter" class="form-control" value="https://twitter.com/hafedh_ammani">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="github">GitHub</label>
+                                        <div class="input-with-icon">
+                                            <i class="fab fa-github"></i>
+                                            <input type="url" id="github" class="form-control" value="https://github.com/hafedh-ammani">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="website">Personal Website</label>
+                                        <div class="input-with-icon">
+                                            <i class="fas fa-globe"></i>
+                                            <input type="url" id="website" class="form-control" value="https://hafedh-ammani.com">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Panel -->
+                    <div class="profile-panel" id="security-panel">
+                        <div class="panel-header">
+                            <h3 class="panel-title">Security Settings</h3>
+                            <p class="panel-description">Manage your account security and authentication methods</p>
+                        </div>
+                        <div class="profile-form">
+                            <div class="form-section">
+                                <h4 class="section-title">Password</h4>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="currentPassword">Current Password</label>
+                                        <input type="password" id="currentPassword" class="form-control" placeholder="Enter your current password">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="newPassword">New Password</label>
+                                        <input type="password" id="newPassword" class="form-control" placeholder="Enter new password">
+                                        <small class="form-text">Must be at least 8 characters with letters, numbers, and symbols</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="confirmPassword">Confirm New Password</label>
+                                        <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm new password">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <button class="btn btn-primary">Update Password</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-section">
+                                <h4 class="section-title">Two-Factor Authentication</h4>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <div class="toggle-container">
+                                            <div class="toggle-info">
+                                                <h5>Enable Two-Factor Authentication</h5>
+                                                <p>Add an extra layer of security to your account by requiring a verification code in addition to your password</p>
+                                            </div>
+                                            <label class="toggle-switch large">
+                                                <input type="checkbox" id="twoFactorAuth">
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row" id="twoFactorOptions" style="display: none;">
+                                    <div class="form-group full-width">
+                                        <div class="two-factor-methods">
+                                            <div class="two-factor-method">
+                                                <input type="radio" name="twoFactorMethod" id="methodApp" checked>
+                                                <label for="methodApp">
+                                                    <div class="method-icon">
+                                                        <i class="fas fa-mobile-alt"></i>
+                                                    </div>
+                                                    <div class="method-info">
+                                                        <h5>Authenticator App</h5>
+                                                        <p>Use an app like Google Authenticator or Authy</p>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="two-factor-method">
+                                                <input type="radio" name="twoFactorMethod" id="methodSMS">
+                                                <label for="methodSMS">
+                                                    <div class="method-icon">
+                                                        <i class="fas fa-sms"></i>
+                                                    </div>
+                                                    <div class="method-info">
+                                                        <h5>SMS Verification</h5>
+                                                        <p>Receive codes via text message</p>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="two-factor-method">
+                                                <input type="radio" name="twoFactorMethod" id="methodEmail">
+                                                <label for="methodEmail">
+                                                    <div class="method-icon">
+                                                        <i class="fas fa-envelope"></i>
+                                                    </div>
+                                                    <div class="method-info">
+                                                        <h5>Email Verification</h5>
+                                                        <p>Receive codes via email</p>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-section">
+                                <h4 class="section-title">Login Sessions</h4>
+                                <div class="sessions-list">
+                                    <div class="session-item current">
+                                        <div class="session-info">
+                                            <div class="session-device">
+                                                <i class="fas fa-laptop"></i>
+                                                <span>MacBook Pro - Chrome</span>
+                                                <span class="session-current">Current</span>
+                                            </div>
+                                            <div class="session-details">
+                                                <span class="session-location">San Francisco, CA, USA</span>
+                                                <span class="session-time">Active now</span>
+                                                <span class="session-ip">IP: 192.168.1.1</span>
+                                            </div>
+                                        </div>
+                                        <div class="session-actions">
+                                            <button class="btn btn-text" disabled>End Session</button>
+                                        </div>
+                                    </div>
+                                    <div class="session-item">
+                                        <div class="session-info">
+                                            <div class="session-device">
+                                                <i class="fas fa-mobile-alt"></i>
+                                                <span>iPhone 13 - Safari</span>
+                                            </div>
+                                            <div class="session-details">
+                                                <span class="session-location">San Francisco, CA, USA</span>
+                                                <span class="session-time">Last active: 2 hours ago</span>
+                                                <span class="session-ip">IP: 192.168.1.2</span>
+                                            </div>
+                                        </div>
+                                        <div class="session-actions">
+                                            <button class="btn btn-text">End Session</button>
+                                        </div>
+                                    </div>
+                                    <div class="session-item">
+                                        <div class="session-info">
+                                            <div class="session-device">
+                                                <i class="fas fa-tablet-alt"></i>
+                                                <span>iPad Pro - Safari</span>
+                                            </div>
+                                            <div class="session-details">
+                                                <span class="session-location">New York, NY, USA</span>
+                                                <span class="session-time">Last active: Yesterday at 3:45 PM</span>
+                                                <span class="session-ip">IP: 192.168.1.3</span>
+                                            </div>
+                                        </div>
+                                        <div class="session-actions">
+                                            <button class="btn btn-text">End Session</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <button class="btn btn-danger">End All Other Sessions</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Preferences Panel -->
+                    <div class="profile-panel" id="preferences-panel">
+                        <div class="panel-header">
+                            <h3 class="panel-title">User Preferences</h3>
+                            <p class="panel-description">Customize your experience with 4AI-build</p>
+                        </div>
+                        <div class="profile-form">
+                            <div class="form-section">
+                                <h4 class="section-title">Notifications</h4>
+                                <div class="preferences-list">
+                                    <div class="preference-item">
+                                        <div class="preference-info">
+                                            <h5>Email Notifications</h5>
+                                            <p>Receive updates and alerts via email</p>
+                                        </div>
+                                        <div class="preference-control">
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" checked>
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="preference-item">
+                                        <div class="preference-info">
+                                            <h5>Workflow Completion</h5>
+                                            <p>Get notified when your workflows complete</p>
+                                        </div>
+                                        <div class="preference-control">
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" checked>
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="preference-item">
+                                        <div class="preference-info">
+                                            <h5>Collaboration Invites</h5>
+                                            <p>Receive notifications for new collaboration invitations</p>
+                                        </div>
+                                        <div class="preference-control">
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" checked>
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="preference-item">
+                                        <div class="preference-info">
+                                            <h5>System Updates</h5>
+                                            <p>Get notified about new features and updates</p>
+                                        </div>
+                                        <div class="preference-control">
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" checked>
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="preference-item">
+                                        <div class="preference-info">
+                                            <h5>Marketing Communications</h5>
+                                            <p>Receive newsletters and promotional content</p>
+                                        </div>
+                                        <div class="preference-control">
+                                            <label class="toggle-switch">
+                                                <input type="checkbox">
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-section">
+                                <h4 class="section-title">Display Preferences</h4>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="theme">Theme</label>
+                                        <select id="theme" class="form-control">
+                                            <option value="light">Light</option>
+                                            <option value="dark">Dark</option>
+                                            <option value="system">System Default</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="colorScheme">Color Scheme</label>
+                                        <select id="colorScheme" class="form-control">
+                                            <option value="blue">Blue</option>
+                                            <option value="purple">Purple</option>
+                                            <option value="green">Green</option>
+                                            <option value="orange">Orange</option>
+                                            <option value="red">Red</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="fontSize">Font Size</label>
+                                        <select id="fontSize" class="form-control">
+                                            <option value="small">Small</option>
+                                            <option value="medium" selected>Medium</option>
+                                            <option value="large">Large</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="density">Content Density</label>
+                                        <select id="density" class="form-control">
+                                            <option value="compact">Compact</option>
+                                            <option value="comfortable" selected>Comfortable</option>
+                                            <option value="spacious">Spacious</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-section">
+                                <h4 class="section-title">Accessibility</h4>
+                                <div class="preferences-list">
+                                    <div class="preference-item">
+                                        <div class="preference-info">
+                                            <h5>High Contrast Mode</h5>
+                                            <p>Increase contrast for better visibility</p>
+                                        </div>
+                                        <div class="preference-control">
+                                            <label class="toggle-switch">
+                                                <input type="checkbox">
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="preference-item">
+                                        <div class="preference-info">
+                                            <h5>Reduce Motion</h5>
+                                            <p>Minimize animations and transitions</p>
+                                        </div>
+                                        <div class="preference-control">
+                                            <label class="toggle-switch">
+                                                <input type="checkbox">
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="preference-item">
+                                        <div class="preference-info">
+                                            <h5>Screen Reader Support</h5>
+                                            <p>Optimize for screen readers and assistive technologies</p>
+                                        </div>
+                                        <div class="preference-control">
+                                            <label class="toggle-switch">
+                                                <input type="checkbox">
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activity Panel -->
+                    <div class="profile-panel" id="activity-panel">
+                        <div class="panel-header">
+                            <h3 class="panel-title">Activity History</h3>
+                            <p class="panel-description">View your recent activities and actions</p>
+                        </div>
+                        <div class="activity-filters">
+                            <div class="filter-group">
+                                <label for="activityType">Activity Type:</label>
+                                <select id="activityType" class="form-control">
+                                    <option value="all">All Activities</option>
+                                    <option value="login">Login Events</option>
+                                    <option value="workflow">Workflow Actions</option>
+                                    <option value="agent">Agent Management</option>
+                                    <option value="settings">Settings Changes</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label for="activityPeriod">Time Period:</label>
+                                <select id="activityPeriod" class="form-control">
+                                    <option value="day">Last 24 Hours</option>
+                                    <option value="week" selected>Last 7 Days</option>
+                                    <option value="month">Last 30 Days</option>
+                                    <option value="year">Last Year</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-outline">
+                                <i class="fas fa-filter"></i>
+                                <span>Apply Filters</span>
+                            </button>
+                        </div>
+                        <div class="activity-timeline">
+                            <div class="timeline-date">Today</div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon login">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4 class="timeline-title">Account Login</h4>
+                                    <p class="timeline-description">Logged in from San Francisco, CA using Chrome on MacBook Pro</p>
+                                    <span class="timeline-time">10:32 AM</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon workflow">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4 class="timeline-title">Workflow Created</h4>
+                                    <p class="timeline-description">Created new workflow "Customer Support Automation"</p>
+                                    <span class="timeline-time">11:15 AM</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon agent">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4 class="timeline-title">Agent Updated</h4>
+                                    <p class="timeline-description">Modified settings for "Data Analysis Assistant" agent</p>
+                                    <span class="timeline-time">2:45 PM</span>
+                                </div>
+                            </div>
+                            <div class="timeline-date">Yesterday</div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon settings">
+                                    <i class="fas fa-cog"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4 class="timeline-title">Settings Changed</h4>
+                                    <p class="timeline-description">Updated notification preferences</p>
+                                    <span class="timeline-time">4:20 PM</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon workflow">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4 class="timeline-title">Workflow Executed</h4>
+                                    <p class="timeline-description">Ran "Document Processing" workflow</p>
+                                    <span class="timeline-time">5:30 PM</span>
+                                </div>
+                            </div>
+                            <div class="timeline-date">April 24, 2025</div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon login">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4 class="timeline-title">Account Login</h4>
+                                    <p class="timeline-description">Logged in from San Francisco, CA using Safari on iPhone</p>
+                                    <span class="timeline-time">9:15 AM</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon dataset">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4 class="timeline-title">Dataset Created</h4>
+                                    <p class="timeline-description">Created new dataset "Customer Feedback Analysis"</p>
+                                    <span class="timeline-time">11:45 AM</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="activity-pagination">
+                            <button class="btn btn-outline">
+                                <i class="fas fa-chevron-left"></i>
+                                <span>Previous</span>
+                            </button>
+                            <div class="pagination-info">Page 1 of 5</div>
+                            <button class="btn btn-outline">
+                                <span>Next</span>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Billing Panel -->
+                    <div class="profile-panel" id="billing-panel">
+                        <div class="panel-header">
+                            <h3 class="panel-title">Billing Information</h3>
+                            <p class="panel-description">Manage your subscription and payment methods</p>
+                        </div>
+                        <div class="profile-form">
+                            <div class="form-section">
+                                <h4 class="section-title">Current Plan</h4>
+                                <div class="current-plan">
+                                    <div class="plan-badge premium">Premium</div>
+                                    <div class="plan-details">
+                                        <h5>Premium Plan</h5>
+                                        <p>$49.99/month, billed monthly</p>
+                                        <ul class="plan-features">
+                                            <li><i class="fas fa-check"></i> Unlimited workflows</li>
+                                            <li><i class="fas fa-check"></i> 50 custom agents</li>
+                                            <li><i class="fas fa-check"></i> Advanced AI models</li>
+                                            <li><i class="fas fa-check"></i> Priority support</li>
+                                        </ul>
+                                    </div>
+                                    <div class="plan-actions">
+                                        <button class="btn btn-outline">Change Plan</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-section">
+                                <h4 class="section-title">Payment Methods</h4>
+                                <div class="payment-methods">
+                                    <div class="payment-method">
+                                        <div class="payment-icon visa">
+                                            <i class="fab fa-cc-visa"></i>
+                                        </div>
+                                        <div class="payment-details">
+                                            <h5>Visa ending in 4242</h5>
+                                            <p>Expires 09/2026</p>
+                                            <span class="payment-default">Default</span>
+                                        </div>
+                                        <div class="payment-actions">
+                                            <button class="btn btn-text">Edit</button>
+                                            <button class="btn btn-text">Remove</button>
+                                        </div>
+                                    </div>
+                                    <div class="payment-method">
+                                        <div class="payment-icon mastercard">
+                                            <i class="fab fa-cc-mastercard"></i>
+                                        </div>
+                                        <div class="payment-details">
+                                            <h5>Mastercard ending in 5555</h5>
+                                            <p>Expires 12/2025</p>
+                                        </div>
+                                        <div class="payment-actions">
+                                            <button class="btn btn-text">Make Default</button>
+                                            <button class="btn btn-text">Edit</button>
+                                            <button class="btn btn-text">Remove</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline">
+                                    <i class="fas fa-plus"></i>
+                                    <span>Add Payment Method</span>
+                                </button>
+                            </div>
+                            <div class="form-section">
+                                <h4 class="section-title">Billing History</h4>
+                                <div class="billing-history">
+                                    <table class="billing-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Description</th>
+                                                <th>Amount</th>
+                                                <th>Status</th>
+                                                <th>Invoice</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Apr 15, 2025</td>
+                                                <td>Premium Plan - Monthly Subscription</td>
+                                                <td>$49.99</td>
+                                                <td><span class="status-badge success">Paid</span></td>
+                                                <td><a href="#" class="invoice-link"><i class="fas fa-file-invoice"></i> PDF</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mar 15, 2025</td>
+                                                <td>Premium Plan - Monthly Subscription</td>
+                                                <td>$49.99</td>
+                                                <td><span class="status-badge success">Paid</span></td>
+                                                <td><a href="#" class="invoice-link"><i class="fas fa-file-invoice"></i> PDF</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Feb 15, 2025</td>
+                                                <td>Premium Plan - Monthly Subscription</td>
+                                                <td>$49.99</td>
+                                                <td><span class="status-badge success">Paid</span></td>
+                                                <td><a href="#" class="invoice-link"><i class="fas fa-file-invoice"></i> PDF</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Jan 15, 2025</td>
+                                                <td>Standard Plan - Monthly Subscription</td>
+                                                <td>$29.99</td>
+                                                <td><span class="status-badge success">Paid</span></td>
+                                                <td><a href="#" class="invoice-link"><i class="fas fa-file-invoice"></i> PDF</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Dec 15, 2024</td>
+                                                <td>Standard Plan - Monthly Subscription</td>
+                                                <td>$29.99</td>
+                                                <td><span class="status-badge success">Paid</span></td>
+                                                <td><a href="#" class="invoice-link"><i class="fas fa-file-invoice"></i> PDF</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="form-section">
+                                <h4 class="section-title">Billing Address</h4>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="billingName">Full Name</label>
+                                        <input type="text" id="billingName" class="form-control" value="Hafedh Ammani">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="billingCompany">Company Name</label>
+                                        <input type="text" id="billingCompany" class="form-control" value="TechInnovate Solutions">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="billingAddress">Street Address</label>
+                                        <input type="text" id="billingAddress" class="form-control" value="123 Innovation Drive">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="billingCity">City</label>
+                                        <input type="text" id="billingCity" class="form-control" value="San Francisco">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="billingState">State/Province</label>
+                                        <input type="text" id="billingState" class="form-control" value="CA">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="billingZip">ZIP/Postal Code</label>
+                                        <input type="text" id="billingZip" class="form-control" value="94105">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="billingCountry">Country</label>
+                                        <select id="billingCountry" class="form-control">
+                                            <option value="US" selected>United States</option>
+                                            <option value="CA">Canada</option>
+                                            <option value="UK">United Kingdom</option>
+                                            <option value="AU">Australia</option>
+                                            <option value="FR">France</option>
+                                            <option value="DE">Germany</option>
+                                            <option value="JP">Japan</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <button class="btn btn-primary">Update Billing Address</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Notification System -->
+    <div class="notification-container">
+        <!-- Notifications will be added here dynamically -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+    <script src="js/ui-improvements.js"></script>
+    <script src="js/profile.js"></script>
+    <script>
+        // Authentication functions
+        function logout() {
+            // Show confirmation dialog
+            if (confirm('Are you sure you want to log out?')) {
+                // In a real app, this would clear session data and redirect to login
+                window.location.href = 'login.html';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Profile navigation
+            const profileNavItems = document.querySelectorAll('.profile-nav-item');
+            const profilePanels = document.querySelectorAll('.profile-panel');
+            
+            profileNavItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    // Remove active class from all items
+                    profileNavItems.forEach(navItem => navItem.classList.remove('active'));
+                    
+                    // Add active class to clicked item
+                    item.classList.add('active');
+                    
+                    // Hide all panels
+                    profilePanels.forEach(panel => panel.classList.remove('active'));
+                    
+                    // Show corresponding panel
+                    const targetPanel = document.getElementById(`${item.dataset.target}-panel`);
+                    if (targetPanel) {
+                        targetPanel.classList.add('active');
+                    }
+                });
+            });
+            
+            // Two-factor authentication toggle
+            const twoFactorToggle = document.getElementById('twoFactorAuth');
+            const twoFactorOptions = document.getElementById('twoFactorOptions');
+            
+            if (twoFactorToggle && twoFactorOptions) {
+                twoFactorToggle.addEventListener('change', () => {
+                    twoFactorOptions.style.display = twoFactorToggle.checked ? 'block' : 'none';
+                });
+            }
+            
+            // Save profile button
+            const saveProfileBtn = document.getElementById('saveProfileBtn');
+            if (saveProfileBtn) {
+                saveProfileBtn.addEventListener('click', () => {
+                    // This would be replaced with actual save functionality
+                    showNotification('Profile updated successfully!', 'success');
+                });
+            }
+            
+            // Function to show notifications
+            function showNotification(message, type = 'info') {
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`;
+                
+                const icon = document.createElement('i');
+                icon.className = type === 'success' ? 'fas fa-check-circle' : 'fas fa-info-circle';
+                
+                const text = document.createElement('span');
+                text.textContent = message;
+                
+                const closeBtn = document.createElement('button');
+                closeBtn.className = 'notification-close';
+                closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+                closeBtn.addEventListener('click', () => {
+                    notification.remove();
+                });
+                
+                notification.appendChild(icon);
+                notification.appendChild(text);
+                notification.appendChild(closeBtn);
+                
+                document.querySelector('.notification-container').appendChild(notification);
+                
+                // Auto-remove after 5 seconds
+                setTimeout(() => {
+                    notification.classList.add('fade-out');
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+</html>

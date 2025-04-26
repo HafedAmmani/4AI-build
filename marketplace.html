@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4AI-build - Marketplace</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/ui-improvements.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/marketplace.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">4AI-build</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="agent-management.html">
+                            <i class="fas fa-robot"></i>
+                            <span>Agents</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="workflow-builder.html">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Workflows</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="prompt-lab.html">
+                            <i class="fas fa-flask"></i>
+                            <span>Prompt Lab</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dataset-studio.html">
+                            <i class="fas fa-database"></i>
+                            <span>Dataset Studio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="app-builder.html">
+                            <i class="fas fa-cubes"></i>
+                            <span>App Builder</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="api-generator.html">
+                            <i class="fas fa-code"></i>
+                            <span>API Generator</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="collaboration.html">
+                            <i class="fas fa-users"></i>
+                            <span>Collaboration</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="web3-integration.html">
+                            <i class="fas fa-link"></i>
+                            <span>Web3</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="collaboration.html">
+                            <i class="fas fa-users"></i>
+                            <span>Collaboration</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="web3-integration.html">
+                            <i class="fas fa-link"></i>
+                            <span>Web3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="marketplace.html">
+                            <i class="fas fa-store"></i>
+                            <span>Marketplace</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-panel.html">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Admin Panel</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="documentation.html">
+                            <i class="fas fa-book"></i>
+                            <span>Documentation</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <p class="user-name">Hafedh Ammani</p>
+                        <p class="user-role">Admin</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <h1 class="page-title">Marketplace</h1>
+                <div class="marketplace-actions">
+                    <div class="search-container">
+                        <input type="text" placeholder="Search marketplace..." class="search-input">
+                        <button class="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        <span>Publish Item</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Marketplace Content -->
+            <div class="marketplace-content">
+                <!-- Marketplace Filters -->
+                <div class="marketplace-filters">
+                    <div class="filter-section">
+                        <h3>Categories</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" checked>
+                                <span>All</span>
+                                <span class="count">42</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>AI Agents</span>
+                                <span class="count">18</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>Workflows</span>
+                                <span class="count">12</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>Datasets</span>
+                                <span class="count">8</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>Prompts</span>
+                                <span class="count">15</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>Apps</span>
+                                <span class="count">6</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3>Price Range</h3>
+                        <div class="price-range">
+                            <div class="range-slider">
+                                <input type="range" min="0" max="100" value="0" class="range-min">
+                                <input type="range" min="0" max="100" value="100" class="range-max">
+                                <div class="slider-track"></div>
+                                <div class="slider-range"></div>
+                            </div>
+                            <div class="range-inputs">
+                                <div class="range-input">
+                                    <label>Min</label>
+                                    <input type="number" value="0" min="0" max="100" class="min-input">
+                                </div>
+                                <div class="range-input">
+                                    <label>Max</label>
+                                    <input type="number" value="100" min="0" max="100" class="max-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3>Rating</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span class="count">8</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span class="count">14</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span class="count">12</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span class="count">6</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span class="count">2</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3>License</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>Free</span>
+                                <span class="count">15</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>Paid</span>
+                                <span class="count">27</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>Commercial Use</span>
+                                <span class="count">22</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox">
+                                <span>Personal Use</span>
+                                <span class="count">20</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-actions">
+                        <button class="btn btn-secondary btn-sm">Reset Filters</button>
+                        <button class="btn btn-primary btn-sm">Apply Filters</button>
+                    </div>
+                </div>
+
+                <!-- Marketplace Items -->
+                <div class="marketplace-items">
+                    <div class="items-header">
+                        <div class="items-count">
+                            <span>42 items</span>
+                        </div>
+                        <div class="items-sort">
+                            <label for="sort-select">Sort by:</label>
+                            <select id="sort-select">
+                                <option value="popular">Most Popular</option>
+                                <option value="recent">Recently Added</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Highest Rated</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="items-grid">
+                        <!-- Item 1 -->
+                        <div class="marketplace-item">
+                            <div class="item-badge">Featured</div>
+                            <div class="item-image">
+                                <img src="https://via.placeholder.com/300x200" alt="Customer Service AI Agent">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-category">AI Agent</div>
+                                <h3 class="item-title">Customer Service AI Agent</h3>
+                                <div class="item-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-count">(48)</span>
+                                </div>
+                                <p class="item-description">A fully trained customer service agent that can handle inquiries, process returns, and escalate issues when necessary.</p>
+                                <div class="item-meta">
+                                    <div class="item-author">
+                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Author">
+                                        <span>Hafedh Ammani</span>
+                                    </div>
+                                    <div class="item-price">
+                                        <span class="price">$49.99</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-actions">
+                                <button class="btn btn-secondary btn-sm">
+                                    <i class="fas fa-eye"></i>
+                                    <span>Preview</span>
+                                </button>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>Purchase</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 2 -->
+                        <div class="marketplace-item">
+                            <div class="item-image">
+                                <img src="https://via.placeholder.com/300x200" alt="Data Analysis Workflow">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-category">Workflow</div>
+                                <h3 class="item-title">Data Analysis Workflow</h3>
+                                <div class="item-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="rating-count">(32)</span>
+                                </div>
+                                <p class="item-description">A comprehensive workflow for data cleaning, analysis, and visualization with customizable parameters.</p>
+                                <div class="item-meta">
+                                    <div class="item-author">
+                                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Author">
+                                        <span>Sarah Johnson</span>
+                                    </div>
+                                    <div class="item-price">
+                                        <span class="price">$29.99</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-actions">
+                                <button class="btn btn-secondary btn-sm">
+                                    <i class="fas fa-eye"></i>
+                                    <span>Preview</span>
+                                </button>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>Purchase</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 3 -->
+                        <div class="marketplace-item">
+                            <div class="item-badge free">Free</div>
+                            <div class="item-image">
+                                <img src="https://via.placeholder.com/300x200" alt="E-commerce Product Descriptions">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-category">Prompts</div>
+                                <h3 class="item-title">E-commerce Product Descriptions</h3>
+                                <div class="item-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="rating-count">(56)</span>
+                                </div>
+                                <p class="item-description">A collection of 50+ prompts for generating compelling e-commerce product descriptions across various categories.</p>
+                                <div class="item-meta">
+                                    <div class="item-author">
+                                        <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Author">
+                                        <span>Michael Chen</span>
+                                    </div>
+                                    <div class="item-price">
+                                        <span class="price">Free</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-actions">
+                                <button class="btn btn-secondary btn-sm">
+                                    <i class="fas fa-eye"></i>
+                                    <span>Preview</span>
+                                </button>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fas fa-download"></i>
+                                    <span>Download</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 4 -->
+                        <div class="marketplace-item">
+                            <div class="item-image">
+                                <img src="https://via.placeholder.com/300x200" alt="Customer Feedback Dataset">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-category">Dataset</div>
+                                <h3 class="item-title">Customer Feedback Dataset</h3>
+                                <div class="item-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="rating-count">(27)</span>
+                                </div>
+                                <p class="item-description">A curated dataset of 10,000+ customer feedback entries with sentiment analysis and categorization.</p>
+                                <div class="item-meta">
+                                    <div class="item-author">
+                                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Author">
+                                        <span>Emma Rodriguez</span>
+                                    </div>
+                                    <div class="item-price">
+                                        <span class="price">$79.99</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-actions">
+                                <button class="btn btn-secondary btn-sm">
+                                    <i class="fas fa-eye"></i>
+                                    <span>Preview</span>
+                                </button>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>Purchase</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 5 -->
+                        <div class="marketplace-item">
+                            <div class="item-image">
+                                <img src="https://via.placeholder.com/300x200" alt="Content Calendar App">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-category">App</div>
+                                <h3 class="item-title">Content Calendar App</h3>
+                                <div class="item-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="rating-count">(19)</span>
+                                </div>
+                                <p class="item-description">An AI-powered content calendar app that helps plan, schedule, and generate content ideas for social media.</p>
+                                <div class="item-meta">
+                                    <div class="item-author">
+                                        <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Author">
+                                        <span>Jessica Taylor</span>
+                                    </div>
+                                    <div class="item-price">
+                                        <span class="price">$39.99</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-actions">
+                                <button class="btn btn-secondary btn-sm">
+                                    <i class="fas fa-eye"></i>
+                                    <span>Preview</span>
+                                </button>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>Purchase</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 6 -->
+                        <div class="marketplace-item">
+                            <div class="item-badge">New</div>
+                            <div class="item-image">
+                                <img src="https://via.placeholder.com/300x200" alt="Translation Workflow">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-category">Workflow</div>
+                                <h3 class="item-title">Translation Workflow</h3>
+                                <div class="item-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="rating-count">(12)</span>
+                                </div>
+                                <p class="item-description">A workflow for translating content between 20+ languages with context preservation and cultural adaptation.</p>
+                                <div class="item-meta">
+                                    <div class="item-author">
+                                        <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Author">
+                                        <span>David Kim</span>
+                                    </div>
+                                    <div class="item-price">
+                                        <span class="price">$59.99</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-actions">
+                                <button class="btn btn-secondary btn-sm">
+                                    <i class="fas fa-eye"></i>
+                                    <span>Preview</span>
+                                </button>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>Purchase</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="items-pagination">
+                        <button class="pagination-btn" disabled>
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="pagination-btn active">1</button>
+                        <button class="pagination-btn">2</button>
+                        <button class="pagination-btn">3</button>
+                        <button class="pagination-btn">4</button>
+                        <button class="pagination-btn">5</button>
+                        <button class="pagination-btn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Item Preview Modal -->
+    <div class="modal" id="preview-modal">
+        <div class="modal-content modal-lg">
+            <div class="modal-header">
+                <h2>Customer Service AI Agent</h2>
+                <button class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="preview-content">
+                    <div class="preview-gallery">
+                        <div class="preview-main-image">
+                            <img src="https://via.placeholder.com/600x400" alt="Customer Service AI Agent">
+                        </div>
+                        <div class="preview-thumbnails">
+                            <div class="preview-thumbnail active">
+                                <img src="https://via.placeholder.com/100x100" alt="Thumbnail 1">
+                            </div>
+                            <div class="preview-thumbnail">
+                                <img src="https://via.placeholder.com/100x100" alt="Thumbnail 2">
+                            </div>
+                            <div class="preview-thumbnail">
+                                <img src="https://via.placeholder.com/100x100" alt="Thumbnail 3">
+                            </div>
+                            <div class="preview-thumbnail">
+                                <img src="https://via.placeholder.com/100x100" alt="Thumbnail 4">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="preview-details">
+                        <div class="preview-header">
+                            <div class="preview-category">AI Agent</div>
+                            <div class="preview-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-count">(48 reviews)</span>
+                            </div>
+                        </div>
+                        
+                        <h3 class="preview-title">Customer Service AI Agent</h3>
+                        
+                        <div class="preview-price">
+                            <span class="price">$49.99</span>
+                            <span class="license">Commercial License</span>
+                        </div>
+                        
+                        <div class="preview-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Author">
+                            <div class="author-info">
+                                <span class="author-name">Hafedh Ammani</span>
+                                <span class="author-title">AI Solutions Architect</span>
+                            </div>
+                        </div>
+                        
+                        <div class="preview-description">
+                            <p>A fully trained customer service agent that can handle inquiries, process returns, and escalate issues when necessary. This AI agent is designed to integrate seamlessly with your existing customer service platform and can be customized to match your brand voice and policies.</p>
+                            <p>The agent comes with pre-built intents for common customer service scenarios and can be further trained on your specific use cases.</p>
+                        </div>
+                        
+                        <div class="preview-features">
+                            <h4>Key Features</h4>
+                            <ul>
+                                <li>Multi-channel support (email, chat, social media)</li>
+                                <li>Sentiment analysis for customer satisfaction monitoring</li>
+                                <li>Automatic ticket categorization and prioritization</li>
+                                <li>Seamless handoff to human agents when needed</li>
+                                <li>Customizable responses and workflows</li>
+                                <li>Multilingual support (15+ languages)</li>
+                                <li>Analytics dashboard for performance tracking</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="preview-actions">
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-heart"></i>
+                                <span>Add to Wishlist</span>
+                            </button>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>Purchase Now</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="preview-tabs">
+                    <button class="preview-tab active">Description</button>
+                    <button class="preview-tab">Reviews (48)</button>
+                    <button class="preview-tab">Support</button>
+                </div>
+                
+                <div class="preview-tab-content active" id="description-tab">
+                    <div class="tab-section">
+                        <h4>Detailed Description</h4>
+                        <p>The Customer Service AI Agent is a comprehensive solution for businesses looking to automate and enhance their customer support operations. Built on advanced natural language processing technology, this agent understands customer inquiries with high accuracy and responds appropriately based on context.</p>
+                        <p>The agent is trained on a diverse dataset of customer service interactions, allowing it to handle a wide range of scenarios from simple product inquiries to complex troubleshooting. It continuously learns from interactions to improve its responses over time.</p>
+                    </div>
+                    
+                    <div class="tab-section">
+                        <h4>Use Cases</h4>
+                        <ul>
+                            <li><strong>24/7 Customer Support:</strong> Provide round-the-clock assistance to customers without increasing staffing costs.</li>
+                            <li><strong>First-Line Triage:</strong> Handle common inquiries automatically and route complex issues to appropriate human agents.</li>
+                            <li><strong>Order Management:</strong> Allow customers to check order status, modify orders, or initiate returns without human intervention.</li>
+                            <li><strong>FAQ Automation:</strong> Answer frequently asked questions instantly, reducing wait times for customers.</li>
+                            <li><strong>Post-Purchase Support:</strong> Guide customers through product setup, troubleshooting, and maintenance.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-section">
+                        <h4>Technical Specifications</h4>
+                        <table class="specs-table">
+                            <tr>
+                                <td>Model Architecture</td>
+                                <td>Transformer-based with 1.5B parameters</td>
+                            </tr>
+                            <tr>
+                                <td>Integration Methods</td>
+                                <td>REST API, Webhook, JavaScript SDK</td>
+                            </tr>
+                            <tr>
+                                <td>Supported Platforms</td>
+                                <td>Zendesk, Intercom, Freshdesk, Custom</td>
+                            </tr>
+                            <tr>
+                                <td>Response Time</td>
+                                <td>&lt;500ms average</td>
+                            </tr>
+                            <tr>
+                                <td>Accuracy</td>
+                                <td>93% intent recognition</td>
+                            </tr>
+                            <tr>
+                                <td>Languages</td>
+                                <td>English, Spanish, French, German, Japanese, Chinese, and 10 more</td>
+                            </tr>
+                            <tr>
+                                <td>Updates</td>
+                                <td>Quarterly model improvements included</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="tab-section">
+                        <h4>What's Included</h4>
+                        <ul>
+                            <li>Pre-trained AI agent model</li>
+                            <li>Integration documentation and code samples</li>
+                            <li>Admin dashboard for monitoring and customization</li>
+                            <li>30-day implementation support</li>
+                            <li>1-year access to model updates</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="preview-tab-content" id="reviews-tab" style="display: none;">
+                    <!-- Reviews tab content would go here -->
+                </div>
+                
+                <div class="preview-tab-content" id="support-tab" style="display: none;">
+                    <!-- Support tab content would go here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Publish Item Modal -->
+    <div class="modal" id="publish-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Publish to Marketplace</h2>
+                <button class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="publish-form">
+                    <div class="form-group">
+                        <label for="item-title">Title</label>
+                        <input type="text" id="item-title" placeholder="Enter a descriptive title">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="item-category">Category</label>
+                        <select id="item-category">
+                            <option value="">Select a category</option>
+                            <option value="agent">AI Agent</option>
+                            <option value="workflow">Workflow</option>
+                            <option value="dataset">Dataset</option>
+                            <option value="prompt">Prompts</option>
+                            <option value="app">App</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="item-description">Description</label>
+                        <textarea id="item-description" placeholder="Describe your item in detail"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Images</label>
+                        <div class="image-uploader">
+                            <div class="upload-placeholder">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Drag & drop images or click to browse</span>
+                            </div>
+                            <input type="file" multiple accept="image/*" style="display: none;">
+                        </div>
+                        <div class="upload-preview">
+                            <!-- Image previews would appear here -->
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="item-price">Price ($)</label>
+                            <input type="number" id="item-price" placeholder="0.00" min="0" step="0.01">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="item-license">License Type</label>
+                            <select id="item-license">
+                                <option value="free">Free</option>
+                                <option value="personal">Personal Use</option>
+                                <option value="commercial">Commercial Use</option>
+                                <option value="enterprise">Enterprise</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Tags</label>
+                        <div class="tags-input">
+                            <input type="text" placeholder="Add tags separated by comma">
+                            <div class="tags-list">
+                                <!-- Tags would appear here -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="terms-checkbox">
+                            <label for="terms-checkbox">I agree to the <a href="#">Marketplace Terms and Conditions</a></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary">Save as Draft</button>
+                <button class="btn btn-primary" disabled>Publish Item</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/ui-improvements.js"></script>
+    <script src="js/marketplace.js"></script>
+</body>
+</html>

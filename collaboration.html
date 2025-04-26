@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4AI-build - Collaboration</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/ui-improvements.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/collaboration.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">4AI-build</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="agent-management.html">
+                            <i class="fas fa-robot"></i>
+                            <span>Agents</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="workflow-builder.html">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Workflows</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="prompt-lab.html">
+                            <i class="fas fa-flask"></i>
+                            <span>Prompt Lab</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dataset-studio.html">
+                            <i class="fas fa-database"></i>
+                            <span>Dataset Studio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="app-builder.html">
+                            <i class="fas fa-cubes"></i>
+                            <span>App Builder</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="api-generator.html">
+                            <i class="fas fa-code"></i>
+                            <span>API Generator</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="collaboration.html">
+                            <i class="fas fa-users"></i>
+                            <span>Collaboration</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="collaboration.html">
+                            <i class="fas fa-users"></i>
+                            <span>Collaboration</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="web3-integration.html">
+                            <i class="fas fa-link"></i>
+                            <span>Web3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="marketplace.html">
+                            <i class="fas fa-store"></i>
+                            <span>Marketplace</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-panel.html">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Admin Panel</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="documentation.html">
+                            <i class="fas fa-book"></i>
+                            <span>Documentation</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <p class="user-name">Hafedh Ammani</p>
+                        <p class="user-role">Admin</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <h1 class="page-title">Collaboration</h1>
+                <div class="action-buttons">
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Invite</span>
+                    </button>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        <span>New Project</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Collaboration Content -->
+            <div class="collaboration-content">
+                <!-- Collaboration Sidebar -->
+                <div class="collaboration-sidebar">
+                    <div class="sidebar-section">
+                        <div class="section-header">
+                            <h2>Projects</h2>
+                            <button class="section-action">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="project-list">
+                            <div class="project-item active">
+                                <div class="project-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="project-info">
+                                    <h3>Customer Service Bot</h3>
+                                    <p>Last edited 5 minutes ago</p>
+                                </div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-icon">
+                                    <i class="fas fa-language"></i>
+                                </div>
+                                <div class="project-info">
+                                    <h3>Translation Workflow</h3>
+                                    <p>Last edited 2 hours ago</p>
+                                </div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-icon">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <div class="project-info">
+                                    <h3>Data Analysis Pipeline</h3>
+                                    <p>Last edited yesterday</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <div class="section-header">
+                            <h2>Team Members</h2>
+                            <button class="section-action">
+                                <i class="fas fa-user-plus"></i>
+                            </button>
+                        </div>
+                        <div class="member-list">
+                            <div class="member-item online">
+                                <div class="member-avatar">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Hafedh Ammani">
+                                </div>
+                                <div class="member-info">
+                                    <h3>Hafedh Ammani</h3>
+                                    <p>Admin • Online</p>
+                                </div>
+                            </div>
+                            <div class="member-item online">
+                                <div class="member-avatar">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+                                </div>
+                                <div class="member-info">
+                                    <h3>Sarah Johnson</h3>
+                                    <p>Editor • Online</p>
+                                </div>
+                            </div>
+                            <div class="member-item">
+                                <div class="member-avatar">
+                                    <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Michael Chen">
+                                </div>
+                                <div class="member-info">
+                                    <h3>Michael Chen</h3>
+                                    <p>Viewer • Offline</p>
+                                </div>
+                            </div>
+                            <div class="member-item">
+                                <div class="member-avatar">
+                                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emma Rodriguez">
+                                </div>
+                                <div class="member-info">
+                                    <h3>Emma Rodriguez</h3>
+                                    <p>Editor • Offline</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <div class="section-header">
+                            <h2>Recent Activity</h2>
+                            <button class="section-action">
+                                <i class="fas fa-sync"></i>
+                            </button>
+                        </div>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-edit"></i>
+                                </div>
+                                <div class="activity-info">
+                                    <h3>Sarah Johnson edited Customer Service Bot</h3>
+                                    <p>5 minutes ago</p>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-comment"></i>
+                                </div>
+                                <div class="activity-info">
+                                    <h3>You commented on Translation Workflow</h3>
+                                    <p>1 hour ago</p>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <div class="activity-info">
+                                    <h3>You invited Emma Rodriguez</h3>
+                                    <p>3 hours ago</p>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-share"></i>
+                                </div>
+                                <div class="activity-info">
+                                    <h3>Michael Chen shared Data Analysis Pipeline</h3>
+                                    <p>Yesterday</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collaboration Main Area -->
+                <div class="collaboration-main">
+                    <div class="project-header">
+                        <div class="project-title">
+                            <h2>Customer Service Bot</h2>
+                            <div class="project-meta">
+                                <span class="project-type">
+                                    <i class="fas fa-robot"></i>
+                                    Agent Project
+                                </span>
+                                <span class="project-status">
+                                    <i class="fas fa-circle"></i>
+                                    Active
+                                </span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <div class="collaborators">
+                                <div class="collaborator-avatars">
+                                    <div class="collaborator-avatar" title="Hafedh Ammani">
+                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Hafedh Ammani">
+                                    </div>
+                                    <div class="collaborator-avatar" title="Sarah Johnson">
+                                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+                                    </div>
+                                    <div class="collaborator-avatar" title="Michael Chen">
+                                        <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Michael Chen">
+                                    </div>
+                                    <div class="collaborator-count">+1</div>
+                                </div>
+                                <button class="collaborator-add">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                            <div class="action-dropdown">
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-share"></i>
+                                    <span>Share</span>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fas fa-link"></i>
+                                        <span>Copy Link</span>
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>Email</span>
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fas fa-lock"></i>
+                                        <span>Manage Access</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-tabs">
+                        <button class="project-tab active">Overview</button>
+                        <button class="project-tab">Files</button>
+                        <button class="project-tab">Comments</button>
+                        <button class="project-tab">History</button>
+                        <button class="project-tab">Settings</button>
+                    </div>
+                    
+                    <div class="project-content">
+                        <!-- Overview Tab (active by default) -->
+                        <div class="project-tab-content active" id="overview-tab">
+                            <div class="overview-section">
+                                <div class="section-header">
+                                    <h3>Project Description</h3>
+                                    <button class="section-action">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                </div>
+                                <div class="section-content">
+                                    <p>This project aims to create a customer service chatbot for our e-commerce platform. The bot will handle common customer inquiries, process returns, and escalate complex issues to human agents when necessary.</p>
+                                    <p>The bot is built using our custom NLP model fine-tuned on customer service conversations and integrated with our CRM system.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="overview-grid">
+                                <div class="overview-section">
+                                    <div class="section-header">
+                                        <h3>Project Stats</h3>
+                                    </div>
+                                    <div class="section-content">
+                                        <div class="stats-grid">
+                                            <div class="stat-item">
+                                                <div class="stat-value">4</div>
+                                                <div class="stat-label">Team Members</div>
+                                            </div>
+                                            <div class="stat-item">
+                                                <div class="stat-value">12</div>
+                                                <div class="stat-label">Files</div>
+                                            </div>
+                                            <div class="stat-item">
+                                                <div class="stat-value">36</div>
+                                                <div class="stat-label">Comments</div>
+                                            </div>
+                                            <div class="stat-item">
+                                                <div class="stat-value">85%</div>
+                                                <div class="stat-label">Complete</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="overview-section">
+                                    <div class="section-header">
+                                        <h3>Timeline</h3>
+                                    </div>
+                                    <div class="section-content">
+                                        <div class="timeline">
+                                            <div class="timeline-item completed">
+                                                <div class="timeline-marker"></div>
+                                                <div class="timeline-content">
+                                                    <h4>Project Started</h4>
+                                                    <p>April 10, 2025</p>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-item completed">
+                                                <div class="timeline-marker"></div>
+                                                <div class="timeline-content">
+                                                    <h4>Requirements Defined</h4>
+                                                    <p>April 15, 2025</p>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-item completed">
+                                                <div class="timeline-marker"></div>
+                                                <div class="timeline-content">
+                                                    <h4>Initial Prototype</h4>
+                                                    <p>April 20, 2025</p>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-item active">
+                                                <div class="timeline-marker"></div>
+                                                <div class="timeline-content">
+                                                    <h4>Testing Phase</h4>
+                                                    <p>April 25, 2025 (Today)</p>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-item">
+                                                <div class="timeline-marker"></div>
+                                                <div class="timeline-content">
+                                                    <h4>Final Review</h4>
+                                                    <p>April 30, 2025</p>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-item">
+                                                <div class="timeline-marker"></div>
+                                                <div class="timeline-content">
+                                                    <h4>Deployment</h4>
+                                                    <p>May 5, 2025</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="overview-section">
+                                <div class="section-header">
+                                    <h3>Recent Comments</h3>
+                                    <button class="section-action">
+                                        <i class="fas fa-comment"></i>
+                                    </button>
+                                </div>
+                                <div class="section-content">
+                                    <div class="comment-list">
+                                        <div class="comment-item">
+                                            <div class="comment-avatar">
+                                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+                                            </div>
+                                            <div class="comment-content">
+                                                <div class="comment-header">
+                                                    <h4>Sarah Johnson</h4>
+                                                    <span>10 minutes ago</span>
+                                                </div>
+                                                <div class="comment-text">
+                                                    <p>I've updated the intent recognition model with the new training data. The accuracy has improved from 87% to 93%. You can test it in the Prompt Lab.</p>
+                                                </div>
+                                                <div class="comment-actions">
+                                                    <button class="comment-action">
+                                                        <i class="fas fa-reply"></i>
+                                                        <span>Reply</span>
+                                                    </button>
+                                                    <button class="comment-action">
+                                                        <i class="fas fa-thumbs-up"></i>
+                                                        <span>3</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="comment-item">
+                                            <div class="comment-avatar">
+                                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Hafedh Ammani">
+                                            </div>
+                                            <div class="comment-content">
+                                                <div class="comment-header">
+                                                    <h4>Hafedh Ammani</h4>
+                                                    <span>1 hour ago</span>
+                                                </div>
+                                                <div class="comment-text">
+                                                    <p>Great work on the CRM integration! The bot can now access customer order history and provide personalized responses.</p>
+                                                </div>
+                                                <div class="comment-actions">
+                                                    <button class="comment-action">
+                                                        <i class="fas fa-reply"></i>
+                                                        <span>Reply</span>
+                                                    </button>
+                                                    <button class="comment-action">
+                                                        <i class="fas fa-thumbs-up"></i>
+                                                        <span>2</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="comment-item">
+                                            <div class="comment-avatar">
+                                                <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Michael Chen">
+                                            </div>
+                                            <div class="comment-content">
+                                                <div class="comment-header">
+                                                    <h4>Michael Chen</h4>
+                                                    <span>Yesterday</span>
+                                                </div>
+                                                <div class="comment-text">
+                                                    <p>I've added a new feature that allows the bot to generate return labels automatically. This should streamline the return process for customers.</p>
+                                                </div>
+                                                <div class="comment-actions">
+                                                    <button class="comment-action">
+                                                        <i class="fas fa-reply"></i>
+                                                        <span>Reply</span>
+                                                    </button>
+                                                    <button class="comment-action">
+                                                        <i class="fas fa-thumbs-up"></i>
+                                                        <span>5</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="comment-form">
+                                        <div class="comment-avatar">
+                                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Hafedh Ammani">
+                                        </div>
+                                        <div class="comment-input">
+                                            <textarea placeholder="Add a comment..."></textarea>
+                                            <div class="comment-actions">
+                                                <button class="comment-action">
+                                                    <i class="fas fa-paperclip"></i>
+                                                </button>
+                                                <button class="comment-action">
+                                                    <i class="fas fa-at"></i>
+                                                </button>
+                                                <button class="comment-action">
+                                                    <i class="fas fa-smile"></i>
+                                                </button>
+                                                <button class="btn btn-primary btn-sm">
+                                                    <i class="fas fa-paper-plane"></i>
+                                                    <span>Send</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Other tabs (initially hidden) -->
+                        <div class="project-tab-content" id="files-tab" style="display: none;">
+                            <!-- Files tab content would go here -->
+                        </div>
+                        
+                        <div class="project-tab-content" id="comments-tab" style="display: none;">
+                            <!-- Comments tab content would go here -->
+                        </div>
+                        
+                        <div class="project-tab-content" id="history-tab" style="display: none;">
+                            <!-- History tab content would go here -->
+                        </div>
+                        
+                        <div class="project-tab-content" id="settings-tab" style="display: none;">
+                            <!-- Settings tab content would go here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collaboration Chat -->
+                <div class="collaboration-chat">
+                    <div class="chat-header">
+                        <h3>Team Chat</h3>
+                        <div class="chat-actions">
+                            <button class="chat-action">
+                                <i class="fas fa-video"></i>
+                            </button>
+                            <button class="chat-action">
+                                <i class="fas fa-phone"></i>
+                            </button>
+                            <button class="chat-action">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-messages">
+                        <div class="chat-day-divider">
+                            <span>Today</span>
+                        </div>
+                        
+                        <div class="chat-message">
+                            <div class="message-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Hafedh Ammani">
+                            </div>
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <h4>Hafedh Ammani</h4>
+                                    <span>9:30 AM</span>
+                                </div>
+                                <div class="message-text">
+                                    <p>Good morning team! Let's focus on testing the bot's response to customer inquiries today.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-message">
+                            <div class="message-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+                            </div>
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <h4>Sarah Johnson</h4>
+                                    <span>9:45 AM</span>
+                                </div>
+                                <div class="message-text">
+                                    <p>I've prepared a set of test cases for the most common customer inquiries. Should we divide them among the team?</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-message">
+                            <div class="message-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Michael Chen">
+                            </div>
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <h4>Michael Chen</h4>
+                                    <span>10:15 AM</span>
+                                </div>
+                                <div class="message-text">
+                                    <p>That sounds good. I can take the order status and tracking inquiries.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-message">
+                            <div class="message-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emma Rodriguez">
+                            </div>
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <h4>Emma Rodriguez</h4>
+                                    <span>10:30 AM</span>
+                                </div>
+                                <div class="message-text">
+                                    <p>I'll handle the return and refund scenarios.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-message">
+                            <div class="message-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Hafedh Ammani">
+                            </div>
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <h4>Hafedh Ammani</h4>
+                                    <span>11:00 AM</span>
+                                </div>
+                                <div class="message-text">
+                                    <p>Great! I'll take product information and availability inquiries. Let's meet at 3 PM to discuss our findings.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-message">
+                            <div class="message-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+                            </div>
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <h4>Sarah Johnson</h4>
+                                    <span>11:15 AM</span>
+                                </div>
+                                <div class="message-text">
+                                    <p>I'll handle account-related inquiries and general questions. 3 PM works for me!</p>
+                                </div>
+                                <div class="message-attachments">
+                                    <div class="message-attachment">
+                                        <i class="fas fa-file-excel"></i>
+                                        <span>test_cases.xlsx</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-typing">
+                            <div class="typing-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Michael Chen">
+                            </div>
+                            <div class="typing-indicator">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input">
+                        <div class="input-actions">
+                            <button class="input-action">
+                                <i class="fas fa-paperclip"></i>
+                            </button>
+                            <button class="input-action">
+                                <i class="fas fa-smile"></i>
+                            </button>
+                        </div>
+                        <input type="text" placeholder="Type a message...">
+                        <button class="input-send">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/ui-improvements.js"></script>
+    <script src="js/collaboration.js"></script>
+</body>
+</html>

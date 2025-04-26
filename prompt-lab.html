@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4AI-build - Prompt Lab</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="prompt-lab.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">4AI-build</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="agent-management.html">
+                            <i class="fas fa-robot"></i>
+                            <span>Agents</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="workflow-builder.html">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Workflows</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="prompt-lab.html">
+                            <i class="fas fa-flask"></i>
+                            <span>Prompt Lab</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dataset-studio.html">
+                            <i class="fas fa-database"></i>
+                            <span>Dataset Studio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="documentation.html">
+                            <i class="fas fa-book"></i>
+                            <span>Documentation</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#settings">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <p class="user-name">Hafedh Ammani</p>
+                        <p class="user-role">Admin</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <h1 class="page-title">Prompt Lab</h1>
+                <div class="action-buttons">
+                    <button class="btn btn-secondary" id="savePromptBtn">
+                        <i class="fas fa-save"></i>
+                        <span>Save Prompt</span>
+                    </button>
+                    <button class="btn btn-primary" id="runPromptBtn">
+                        <i class="fas fa-play"></i>
+                        <span>Run</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Prompt Lab Content -->
+            <div class="prompt-lab-content">
+                <!-- Prompt Editor -->
+                <div class="prompt-editor-container">
+                    <div class="card-header">
+                        <div class="prompt-title-container">
+                            <input type="text" class="prompt-title-input" value="New Prompt" placeholder="Enter prompt name">
+                            <button class="btn btn-icon edit-name-btn">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                        </div>
+                        <div class="prompt-actions">
+                            <button class="btn btn-icon" title="History">
+                                <i class="fas fa-history"></i>
+                            </button>
+                            <button class="btn btn-icon" title="Templates">
+                                <i class="fas fa-file-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="form-group">
+                            <label for="promptText">Prompt</label>
+                            <textarea id="promptText" class="form-textarea prompt-textarea" rows="10" placeholder="Enter your prompt here..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Models to Test</label>
+                            <div class="model-selection">
+                                <div class="model-checkbox">
+                                    <input type="checkbox" id="modelOpenAI" checked>
+                                    <label for="modelOpenAI">OpenAI (GPT-4)</label>
+                                </div>
+                                <div class="model-checkbox">
+                                    <input type="checkbox" id="modelClaude">
+                                    <label for="modelClaude">Claude</label>
+                                </div>
+                                <div class="model-checkbox">
+                                    <input type="checkbox" id="modelMistral">
+                                    <label for="modelMistral">Mistral</label>
+                                </div>
+                                <div class="model-checkbox">
+                                    <input type="checkbox" id="modelLlama">
+                                    <label for="modelLlama">Llama 3</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Parameters</label>
+                            <div class="parameters-grid">
+                                <div class="parameter-item">
+                                    <label for="temperature">Temperature</label>
+                                    <div class="parameter-control">
+                                        <input type="range" id="temperature" min="0" max="2" step="0.1" value="0.7">
+                                        <span class="parameter-value">0.7</span>
+                                    </div>
+                                </div>
+                                <div class="parameter-item">
+                                    <label for="maxTokens">Max Tokens</label>
+                                    <div class="parameter-control">
+                                        <input type="number" id="maxTokens" min="1" max="4096" value="1024">
+                                    </div>
+                                </div>
+                                <div class="parameter-item">
+                                    <label for="topP">Top P</label>
+                                    <div class="parameter-control">
+                                        <input type="range" id="topP" min="0" max="1" step="0.05" value="0.9">
+                                        <span class="parameter-value">0.9</span>
+                                    </div>
+                                </div>
+                                <div class="parameter-item">
+                                    <label for="frequencyPenalty">Frequency Penalty</label>
+                                    <div class="parameter-control">
+                                        <input type="range" id="frequencyPenalty" min="-2" max="2" step="0.1" value="0">
+                                        <span class="parameter-value">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Response Comparison -->
+                <div class="response-comparison-container">
+                    <div class="card-header">
+                        <h2 class="card-title">Response Comparison</h2>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary" id="exportResultsBtn">
+                                <i class="fas fa-download"></i>
+                                <span>Export</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="response-tabs">
+                            <div class="tab-header">
+                                <button class="tab-btn active" data-tab="openai">OpenAI</button>
+                                <button class="tab-btn" data-tab="claude">Claude</button>
+                                <button class="tab-btn" data-tab="mistral">Mistral</button>
+                                <button class="tab-btn" data-tab="llama">Llama 3</button>
+                                <button class="tab-btn" data-tab="comparison">Comparison</button>
+                            </div>
+                            <div class="tab-content">
+                                <!-- OpenAI Tab -->
+                                <div class="tab-pane active" id="openaiTab">
+                                    <div class="response-container">
+                                        <div class="response-header">
+                                            <div class="model-info">
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png" alt="OpenAI Logo" class="model-logo">
+                                                <div class="model-details">
+                                                    <h3>GPT-4</h3>
+                                                    <p>OpenAI</p>
+                                                </div>
+                                            </div>
+                                            <div class="response-metrics">
+                                                <div class="metric">
+                                                    <span class="metric-label">Tokens:</span>
+                                                    <span class="metric-value">245</span>
+                                                </div>
+                                                <div class="metric">
+                                                    <span class="metric-label">Cost:</span>
+                                                    <span class="metric-value">$0.012</span>
+                                                </div>
+                                                <div class="metric">
+                                                    <span class="metric-label">Time:</span>
+                                                    <span class="metric-value">1.2s</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="response-body">
+                                            <div class="response-placeholder">
+                                                <i class="fas fa-robot"></i>
+                                                <p>Run your prompt to see the response from OpenAI</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Claude Tab -->
+                                <div class="tab-pane" id="claudeTab">
+                                    <div class="response-container">
+                                        <div class="response-header">
+                                            <div class="model-info">
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Claude_logo.svg/1200px-Claude_logo.svg.png" alt="Claude Logo" class="model-logo">
+                                                <div class="model-details">
+                                                    <h3>Claude 3 Opus</h3>
+                                                    <p>Anthropic</p>
+                                                </div>
+                                            </div>
+                                            <div class="response-metrics">
+                                                <div class="metric">
+                                                    <span class="metric-label">Tokens:</span>
+                                                    <span class="metric-value">--</span>
+                                                </div>
+                                                <div class="metric">
+                                                    <span class="metric-label">Cost:</span>
+                                                    <span class="metric-value">--</span>
+                                                </div>
+                                                <div class="metric">
+                                                    <span class="metric-label">Time:</span>
+                                                    <span class="metric-value">--</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="response-body">
+                                            <div class="response-placeholder">
+                                                <i class="fas fa-robot"></i>
+                                                <p>Run your prompt to see the response from Claude</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Mistral Tab -->
+                                <div class="tab-pane" id="mistralTab">
+                                    <div class="response-container">
+                                        <div class="response-header">
+                                            <div class="model-info">
+                                                <img src="https://mistral.ai/images/logo-dark.svg" alt="Mistral Logo" class="model-logo">
+                                                <div class="model-details">
+                                                    <h3>Mistral Large</h3>
+                                                    <p>Mistral AI</p>
+                                                </div>
+                                            </div>
+                                            <div class="response-metrics">
+                                                <div class="metric">
+                                                    <span class="metric-label">Tokens:</span>
+                                                    <span class="metric-value">--</span>
+                                                </div>
+                                                <div class="metric">
+                                                    <span class="metric-label">Cost:</span>
+                                                    <span class="metric-value">--</span>
+                                                </div>
+                                                <div class="metric">
+                                                    <span class="metric-label">Time:</span>
+                                                    <span class="metric-value">--</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="response-body">
+                                            <div class="response-placeholder">
+                                                <i class="fas fa-robot"></i>
+                                                <p>Run your prompt to see the response from Mistral</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Llama Tab -->
+                                <div class="tab-pane" id="llamaTab">
+                                    <div class="response-container">
+                                        <div class="response-header">
+                                            <div class="model-info">
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Meta_Logo_2023.png/1200px-Meta_Logo_2023.png" alt="Meta Logo" class="model-logo">
+                                                <div class="model-details">
+                                                    <h3>Llama 3 70B</h3>
+                                                    <p>Meta AI</p>
+                                                </div>
+                                            </div>
+                                            <div class="response-metrics">
+                                                <div class="metric">
+                                                    <span class="metric-label">Tokens:</span>
+                                                    <span class="metric-value">--</span>
+                                                </div>
+                                                <div class="metric">
+                                                    <span class="metric-label">Cost:</span>
+                                                    <span class="metric-value">--</span>
+                                                </div>
+                                                <div class="metric">
+                                                    <span class="metric-label">Time:</span>
+                                                    <span class="metric-value">--</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="response-body">
+                                            <div class="response-placeholder">
+                                                <i class="fas fa-robot"></i>
+                                                <p>Run your prompt to see the response from Llama 3</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Comparison Tab -->
+                                <div class="tab-pane" id="comparisonTab">
+                                    <div class="comparison-container">
+                                        <div class="comparison-header">
+                                            <h3>Model Comparison</h3>
+                                        </div>
+                                        <div class="comparison-body">
+                                            <div class="comparison-chart">
+                                                <canvas id="comparisonChart"></canvas>
+                                            </div>
+                                            <div class="comparison-metrics">
+                                                <table class="comparison-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Model</th>
+                                                            <th>Coherence</th>
+                                                            <th>Relevance</th>
+                                                            <th>Tokens</th>
+                                                            <th>Cost</th>
+                                                            <th>Time</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>GPT-4</td>
+                                                            <td>--</td>
+                                                            <td>--</td>
+                                                            <td>--</td>
+                                                            <td>--</td>
+                                                            <td>--</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Claude 3</td>
+                                                            <td>--</td>
+                                                            <td>--</td>
+                                                            <td>--</td>
+                                                            <td>--</td>
+                                                            <td>--</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Mistral</td>
+                                                            <td>--</td>
+                                                            <td>--</td>
+                                                            <td>--</td>
+                                                            <td>--</td>
+                                                            <td>--</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Llama 3</td>
+                                                            <td>--</td>
+                                                            <td>--</td>
+                                                            <td>--</td>
+                                                            <td>--</td>
+                                                            <td>--</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prompt History Sidebar -->
+            <div class="prompt-history-sidebar">
+                <div class="sidebar-header">
+                    <h2>Prompt History</h2>
+                    <button class="btn btn-icon" id="closeSidebarBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="sidebar-content">
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search prompts...">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                    <div class="history-list">
+                        <div class="history-item active">
+                            <div class="history-item-header">
+                                <h3 class="history-item-title">Customer Support Agent</h3>
+                                <span class="history-item-date">Today, 10:45 AM</span>
+                            </div>
+                            <p class="history-item-preview">You are a helpful customer support agent for a software company...</p>
+                        </div>
+                        <div class="history-item">
+                            <div class="history-item-header">
+                                <h3 class="history-item-title">Data Analysis</h3>
+                                <span class="history-item-date">Yesterday, 3:20 PM</span>
+                            </div>
+                            <p class="history-item-preview">Analyze the following data and provide insights on trends...</p>
+                        </div>
+                        <div class="history-item">
+                            <div class="history-item-header">
+                                <h3 class="history-item-title">Content Generator</h3>
+                                <span class="history-item-date">Apr 22, 2025</span>
+                            </div>
+                            <p class="history-item-preview">Generate engaging content for a blog post about...</p>
+                        </div>
+                        <div class="history-item">
+                            <div class="history-item-header">
+                                <h3 class="history-item-title">Code Review</h3>
+                                <span class="history-item-date">Apr 20, 2025</span>
+                            </div>
+                            <p class="history-item-preview">Review the following code and suggest improvements...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="common.js"></script>
+    <script src="prompt-lab.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

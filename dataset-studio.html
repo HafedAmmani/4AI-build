@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4AI-build - Dataset Studio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="dataset-studio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">4AI-build</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="agent-management.html">
+                            <i class="fas fa-robot"></i>
+                            <span>Agents</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="workflow-builder.html">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Workflows</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="prompt-lab.html">
+                            <i class="fas fa-flask"></i>
+                            <span>Prompt Lab</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="dataset-studio.html">
+                            <i class="fas fa-database"></i>
+                            <span>Dataset Studio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="documentation.html">
+                            <i class="fas fa-book"></i>
+                            <span>Documentation</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#settings">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <p class="user-name">Hafedh Ammani</p>
+                        <p class="user-role">Admin</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <h1 class="page-title">Dataset Studio</h1>
+                <div class="action-buttons">
+                    <button class="btn btn-secondary" id="importDataBtn">
+                        <i class="fas fa-file-import"></i>
+                        <span>Import Data</span>
+                    </button>
+                    <button class="btn btn-primary" id="saveDatasetBtn">
+                        <i class="fas fa-save"></i>
+                        <span>Save Dataset</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Dataset Studio Content -->
+            <div class="dataset-studio-content">
+                <!-- Dataset List Sidebar -->
+                <div class="dataset-list-sidebar">
+                    <div class="sidebar-header">
+                        <h2>Your Datasets</h2>
+                        <button class="btn btn-icon" id="newDatasetBtn" title="New Dataset">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search datasets...">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                    <div class="dataset-list">
+                        <div class="dataset-item active">
+                            <div class="dataset-icon">
+                                <i class="fas fa-table"></i>
+                            </div>
+                            <div class="dataset-info">
+                                <h3 class="dataset-name">Customer Feedback</h3>
+                                <div class="dataset-meta">
+                                    <span class="dataset-type">CSV</span>
+                                    <span class="dataset-size">2.4 MB</span>
+                                    <span class="dataset-rows">1,245 rows</span>
+                                </div>
+                            </div>
+                            <div class="dataset-actions">
+                                <button class="btn btn-icon" title="More Options">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="dataset-item">
+                            <div class="dataset-icon">
+                                <i class="fas fa-file-code"></i>
+                            </div>
+                            <div class="dataset-info">
+                                <h3 class="dataset-name">Product Catalog</h3>
+                                <div class="dataset-meta">
+                                    <span class="dataset-type">JSON</span>
+                                    <span class="dataset-size">1.8 MB</span>
+                                    <span class="dataset-rows">856 items</span>
+                                </div>
+                            </div>
+                            <div class="dataset-actions">
+                                <button class="btn btn-icon" title="More Options">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="dataset-item">
+                            <div class="dataset-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="dataset-info">
+                                <h3 class="dataset-name">Support Tickets</h3>
+                                <div class="dataset-meta">
+                                    <span class="dataset-type">TXT</span>
+                                    <span class="dataset-size">3.2 MB</span>
+                                    <span class="dataset-rows">450 entries</span>
+                                </div>
+                            </div>
+                            <div class="dataset-actions">
+                                <button class="btn btn-icon" title="More Options">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dataset Workspace -->
+                <div class="dataset-workspace">
+                    <!-- Dataset Tabs -->
+                    <div class="dataset-tabs">
+                        <button class="tab-btn active" data-tab="preview">Preview</button>
+                        <button class="tab-btn" data-tab="annotate">Annotate</button>
+                        <button class="tab-btn" data-tab="clean">Clean & Enrich</button>
+                        <button class="tab-btn" data-tab="history">Version History</button>
+                    </div>
+
+                    <!-- Tab Content -->
+                    <div class="tab-content">
+                        <!-- Preview Tab -->
+                        <div class="tab-pane active" id="previewTab">
+                            <div class="preview-header">
+                                <div class="dataset-title">
+                                    <h2>Customer Feedback</h2>
+                                    <span class="dataset-updated">Last updated: Today, 10:45 AM</span>
+                                </div>
+                                <div class="preview-actions">
+                                    <button class="btn btn-icon" title="Download">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                    <button class="btn btn-icon" title="Share">
+                                        <i class="fas fa-share-alt"></i>
+                                    </button>
+                                    <button class="btn btn-icon" title="Settings">
+                                        <i class="fas fa-cog"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="preview-stats">
+                                <div class="stat-item">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-table"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <h3 class="stat-value">1,245</h3>
+                                        <p class="stat-label">Rows</p>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-columns"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <h3 class="stat-value">8</h3>
+                                        <p class="stat-label">Columns</p>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <h3 class="stat-value">24</h3>
+                                        <p class="stat-label">Missing Values</p>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-tag"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <h3 class="stat-value">45%</h3>
+                                        <p class="stat-label">Annotated</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data-table-container">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Date</th>
+                                            <th>Customer</th>
+                                            <th>Product</th>
+                                            <th>Rating</th>
+                                            <th>Feedback</th>
+                                            <th>Sentiment</th>
+                                            <th>Category</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1001</td>
+                                            <td>2025-04-15</td>
+                                            <td>John Smith</td>
+                                            <td>AI Assistant Pro</td>
+                                            <td>4.5</td>
+                                            <td>Great product, very intuitive interface. Would recommend to others.</td>
+                                            <td>Positive</td>
+                                            <td>UI/UX</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1002</td>
+                                            <td>2025-04-16</td>
+                                            <td>Sarah Johnson</td>
+                                            <td>AI Assistant Pro</td>
+                                            <td>3.0</td>
+                                            <td>The product works well but could use more customization options.</td>
+                                            <td>Neutral</td>
+                                            <td>Features</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1003</td>
+                                            <td>2025-04-16</td>
+                                            <td>Michael Brown</td>
+                                            <td>Data Analyzer</td>
+                                            <td>2.0</td>
+                                            <td>Frequent crashes when processing large datasets. Very frustrating.</td>
+                                            <td>Negative</td>
+                                            <td>Performance</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1004</td>
+                                            <td>2025-04-17</td>
+                                            <td>Emily Davis</td>
+                                            <td>AI Assistant Pro</td>
+                                            <td>5.0</td>
+                                            <td>Absolutely love this product! It has saved me hours of work every week.</td>
+                                            <td>Positive</td>
+                                            <td>General</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1005</td>
+                                            <td>2025-04-18</td>
+                                            <td>David Wilson</td>
+                                            <td>Workflow Builder</td>
+                                            <td>4.0</td>
+                                            <td>Very powerful tool. The learning curve is a bit steep but worth it.</td>
+                                            <td>Positive</td>
+                                            <td>Usability</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1006</td>
+                                            <td>2025-04-18</td>
+                                            <td>Jennifer Lee</td>
+                                            <td>Data Analyzer</td>
+                                            <td>3.5</td>
+                                            <td>Good functionality but the UI could be more intuitive.</td>
+                                            <td>Neutral</td>
+                                            <td>UI/UX</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1007</td>
+                                            <td>2025-04-19</td>
+                                            <td>Robert Taylor</td>
+                                            <td>Workflow Builder</td>
+                                            <td>1.5</td>
+                                            <td>Too complicated to use. Documentation is lacking.</td>
+                                            <td>Negative</td>
+                                            <td>Documentation</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1008</td>
+                                            <td>2025-04-20</td>
+                                            <td>Lisa Anderson</td>
+                                            <td>AI Assistant Pro</td>
+                                            <td>4.5</td>
+                                            <td>Excellent product. Would like to see more integration options.</td>
+                                            <td>Positive</td>
+                                            <td>Integration</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <!-- Annotate Tab -->
+                        <div class="tab-pane" id="annotateTab">
+                            <div class="annotate-header">
+                                <div class="annotation-controls">
+                                    <div class="form-group">
+                                        <label for="annotationField">Annotation Field</label>
+                                        <select id="annotationField" class="form-select">
+                                            <option value="sentiment">Sentiment</option>
+                                            <option value="category">Category</option>
+                                            <option value="priority">Priority</option>
+                                            <option value="custom">Custom Field</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="annotationMethod">Annotation Method</label>
+                                        <select id="annotationMethod" class="form-select">
+                                            <option value="manual">Manual</option>
+                                            <option value="ai-assisted">AI-Assisted</option>
+                                            <option value="rule-based">Rule-Based</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="annotation-actions">
+                                    <button class="btn btn-secondary" id="autoAnnotateBtn">
+                                        <i class="fas fa-magic"></i>
+                                        <span>Auto-Annotate</span>
+                                    </button>
+                                    <button class="btn btn-primary" id="applyAnnotationsBtn">
+                                        <i class="fas fa-check"></i>
+                                        <span>Apply</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="annotation-workspace">
+                                <div class="annotation-item">
+                                    <div class="annotation-content">
+                                        <div class="annotation-text">
+                                            <p>Great product, very intuitive interface. Would recommend to others.</p>
+                                            <div class="annotation-meta">
+                                                <span class="annotation-id">ID: 1001</span>
+                                                <span class="annotation-product">Product: AI Assistant Pro</span>
+                                                <span class="annotation-rating">Rating: 4.5</span>
+                                            </div>
+                                        </div>
+                                        <div class="annotation-labels">
+                                            <div class="label-group">
+                                                <label>Sentiment</label>
+                                                <div class="label-options">
+                                                    <button class="label-btn active" data-value="positive">Positive</button>
+                                                    <button class="label-btn" data-value="neutral">Neutral</button>
+                                                    <button class="label-btn" data-value="negative">Negative</button>
+                                                </div>
+                                            </div>
+                                            <div class="label-group">
+                                                <label>Category</label>
+                                                <div class="label-options">
+                                                    <button class="label-btn active" data-value="ui-ux">UI/UX</button>
+                                                    <button class="label-btn" data-value="features">Features</button>
+                                                    <button class="label-btn" data-value="performance">Performance</button>
+                                                    <button class="label-btn" data-value="general">General</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="annotation-actions">
+                                        <button class="btn btn-icon" title="Previous">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="btn btn-icon" title="Next">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="annotation-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 45%"></div>
+                                </div>
+                                <div class="progress-stats">
+                                    <span>560 / 1,245 annotated (45%)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Clean & Enrich Tab -->
+                        <div class="tab-pane" id="cleanTab">
+                            <div class="clean-header">
+                                <div class="cleaning-options">
+                                    <div class="form-group">
+                                        <label for="cleaningOperation">Cleaning Operation</label>
+                                        <select id="cleaningOperation" class="form-select">
+                                            <option value="missing">Handle Missing Values</option>
+                                            <option value="duplicates">Remove Duplicates</option>
+                                            <option value="outliers">Detect Outliers</option>
+                                            <option value="normalize">Normalize Data</option>
+                                            <option value="transform">Transform Column</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="cleaning-actions">
+                                    <button class="btn btn-secondary" id="analyzeDataBtn">
+                                        <i class="fas fa-search"></i>
+                                        <span>Analyze</span>
+                                    </button>
+                                    <button class="btn btn-primary" id="applyCleaningBtn">
+                                        <i class="fas fa-check"></i>
+                                        <span>Apply</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="cleaning-workspace">
+                                <div class="data-quality-report">
+                                    <h3>Data Quality Report</h3>
+                                    <div class="quality-metrics">
+                                        <div class="quality-metric">
+                                            <div class="metric-header">
+                                                <h4>Missing Values</h4>
+                                                <span class="metric-value">24 cells (0.24%)</span>
+                                            </div>
+                                            <div class="metric-chart">
+                                                <div class="chart-bar">
+                                                    <div class="chart-fill" style="width: 0.24%"></div>
+                                                </div>
+                                            </div>
+                                            <div class="metric-details">
+                                                <p>Columns with missing values:</p>
+                                                <ul>
+                                                    <li>Feedback: 12 missing</li>
+                                                    <li>Category: 8 missing</li>
+                                                    <li>Sentiment: 4 missing</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="quality-metric">
+                                            <div class="metric-header">
+                                                <h4>Duplicate Rows</h4>
+                                                <span class="metric-value">5 rows (0.4%)</span>
+                                            </div>
+                                            <div class="metric-chart">
+                                                <div class="chart-bar">
+                                                    <div class="chart-fill" style="width: 0.4%"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="quality-metric">
+                                            <div class="metric-header">
+                                                <h4>Outliers</h4>
+                                                <span class="metric-value">18 values (1.45%)</span>
+                                            </div>
+                                            <div class="metric-chart">
+                                                <div class="chart-bar">
+                                                    <div class="chart-fill" style="width: 1.45%"></div>
+                                                </div>
+                                            </div>
+                                            <div class="metric-details">
+                                                <p>Columns with outliers:</p>
+                                                <ul>
+                                                    <li>Rating: 18 outliers</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cleaning-options-panel">
+                                    <h3>Handle Missing Values</h3>
+                                    <div class="cleaning-form">
+                                        <div class="form-group">
+                                            <label for="missingValuesColumn">Column</label>
+                                            <select id="missingValuesColumn" class="form-select">
+                                                <option value="all">All Columns</option>
+                                                <option value="feedback">Feedback</option>
+                                                <option value="category">Category</option>
+                                                <option value="sentiment">Sentiment</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="missingValuesStrategy">Strategy</label>
+                                            <select id="missingValuesStrategy" class="form-select">
+                                                <option value="remove">Remove Rows</option>
+                                                <option value="fill-mean">Fill with Mean/Mode</option>
+                                                <option value="fill-median">Fill with Median</option>
+                                                <option value="fill-custom">Fill with Custom Value</option>
+                                                <option value="fill-ai">AI-Generated Values</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="customFillValue">Custom Fill Value (if applicable)</label>
+                                            <input type="text" id="customFillValue" class="form-input" placeholder="Enter value">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Version History Tab -->
+                        <div class="tab-pane" id="historyTab">
+                            <div class="history-header">
+                                <h3>Version History</h3>
+                                <div class="history-actions">
+                                    <button class="btn btn-secondary" id="compareVersionsBtn">
+                                        <i class="fas fa-exchange-alt"></i>
+                                        <span>Compare</span>
+                                    </button>
+                                    <button class="btn btn-primary" id="restoreVersionBtn">
+                                        <i class="fas fa-undo"></i>
+                                        <span>Restore</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="version-timeline">
+                                <div class="version-item active">
+                                    <div class="version-marker">
+                                        <div class="version-dot"></div>
+                                        <div class="version-line"></div>
+                                    </div>
+                                    <div class="version-card">
+                                        <div class="version-header">
+                                            <h4>Version 1.3 (Current)</h4>
+                                            <span class="version-date">Today, 10:45 AM</span>
+                                        </div>
+                                        <div class="version-details">
+                                            <p class="version-description">Added sentiment analysis and categorization</p>
+                                            <div class="version-stats">
+                                                <span class="version-stat">1,245 rows</span>
+                                                <span class="version-stat">8 columns</span>
+                                                <span class="version-stat">2.4 MB</span>
+                                            </div>
+                                            <div class="version-author">
+                                                <i class="fas fa-user"></i>
+                                                <span>Hafedh Ammani</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="version-item">
+                                    <div class="version-marker">
+                                        <div class="version-dot"></div>
+                                        <div class="version-line"></div>
+                                    </div>
+                                    <div class="version-card">
+                                        <div class="version-header">
+                                            <h4>Version 1.2</h4>
+                                            <span class="version-date">Yesterday, 3:20 PM</span>
+                                        </div>
+                                        <div class="version-details">
+                                            <p class="version-description">Cleaned missing values and removed duplicates</p>
+                                            <div class="version-stats">
+                                                <span class="version-stat">1,240 rows</span>
+                                                <span class="version-stat">6 columns</span>
+                                                <span class="version-stat">2.2 MB</span>
+                                            </div>
+                                            <div class="version-author">
+                                                <i class="fas fa-user"></i>
+                                                <span>Hafedh Ammani</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="version-item">
+                                    <div class="version-marker">
+                                        <div class="version-dot"></div>
+                                        <div class="version-line"></div>
+                                    </div>
+                                    <div class="version-card">
+                                        <div class="version-header">
+                                            <h4>Version 1.1</h4>
+                                            <span class="version-date">Apr 22, 2025</span>
+                                        </div>
+                                        <div class="version-details">
+                                            <p class="version-description">Added product and rating columns</p>
+                                            <div class="version-stats">
+                                                <span class="version-stat">1,245 rows</span>
+                                                <span class="version-stat">6 columns</span>
+                                                <span class="version-stat">2.1 MB</span>
+                                            </div>
+                                            <div class="version-author">
+                                                <i class="fas fa-user"></i>
+                                                <span>Sarah Johnson</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="version-item">
+                                    <div class="version-marker">
+                                        <div class="version-dot"></div>
+                                    </div>
+                                    <div class="version-card">
+                                        <div class="version-header">
+                                            <h4>Version 1.0</h4>
+                                            <span class="version-date">Apr 20, 2025</span>
+                                        </div>
+                                        <div class="version-details">
+                                            <p class="version-description">Initial dataset upload</p>
+                                            <div class="version-stats">
+                                                <span class="version-stat">1,245 rows</span>
+                                                <span class="version-stat">4 columns</span>
+                                                <span class="version-stat">1.8 MB</span>
+                                            </div>
+                                            <div class="version-author">
+                                                <i class="fas fa-user"></i>
+                                                <span>Hafedh Ammani</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Import Data Modal -->
+            <div class="modal" id="importDataModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Import Data</h2>
+                        <button class="btn btn-icon" id="closeModalBtn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="import-options">
+                            <div class="import-option">
+                                <div class="import-option-icon">
+                                    <i class="fas fa-file-csv"></i>
+                                </div>
+                                <div class="import-option-content">
+                                    <h3>CSV File</h3>
+                                    <p>Import data from a comma-separated values file</p>
+                                </div>
+                            </div>
+                            <div class="import-option">
+                                <div class="import-option-icon">
+                                    <i class="fas fa-file-code"></i>
+                                </div>
+                                <div class="import-option-content">
+                                    <h3>JSON File</h3>
+                                    <p>Import data from a JSON file</p>
+                                </div>
+                            </div>
+                            <div class="import-option">
+                                <div class="import-option-icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="import-option-content">
+                                    <h3>Text File</h3>
+                                    <p>Import data from a plain text file</p>
+                                </div>
+                            </div>
+                            <div class="import-option">
+                                <div class="import-option-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div class="import-option-content">
+                                    <h3>Database</h3>
+                                    <p>Connect to a database and import data</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="file-upload-container">
+                            <div class="file-upload-area">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Drop files here or click to upload</p>
+                                <input type="file" id="fileUpload" class="file-input" multiple>
+                            </div>
+                        </div>
+                        <div class="import-settings">
+                            <h3>Import Settings</h3>
+                            <div class="form-group">
+                                <label for="delimiter">Delimiter (CSV)</label>
+                                <select id="delimiter" class="form-select">
+                                    <option value="comma">Comma (,)</option>
+                                    <option value="tab">Tab</option>
+                                    <option value="semicolon">Semicolon (;)</option>
+                                    <option value="pipe">Pipe (|)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="encoding">Encoding</label>
+                                <select id="encoding" class="form-select">
+                                    <option value="utf8">UTF-8</option>
+                                    <option value="latin1">Latin-1</option>
+                                    <option value="ascii">ASCII</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="headerRow" checked>
+                                    <label for="headerRow">First row contains headers</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" id="cancelImportBtn">Cancel</button>
+                        <button class="btn btn-primary" id="confirmImportBtn">Import</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="common.js"></script>
+    <script src="dataset-studio.js"></script>
+</body>
+</html>

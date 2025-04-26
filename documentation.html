@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4AI-build - Documentation</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/ui-improvements.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -36,18 +37,66 @@
                             <span>Workflows</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="prompt-lab.html">
+                            <i class="fas fa-flask"></i>
+                            <span>Prompt Lab</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dataset-studio.html">
+                            <i class="fas fa-database"></i>
+                            <span>Dataset Studio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="app-builder.html">
+                            <i class="fas fa-cubes"></i>
+                            <span>App Builder</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="api-generator.html">
+                            <i class="fas fa-code"></i>
+                            <span>API Generator</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="collaboration.html">
+                            <i class="fas fa-users"></i>
+                            <span>Collaboration</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="web3-integration.html">
+                            <i class="fas fa-link"></i>
+                            <span>Web3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="marketplace.html">
+                            <i class="fas fa-store"></i>
+                            <span>Marketplace</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-panel.html">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Admin Panel</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
                     <li class="active">
                         <a href="documentation.html">
                             <i class="fas fa-book"></i>
                             <span>Documentation</span>
                         </a>
                     </li>
-<!--                     <li>
-                        <a href="#settings">
-                            <i class="fas fa-cog"></i>
-                            <span>Settings</span>
-                        </a>
-                    </li> -->
                 </ul>
             </nav>
             <div class="sidebar-footer">
@@ -224,22 +273,99 @@
                 </div>
 
                 <div class="doc-section">
-                    <h3>6. Next Steps</h3>
-                    <p>This prototype demonstrates the core functionality of the 4AI-build platform. Future development will include:</p>
+                    <h3>6. Prompt Lab</h3>
+                    <p>The Prompt Lab is a specialized environment for testing, optimizing, and comparing prompts across different AI models. Key features include:</p>
                     <ul>
-                        <li>User management and team collaboration features</li>
-                        <li>Integration with additional LLM providers</li>
-                        <li>Advanced workflow templates and examples</li>
-                        <li>API access for programmatic control</li>
-                        <li>Enhanced analytics and monitoring</li>
+                        <li>Multi-model prompt testing with side-by-side comparison</li>
+                        <li>Parameter adjustment (temperature, tokens, top-p, etc.)</li>
+                        <li>Prompt template library with categorized examples</li>
+                        <li>Prompt history and versioning</li>
+                        <li>Performance metrics and scoring</li>
                     </ul>
                     
-                    <p>For feedback or questions about this prototype, please contact the development team. whatsapp : +21628184164</p>
+                    <h4>6.1 Testing Prompts</h4>
+                    <p>To test a prompt:</p>
+                    <ol>
+                        <li>Enter your prompt in the editor</li>
+                        <li>Select one or more models to test against</li>
+                        <li>Adjust parameters as needed</li>
+                        <li>Click "Generate" to see the results</li>
+                        <li>Compare outputs side by side</li>
+                    </ol>
+                    
+                    <h4>6.2 Saving and Organizing Prompts</h4>
+                    <p>The Prompt Lab allows you to:</p>
+                    <ul>
+                        <li>Save prompts to your library</li>
+                        <li>Organize prompts into categories</li>
+                        <li>Track version history of prompts</li>
+                        <li>Export prompts for use in workflows or agents</li>
+                    </ul>
+                </div>
+
+                <div class="doc-section">
+                    <h3>7. Dataset Studio</h3>
+                    <p>The Dataset Studio provides tools for managing, cleaning, and enriching datasets used for AI training and evaluation. Key features include:</p>
+                    <ul>
+                        <li>Data import from multiple sources (CSV, JSON, TXT)</li>
+                        <li>Visual data exploration and analysis</li>
+                        <li>Manual and AI-assisted annotation</li>
+                        <li>Data cleaning and transformation tools</li>
+                        <li>Version control and change tracking</li>
+                    </ul>
+                    
+                    <h4>7.1 Importing Data</h4>
+                    <p>To import data:</p>
+                    <ol>
+                        <li>Click "Import Data" in the Dataset Studio</li>
+                        <li>Select a file or connect to a data source</li>
+                        <li>Configure import settings (delimiter, encoding, etc.)</li>
+                        <li>Preview and confirm the data</li>
+                        <li>Click "Import" to add the data to your workspace</li>
+                    </ol>
+                    
+                    <h4>7.2 Data Annotation</h4>
+                    <p>The Dataset Studio offers two annotation methods:</p>
+                    <ul>
+                        <li><strong>Manual Annotation</strong> - Apply labels, tags, or classifications manually</li>
+                        <li><strong>AI-Assisted Annotation</strong> - Use AI models to suggest annotations that you can review and approve</li>
+                    </ul>
+                    
+                    <h4>7.3 Data Versioning</h4>
+                    <p>All changes to datasets are tracked with version control, allowing you to:</p>
+                    <ul>
+                        <li>View the history of changes</li>
+                        <li>Revert to previous versions</li>
+                        <li>Compare different versions</li>
+                        <li>Create branches for experimental changes</li>
+                    </ul>
+                </div>
+
+                <div class="doc-section">
+                    <h3>8. Upcoming Features</h3>
+                    <p>The 4AI-build platform is continuously evolving. The following features are currently in development:</p>
+                    
+                    <h4>8.1 Phase 6 Features</h4>
+                    <ul>
+                        <li><strong>App Builder</strong> - Create custom AI applications with a visual interface</li>
+                        <li><strong>API Generator</strong> - Automatically generate APIs from your AI models and workflows</li>
+                        <li><strong>Real-time Collaboration</strong> - Work together with team members on projects simultaneously</li>
+                    </ul>
+                    
+                    <h4>8.2 Phase 7 Features</h4>
+                    <ul>
+                        <li><strong>Web3 Integration</strong> - Connect with blockchain technologies for decentralized AI</li>
+                        <li><strong>Marketplace</strong> - Buy, sell, and share AI models, workflows, and components</li>
+                        <li><strong>Admin Panel</strong> - Comprehensive tools for managing users, resources, and permissions</li>
+                    </ul>
+                    
+                    <p>For feedback or questions about this platform, please contact the development team.</p>
                 </div>
             </div>
         </main>
     </div>
 
-    <script src="common.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/ui-improvements.js"></script>
 </body>
 </html>
