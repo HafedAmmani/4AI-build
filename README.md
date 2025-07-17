@@ -142,6 +142,6 @@
 - Intégration avec des outils d'entreprise (Slack, Teams, etc.)
 - Support multi-langues
 
-## Licence
+## Licence 
 
 © 2025 4AI-build. Tous droits réservés.
